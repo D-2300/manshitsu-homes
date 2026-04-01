@@ -4,6 +4,7 @@ import { M, C } from "../tokens";
 declare global {
   interface Window {
     dataLayer?: Record<string, unknown>[];
+    gtag?: (...args: unknown[]) => void;
   }
 }
 
@@ -25,6 +26,13 @@ export default function MContactForm() {
       });
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({ event: "form_submit_manshitsu" });
+      if (window.gtag) {
+        window.gtag('event', 'conversion', {
+          send_to: 'AW-18048616711/A0baCJiLy2McEIeSoJ5b',
+          value: 1.0,
+          currency: 'JPY',
+        });
+      }
       setSubmitted(true);
     } catch {
       setSubmitting(false);
