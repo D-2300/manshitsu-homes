@@ -2,3 +2,6 @@ node_modules
 dist
 .DS_Store
 *.timestamp-*
+
+# Local Netlify folder
+.netlify
