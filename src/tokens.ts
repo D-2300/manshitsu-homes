@@ -20,8 +20,8 @@ export const C = {
   lineGreen:   "#06C755",
 } as const;
 
-// TODO: 満室デザインLABO専用のLINE・電話番号に差し替え
-// 現在は記憶荘と共通（暫定）— 新LINE公式・新eSIM番号が決まり次第更新
-export const LINE_URL = "https://lin.ee/HVV0QJO";
+// 満室デザインLABO専用LINE公式アカウント（@074uzmls）
+export const LINE_URL = "https://lin.ee/Qx59ZkVE";
+// TODO: 電話番号は新eSIM取得後に差し替え（現在は記憶荘と共通）
 export const TEL = "08069003314";
 export const TEL_DISPLAY = "080-6900-3314";
