@@ -23,6 +23,19 @@ export default function Nav() {
 
   useEffect(() => { setOpen(false); }, [location.pathname]);
 
+  // ハッシュ付きでトップページに遷移した時にスクロール
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace('#', '');
+      // DOMレンダリングを待つ
+      const timer = setTimeout(() => {
+        const el = document.getElementById(id);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+      return () => clearTimeout(timer);
+    }
+  }, [location]);
+
   useEffect(() => {
     document.body.style.overflow = open ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
@@ -65,9 +78,9 @@ export default function Nav() {
                 {l.label}
               </Link>
             ) : (
-              <a key={l.label} href={l.href} style={{ ...font, color: 'rgba(255,255,255,0.8)' }}>
+              <Link key={l.label} to={`/${l.href}`} style={{ ...font, color: 'rgba(255,255,255,0.8)' }}>
                 {l.label}
-              </a>
+              </Link>
             ),
           )}
           <a
@@ -122,9 +135,9 @@ export default function Nav() {
               {l.label}
             </Link>
           ) : (
-            <a key={l.label} href={l.href} onClick={() => setOpen(false)} style={{ ...font, color: '#fff', fontSize: 18 }}>
+            <Link key={l.label} to={`/${l.href}`} onClick={() => setOpen(false)} style={{ ...font, color: '#fff', fontSize: 18 }}>
               {l.label}
-            </a>
+            </Link>
           ),
         )}
         <a
