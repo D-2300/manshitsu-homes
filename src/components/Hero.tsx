@@ -16,10 +16,24 @@ export default function Hero() {
         overflow: 'hidden',
       }}
     >
+      {/* Background image */}
+      <img
+        src="/images/hero-bg.webp"
+        alt=""
+        style={{
+          position: 'absolute',
+          inset: 0,
+          width: '100%',
+          height: '100%',
+          objectFit: 'cover',
+          opacity: 0.15,
+          zIndex: 0,
+        }}
+      />
       {/* Background pattern */}
       <div
         style={{
-          position: 'absolute', inset: 0,
+          position: 'absolute', inset: 0, zIndex: 0,
           background: `radial-gradient(circle at 20% 80%, ${M.main}33 0%, transparent 50%), radial-gradient(circle at 80% 20%, ${C.gold}11 0%, transparent 50%)`,
         }}
       />
