@@ -1,12 +1,12 @@
 import { C } from './tokens';
 import Nav from './components/Nav';
 import Hero from './components/Hero';
-import Problem from './components/Problem';
-import Solution from './components/Solution';
-import WhySection from './components/WhySection';
+import ServiceOverview from './components/ServiceOverview';
 import Work from './components/Work';
-import Diagnostic from './components/Diagnostic';
+import ArticlePreview from './components/ArticlePreview';
+import WhySection from './components/WhySection';
 import Pricing from './components/Pricing';
+import About from './components/About';
 import FAQ from './components/FAQ';
 import FinalCTA from './components/FinalCTA';
 import Footer from './components/Footer';
@@ -22,12 +22,12 @@ export default function App() {
     >
       <Nav />
       <Hero />
-      <Problem />
-      <Solution />
-      <WhySection />
+      <ServiceOverview />
       <Work />
-      <Diagnostic />
+      <ArticlePreview />
+      <WhySection />
       <Pricing />
+      <About />
       <FAQ />
       <FinalCTA />
       <Footer />

@@ -49,7 +49,7 @@ export default function Work() {
     >
       <div style={{ maxWidth: 800, margin: '0 auto' }}>
         <ScrollFadeIn>
-          <SectionLabel en="Works" ja="施工実績" />
+          <SectionLabel en="Works" ja="施工実績" dark />
         </ScrollFadeIn>
 
         {/* Pickup */}

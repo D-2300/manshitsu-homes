@@ -4,10 +4,12 @@ interface Props {
   en: string;
   ja?: string;
   align?: 'center' | 'left';
+  dark?: boolean;
 }
 
-export default function SectionLabel({ en, ja, align = 'center' }: Props) {
+export default function SectionLabel({ en, ja, align = 'center', dark = false }: Props) {
   const ta = align === 'center' ? 'center' : 'left';
+  const labelColor = dark ? 'rgba(255,255,255,0.5)' : C.warmGray;
   return (
     <div style={{ textAlign: ta, marginBottom: 40 }}>
       <div
@@ -16,7 +18,7 @@ export default function SectionLabel({ en, ja, align = 'center' }: Props) {
           fontWeight: 300,
           letterSpacing: '0.2em',
           textTransform: 'uppercase' as const,
-          color: C.warmGray,
+          color: labelColor,
           fontFamily: "'Cormorant Garamond', serif",
         }}
       >
@@ -28,7 +30,7 @@ export default function SectionLabel({ en, ja, align = 'center' }: Props) {
             fontSize: 12,
             fontWeight: 400,
             letterSpacing: '0.05em',
-            color: C.warmGray,
+            color: labelColor,
             marginTop: 4,
           }}
         >

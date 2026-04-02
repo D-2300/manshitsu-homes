@@ -43,7 +43,7 @@ export default function FinalCTA() {
             style={{
               fontSize: 13,
               lineHeight: 2,
-              color: 'rgba(255,255,255,0.55)',
+              color: 'rgba(255,255,255,0.75)',
               fontWeight: 300,
               marginBottom: 40,
             }}
@@ -94,13 +94,13 @@ export default function FinalCTA() {
                 width: '100%',
                 maxWidth: 320,
                 backgroundColor: 'transparent',
-                color: 'rgba(255,255,255,0.7)',
+                color: 'rgba(255,255,255,0.85)',
                 fontSize: 14,
                 fontWeight: 400,
                 padding: '14px 24px',
                 borderRadius: 4,
                 textDecoration: 'none',
-                border: '1px solid rgba(255,255,255,0.2)',
+                border: '1px solid rgba(255,255,255,0.35)',
                 letterSpacing: '0.04em',
               }}
             >
@@ -111,7 +111,7 @@ export default function FinalCTA() {
           <p
             style={{
               fontSize: 11,
-              color: 'rgba(255,255,255,0.3)',
+              color: 'rgba(255,255,255,0.5)',
               marginTop: 24,
               letterSpacing: '0.04em',
             }}
