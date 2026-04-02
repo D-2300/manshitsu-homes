@@ -11,8 +11,8 @@ const pickup = {
     { label: 'Type', value: '1LDK / 40㎡' },
     { label: 'Work', value: 'クロス+CF+清掃' },
   ],
-  before: 'https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80',
-  after: 'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=600&q=80',
+  before: '/images/m-before-1-sm.webp',
+  after: '/images/m-after-accent-sm.webp',
   story:
     '退去後、管理会社の見積もりは18万円。オーナー様がLINEで見積書を送ってくださり、同じ内容で8.5万円の見積もりを提示。クロス全面張替え＋アクセントクロス1面＋クッションフロア張替え＋クリーニングで、次の入居者が2週間で決まった。',
 };
@@ -22,22 +22,22 @@ const cases = [
     title: '2LDK アクセントクロス施工',
     cost: '¥52,000',
     period: '2日',
-    before: 'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=400&q=80',
-    after: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=80',
+    before: '/images/m-before-2-sm.webp',
+    after: '/images/m-after-green-sm.webp',
   },
   {
     title: '1K クリーニング＋部分張替え',
     cost: '¥28,000',
     period: '1日',
-    before: 'https://images.unsplash.com/photo-1560448204-603b3fc33ddc?w=400&q=80',
-    after: 'https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?w=400&q=80',
+    before: '/images/m-before-3-sm.webp',
+    after: '/images/m-after-herringbone-sm.webp',
   },
   {
     title: '3LDK 退去時原状回復',
     cost: '¥145,000',
     period: '5日',
-    before: 'https://images.unsplash.com/photo-1574362848149-11496d93a7c7?w=400&q=80',
-    after: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&q=80',
+    before: '/images/m-before-1-sm.webp',
+    after: '/images/m-after-led-sm.webp',
   },
 ];
 
@@ -98,7 +98,7 @@ export default function Work() {
               </div>
             </div>
 
-            <p style={{ fontSize: 13, lineHeight: 2, color: 'rgba(255,255,255,0.55)', fontWeight: 300 }}>
+            <p style={{ fontSize: 13, lineHeight: 2, color: 'rgba(255,255,255,0.7)', fontWeight: 300 }}>
               {pickup.story}
             </p>
           </div>
@@ -124,7 +124,7 @@ export default function Work() {
                 </div>
                 <div style={{ padding: '12px 14px' }}>
                   <div style={{ fontSize: 13, color: '#fff', fontWeight: 500, marginBottom: 6 }}>{c.title}</div>
-                  <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.45)' }}>
+                  <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.6)' }}>
                     {c.cost} / {c.period}
                   </div>
                 </div>

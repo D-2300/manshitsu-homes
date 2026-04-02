@@ -50,9 +50,11 @@ export default function Nav() {
         }}
       >
         <Link to="/" style={{ textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 8 }}>
-          <span style={{ color: C.gold, fontSize: 16, fontWeight: 700, letterSpacing: '0.05em' }}>
-            満室デザインLABO
-          </span>
+          <img
+            src="/images/logo-manshitsu-h-gold.png"
+            alt="満室デザインLABO"
+            style={{ height: 28, objectFit: 'contain' }}
+          />
         </Link>
 
         {/* PC nav */}
