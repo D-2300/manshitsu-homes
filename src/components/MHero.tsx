@@ -18,7 +18,7 @@ export default function MHero() {
       {/* Background image */}
       <div className="absolute inset-0">
         <img
-          src="/images/m-hero-color.webp"
+          src="/images/hero-bg.webp"
           alt="施工完了後の明るい部屋"
           className="w-full h-full object-cover opacity-40"
         />
