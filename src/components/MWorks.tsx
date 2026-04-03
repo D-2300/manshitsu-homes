@@ -36,9 +36,9 @@ const others = [
 
 export default function MWorks() {
   return (
-    <section className="bg-slate-900 py-14 px-5">
+    <section className="bg-m-dark py-14 px-5">
       <div className="max-w-[720px] mx-auto">
-        <p className="text-amber-400 text-xs font-semibold tracking-widest text-center mb-3">
+        <p className="text-c-gold-lt text-xs font-semibold tracking-widest text-center mb-3">
           WORKS
         </p>
         <h2 className="text-[clamp(20px,5vw,28px)] font-bold text-white text-center leading-snug mb-10">
@@ -46,7 +46,7 @@ export default function MWorks() {
         </h2>
 
         {/* Pickup */}
-        <div className="bg-slate-800 rounded-lg overflow-hidden mb-6">
+        <div className="bg-m-main rounded-lg overflow-hidden mb-6">
           <div className="flex">
             <div className="flex-1 relative">
               <img src={pickup.beforeSrc} alt="施工前" loading="lazy" className="w-full h-full object-cover" />
@@ -54,10 +54,10 @@ export default function MWorks() {
                 BEFORE
               </span>
             </div>
-            <div className="w-[2px] bg-slate-700" />
+            <div className="w-[2px] bg-m-dark" />
             <div className="flex-1 relative">
               <img src={pickup.afterSrc} alt="施工後" loading="lazy" className="w-full h-full object-cover" />
-              <span className="absolute top-2 left-2 text-[11px] font-semibold bg-amber-500 text-slate-900 px-2.5 py-1 rounded-sm tracking-wide">
+              <span className="absolute top-2 left-2 text-[11px] font-semibold bg-c-gold text-m-dark px-2.5 py-1 rounded-sm tracking-wide">
                 AFTER
               </span>
             </div>
@@ -66,23 +66,23 @@ export default function MWorks() {
             <p className="text-sm font-medium text-white/85 mb-3">{pickup.type}</p>
             <div className="flex items-center gap-6 mb-2">
               <div className="flex items-center gap-2">
-                <Clock size={18} className="text-amber-400" />
-                <span className="text-2xl font-bold text-amber-400">{pickup.days}</span>
-                <span className="text-xs text-slate-400">で完了</span>
+                <Clock size={18} className="text-c-gold" />
+                <span className="text-2xl font-bold text-c-gold">{pickup.days}</span>
+                <span className="text-xs text-white/50">で完了</span>
               </div>
               <div>
                 <span className="text-lg font-semibold text-white">{pickup.cost}</span>
-                <span className="text-xs text-slate-400 ml-1">（税別）</span>
+                <span className="text-xs text-white/50 ml-1">（税別）</span>
               </div>
             </div>
-            <p className="text-xs text-slate-400 leading-relaxed">{pickup.desc}</p>
+            <p className="text-xs text-white/50 leading-relaxed">{pickup.desc}</p>
           </div>
         </div>
 
         {/* Other Works */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-6">
           {others.map((w, i) => (
-            <div key={i} className="bg-slate-800 rounded-lg overflow-hidden">
+            <div key={i} className="bg-m-main rounded-lg overflow-hidden">
               <div className="flex h-[120px]">
                 <div className="flex-1 relative">
                   <img src={w.beforeSrc} alt="施工前" loading="lazy" className="w-full h-full object-cover brightness-[0.85]" />
@@ -90,18 +90,18 @@ export default function MWorks() {
                     BEFORE
                   </span>
                 </div>
-                <div className="w-px bg-slate-700" />
+                <div className="w-px bg-m-dark" />
                 <div className="flex-1 relative">
                   <img src={w.afterSrc} alt="施工後" loading="lazy" className="w-full h-full object-cover" />
-                  <span className="absolute top-1.5 left-1.5 text-[10px] font-semibold bg-amber-500 text-slate-900 px-2 py-0.5 rounded-sm">
+                  <span className="absolute top-1.5 left-1.5 text-[10px] font-semibold bg-c-gold text-m-dark px-2 py-0.5 rounded-sm">
                     AFTER
                   </span>
                 </div>
               </div>
-              <div className="p-3 border-t border-slate-700">
+              <div className="p-3 border-t border-white/10">
                 <p className="text-xs text-white/80 mb-1">{w.type}</p>
                 <div className="flex items-center justify-between">
-                  <span className="inline-flex items-center gap-1 text-amber-400 text-sm font-bold">
+                  <span className="inline-flex items-center gap-1 text-c-gold text-sm font-bold">
                     <Clock size={13} /> {w.days}
                   </span>
                   <span className="text-sm font-medium text-white">{w.cost}</span>
@@ -111,7 +111,7 @@ export default function MWorks() {
           ))}
         </div>
 
-        <p className="text-center text-xs text-slate-500">
+        <p className="text-center text-xs text-white/35">
           ※施工事例はイメージです。初回のお客様には特別価格でご対応します。
         </p>
 

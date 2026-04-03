@@ -2,7 +2,7 @@ import { TEL_DISPLAY } from "../tokens";
 
 export default function MFooter() {
   return (
-    <footer className="bg-slate-950 py-10 px-5">
+    <footer className="bg-m-dark py-10 px-5">
       <div className="max-w-[720px] mx-auto text-center">
         <img
           src="/images/logo-manshitsu-mark-white.webp"
@@ -10,7 +10,7 @@ export default function MFooter() {
           loading="lazy"
           className="h-11 object-contain mx-auto mb-3 opacity-80"
         />
-        <p className="text-amber-500 text-[15px] font-medium tracking-wide mb-2">
+        <p className="text-c-gold text-[15px] font-medium tracking-wide mb-2">
           満室デザインLABO
         </p>
         <p className="text-white/50 text-[13px] mb-1">

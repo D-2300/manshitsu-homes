@@ -20,39 +20,39 @@ const rows = [
 
 export default function MPrice() {
   return (
-    <section className="bg-slate-50 py-14 px-5">
+    <section className="bg-c-warm py-14 px-5">
       <div className="max-w-[720px] mx-auto">
-        <p className="text-amber-600 text-xs font-semibold tracking-widest text-center mb-3">
+        <p className="text-m-main text-xs font-semibold tracking-widest text-center mb-3">
           PRICE
         </p>
-        <h2 className="text-[clamp(20px,5vw,28px)] font-bold text-slate-900 text-center leading-snug mb-3">
+        <h2 className="text-[clamp(20px,5vw,28px)] font-bold text-c-text text-center leading-snug mb-3">
           「一式◯万円」は、ありません。
         </h2>
-        <p className="text-sm text-slate-500 text-center mb-8 leading-relaxed">
+        <p className="text-sm text-c-text-md text-center mb-8 leading-relaxed">
           平米数・単価・材料名をすべて記載した見積書をお出しします。
         </p>
 
-        <div className="rounded-lg overflow-hidden border border-slate-200 bg-white mb-4">
+        <div className="rounded-lg overflow-hidden border border-m-light/20 bg-white mb-4">
           {/* Header */}
-          <div className="bg-slate-800 px-4 py-2.5 flex justify-between">
-            <span className="text-[11px] font-medium text-slate-400 tracking-wide">施工内容</span>
-            <span className="text-[11px] font-medium text-slate-400 tracking-wide">単価（税別）</span>
+          <div className="bg-m-main px-4 py-2.5 flex justify-between">
+            <span className="text-[11px] font-medium text-white/70 tracking-wide">施工内容</span>
+            <span className="text-[11px] font-medium text-white/70 tracking-wide">単価（税別）</span>
           </div>
           {/* Rows */}
           {rows.map((row, i) => (
             <div
               key={i}
               className={`flex justify-between items-center px-4 py-3 gap-3 ${
-                i < rows.length - 1 ? "border-b border-slate-100" : ""
-              } ${i % 2 === 0 ? "bg-white" : "bg-slate-50/50"}`}
+                i < rows.length - 1 ? "border-b border-m-light/10" : ""
+              } ${i % 2 === 0 ? "bg-white" : "bg-m-bg/20"}`}
             >
-              <span className="text-xs text-slate-700 leading-relaxed flex-1">{row.label}</span>
-              <span className="text-sm font-medium text-slate-900 whitespace-nowrap flex-shrink-0">{row.price}</span>
+              <span className="text-xs text-c-text leading-relaxed flex-1">{row.label}</span>
+              <span className="text-sm font-medium text-m-dark whitespace-nowrap flex-shrink-0">{row.price}</span>
             </div>
           ))}
         </div>
 
-        <p className="text-[11px] text-slate-400 leading-relaxed mb-6">
+        <p className="text-[11px] text-c-warm-gr leading-relaxed mb-6">
           ※最低発注金額 35,000円（税別）〜　※使用材料はサンゲツ・リリカラ等のJIS規格品。F☆☆☆☆対応。
         </p>
 

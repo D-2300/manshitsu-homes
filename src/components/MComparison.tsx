@@ -11,41 +11,41 @@ const rows = [
 
 export default function MComparison() {
   return (
-    <section className="bg-slate-50 py-14 px-5">
+    <section className="bg-m-bg py-14 px-5">
       <div className="max-w-[720px] mx-auto">
-        <p className="text-amber-600 text-xs font-semibold tracking-widest text-center mb-3">
+        <p className="text-m-main text-xs font-semibold tracking-widest text-center mb-3">
           COMPARISON
         </p>
-        <h2 className="text-[clamp(18px,4.5vw,26px)] font-bold text-slate-900 text-center leading-snug mb-8">
+        <h2 className="text-[clamp(18px,4.5vw,26px)] font-bold text-c-text text-center leading-snug mb-8">
           従来の管理会社経由との違い
         </h2>
 
-        <div className="rounded-lg overflow-hidden border border-slate-200 bg-white">
+        <div className="rounded-lg overflow-hidden border border-m-light/30 bg-white">
           {/* Header */}
-          <div className="grid grid-cols-[1fr_1fr_1fr] bg-slate-800 text-white text-xs font-semibold">
+          <div className="grid grid-cols-[1fr_1fr_1fr] bg-m-dark text-white text-xs font-semibold">
             <div className="p-3" />
-            <div className="p-3 text-center border-l border-slate-700">管理会社経由</div>
-            <div className="p-3 text-center border-l border-slate-700 bg-amber-600 text-white">満室デザインLABO</div>
+            <div className="p-3 text-center border-l border-white/10">管理会社経由</div>
+            <div className="p-3 text-center border-l border-white/10 bg-m-main text-white">満室デザインLABO</div>
           </div>
 
           {/* Rows */}
           {rows.map((row, i) => (
             <div
               key={i}
-              className={`grid grid-cols-[1fr_1fr_1fr] text-sm border-t border-slate-100 ${
-                i % 2 === 0 ? "bg-white" : "bg-slate-50/50"
+              className={`grid grid-cols-[1fr_1fr_1fr] text-sm border-t border-m-light/15 ${
+                i % 2 === 0 ? "bg-white" : "bg-m-bg/30"
               }`}
             >
-              <div className="p-3 font-medium text-slate-700 text-xs">
+              <div className="p-3 font-medium text-c-text text-xs">
                 {row.label}
               </div>
-              <div className="p-3 text-center text-slate-400 border-l border-slate-100 text-xs">
+              <div className="p-3 text-center text-c-warm-gr border-l border-m-light/15 text-xs">
                 {row.old}
               </div>
-              <div className={`p-3 text-center border-l border-slate-100 text-xs font-bold ${
-                row.highlight ? "text-amber-600 bg-amber-50/50" : "text-slate-800"
+              <div className={`p-3 text-center border-l border-m-light/15 text-xs font-bold ${
+                row.highlight ? "text-c-gold bg-c-gold-pl/40" : "text-c-text"
               }`}>
-                {row.highlight && <ArrowRight size={12} className="inline mr-1 text-amber-500" />}
+                {row.highlight && <ArrowRight size={12} className="inline mr-1 text-c-gold" />}
                 {row.new}
               </div>
             </div>

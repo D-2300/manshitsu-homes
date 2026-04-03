@@ -14,7 +14,7 @@ import MFloatingCTA from "./components/MFloatingCTA";
 
 export default function ManshitsuPage() {
   return (
-    <div className="font-['Noto_Sans_JP',sans-serif] bg-white pb-16">
+    <div className="font-['Noto_Sans_JP',sans-serif] bg-c-warm pb-16">
       <MHero />
       <MVacancyCost />
       <MService />

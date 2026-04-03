@@ -14,7 +14,7 @@ function pushEvent(event: string) {
 
 export default function MHero() {
   return (
-    <section className="relative min-h-[90vh] flex items-end overflow-hidden bg-slate-900">
+    <section className="relative min-h-[90vh] flex items-end overflow-hidden bg-m-dark">
       {/* Background image */}
       <div className="absolute inset-0">
         <img
@@ -22,7 +22,7 @@ export default function MHero() {
           alt="施工完了後の明るい部屋"
           className="w-full h-full object-cover opacity-40"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-slate-900 via-slate-900/70 to-slate-900/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-m-dark via-m-dark/70 to-m-dark/30" />
       </div>
 
       {/* Content */}
@@ -32,7 +32,7 @@ export default function MHero() {
           空室を、収益に戻す。
         </h1>
 
-        <p className="text-[clamp(14px,3.5vw,16px)] text-slate-300 leading-[1.85] mb-6">
+        <p className="text-[clamp(14px,3.5vw,16px)] text-white/70 leading-[1.85] mb-6">
           退去連絡から最短2日で原状回復完了。<br />
           管理会社を通さないから、速い。<br />
           直接だから、安い。細かい修正もすぐ対応。<br />
@@ -41,13 +41,13 @@ export default function MHero() {
 
         {/* Badges */}
         <div className="flex flex-wrap gap-2 mb-8">
-          <span className="inline-flex items-center gap-1.5 bg-amber-500/15 border border-amber-500/30 text-amber-400 text-xs font-semibold px-3 py-1.5 rounded">
+          <span className="inline-flex items-center gap-1.5 bg-c-gold/15 border border-c-gold/30 text-c-gold text-xs font-semibold px-3 py-1.5 rounded">
             <Clock size={14} /> 最短2日
           </span>
-          <span className="inline-flex items-center gap-1.5 bg-amber-500/15 border border-amber-500/30 text-amber-400 text-xs font-semibold px-3 py-1.5 rounded">
+          <span className="inline-flex items-center gap-1.5 bg-c-gold/15 border border-c-gold/30 text-c-gold text-xs font-semibold px-3 py-1.5 rounded">
             <Zap size={14} /> 中間マージン0円
           </span>
-          <span className="inline-flex items-center gap-1.5 bg-amber-500/15 border border-amber-500/30 text-amber-400 text-xs font-semibold px-3 py-1.5 rounded">
+          <span className="inline-flex items-center gap-1.5 bg-c-gold/15 border border-c-gold/30 text-c-gold text-xs font-semibold px-3 py-1.5 rounded">
             <Star size={14} /> 初回お試し価格
           </span>
         </div>

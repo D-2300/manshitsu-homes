@@ -10,7 +10,7 @@ function pushEvent(event: string) {
 
 export default function MFloatingCTA() {
   return (
-    <div className="fixed bottom-0 left-0 right-0 z-50 bg-slate-900/95 backdrop-blur-md border-t border-white/10 p-2.5 flex gap-2.5 justify-center items-center md:hidden">
+    <div className="fixed bottom-0 left-0 right-0 z-50 bg-m-dark/95 backdrop-blur-md border-t border-c-gold/15 p-2.5 flex gap-2.5 justify-center items-center md:hidden">
       <a
         href={LINE_URL}
         target="_blank"

@@ -10,12 +10,12 @@ function pushEvent(event: string) {
 
 export default function MContactCTA() {
   return (
-    <section className="bg-slate-900 py-14 px-5">
+    <section className="bg-m-dark py-14 px-5">
       <div className="max-w-[720px] mx-auto text-center">
         <h2 className="text-[clamp(20px,5.5vw,30px)] font-bold text-white leading-snug mb-3">
           管理会社の見積書、<br className="sm:hidden" />LINEで送るだけ。
         </h2>
-        <p className="text-sm text-slate-400 mb-8 leading-relaxed">
+        <p className="text-sm text-white/50 mb-8 leading-relaxed">
           比較用の見積もりを無料でお出しします。
         </p>
 

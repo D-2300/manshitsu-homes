@@ -36,34 +36,34 @@ export default function MFAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section className="bg-slate-50 py-14 px-5">
+    <section className="bg-m-bg py-14 px-5">
       <div className="max-w-[720px] mx-auto">
-        <p className="text-amber-600 text-xs font-semibold tracking-widest text-center mb-3">
+        <p className="text-m-main text-xs font-semibold tracking-widest text-center mb-3">
           FAQ
         </p>
-        <h2 className="text-[clamp(20px,5vw,28px)] font-bold text-slate-900 text-center leading-snug mb-8">
+        <h2 className="text-[clamp(20px,5vw,28px)] font-bold text-c-text text-center leading-snug mb-8">
           よくあるご質問
         </h2>
 
-        <div className="bg-white rounded-lg border border-slate-200 divide-y divide-slate-100">
+        <div className="bg-white rounded-lg border border-m-light/20 divide-y divide-m-light/10">
           {faqs.map((faq, i) => (
             <div key={i}>
               <button
                 onClick={() => setOpen(open === i ? null : i)}
-                className="w-full flex items-start justify-between gap-3 p-4 text-left bg-transparent border-none cursor-pointer hover:bg-slate-50/50 transition-colors"
+                className="w-full flex items-start justify-between gap-3 p-4 text-left bg-transparent border-none cursor-pointer hover:bg-m-bg/30 transition-colors"
               >
                 <div className="flex gap-3 items-start">
-                  <span className="text-amber-600 font-bold text-sm flex-shrink-0 mt-0.5">Q</span>
-                  <span className="text-sm font-medium text-slate-800 leading-relaxed">{faq.q}</span>
+                  <span className="text-m-main font-bold text-sm flex-shrink-0 mt-0.5">Q</span>
+                  <span className="text-sm font-medium text-c-text leading-relaxed">{faq.q}</span>
                 </div>
-                <span className="flex-shrink-0 text-slate-400 mt-0.5">
+                <span className="flex-shrink-0 text-m-mid mt-0.5">
                   {open === i ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
                 </span>
               </button>
               {open === i && (
                 <div className="px-4 pb-4 pl-11 flex gap-3">
-                  <span className="text-amber-400 font-bold text-sm flex-shrink-0 mt-0.5">A</span>
-                  <p className="text-sm text-slate-500 leading-[1.85] m-0">{faq.a}</p>
+                  <span className="text-m-light font-bold text-sm flex-shrink-0 mt-0.5">A</span>
+                  <p className="text-sm text-c-text-md leading-[1.85] m-0">{faq.a}</p>
                 </div>
               )}
             </div>

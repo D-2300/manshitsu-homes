@@ -2,21 +2,21 @@ import { Zap, MessageCircle, Wrench } from "lucide-react";
 
 const services = [
   {
-    icon: <MessageCircle className="text-amber-500" size={28} />,
+    icon: <MessageCircle className="text-c-gold" size={28} />,
     title: "直接取引、中間ロスゼロ",
     desc: "管理会社を通さず直接やり取り。伝言ゲームがないから判断が速い。",
     img: "/images/service-direct.webp",
     placeholder: "LINEで直接やり取り",
   },
   {
-    icon: <Zap className="text-amber-500" size={28} />,
+    icon: <Zap className="text-c-gold" size={28} />,
     title: "少数精鋭、即判断即着工",
     desc: "稟議・承認プロセスゼロ。現場を見てその場で概算。",
     img: "/images/service-speed.webp",
     placeholder: "手際よく施工する職人",
   },
   {
-    icon: <Wrench className="text-amber-500" size={28} />,
+    icon: <Wrench className="text-c-gold" size={28} />,
     title: "完了後もすぐフォロー",
     desc: "施工後の細かい修正もすぐ対応。やりっぱなしにしない。",
     img: "/images/service-aftercare.webp",
@@ -26,7 +26,7 @@ const services = [
 
 function ImageOrPlaceholder({ src, alt, placeholder }: { src: string; alt: string; placeholder: string }) {
   return (
-    <div className="relative w-full aspect-[4/3] bg-slate-200 rounded-lg overflow-hidden">
+    <div className="relative w-full aspect-[4/3] bg-m-bg rounded-lg overflow-hidden">
       <img
         src={src}
         alt={alt}
@@ -39,7 +39,7 @@ function ImageOrPlaceholder({ src, alt, placeholder }: { src: string; alt: strin
           if (next) next.style.display = "flex";
         }}
       />
-      <div className="absolute inset-0 bg-slate-300 items-center justify-center text-slate-500 text-sm hidden">
+      <div className="absolute inset-0 bg-m-bg items-center justify-center text-m-mid text-sm hidden">
         {placeholder}
       </div>
     </div>
@@ -48,12 +48,12 @@ function ImageOrPlaceholder({ src, alt, placeholder }: { src: string; alt: strin
 
 export default function MService() {
   return (
-    <section className="bg-white py-14 px-5">
+    <section className="bg-c-warm py-14 px-5">
       <div className="max-w-[720px] mx-auto">
-        <p className="text-amber-600 text-xs font-semibold tracking-widest text-center mb-3">
+        <p className="text-m-main text-xs font-semibold tracking-widest text-center mb-3">
           SERVICE
         </p>
-        <h2 className="text-[clamp(20px,5vw,28px)] font-bold text-slate-900 text-center leading-snug mb-10">
+        <h2 className="text-[clamp(20px,5vw,28px)] font-bold text-c-text text-center leading-snug mb-10">
           なぜ、最短2日で<br className="sm:hidden" />終わるのか。
         </h2>
 
@@ -71,9 +71,9 @@ export default function MService() {
               <div className="w-full sm:w-1/2">
                 <div className="flex items-center gap-3 mb-2">
                   {s.icon}
-                  <h3 className="text-lg font-bold text-slate-900">{s.title}</h3>
+                  <h3 className="text-lg font-bold text-c-text">{s.title}</h3>
                 </div>
-                <p className="text-sm text-slate-600 leading-relaxed">{s.desc}</p>
+                <p className="text-sm text-c-text-md leading-relaxed">{s.desc}</p>
               </div>
             </div>
           ))}
