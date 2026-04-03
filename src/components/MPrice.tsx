@@ -1,5 +1,11 @@
-import { M, C } from "../tokens";
-import MSectionHeader from "./MSectionHeader";
+import { LINE_URL } from "../tokens";
+
+function pushEvent(event: string) {
+  if (typeof window !== "undefined") {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ event });
+  }
+}
 
 const rows = [
   { label: "クロス張替え（量産品）めくり・下地処理・処分込み", price: "900円/㎡〜" },
@@ -14,55 +20,53 @@ const rows = [
 
 export default function MPrice() {
   return (
-    <section style={{ backgroundColor: C.warmWhite, padding: "48px 20px" }}>
-      <div style={{ maxWidth: "720px", margin: "0 auto" }}>
-        <MSectionHeader label="PRICE" heading={"「一式◯万円」は、ありません。"} />
-
-        <p
-          style={{
-            margin: "0 0 20px",
-            textAlign: "center",
-            fontSize: "clamp(14px, 3.5vw, 15px)",
-            color: C.textMid,
-            lineHeight: 1.85,
-          }}
-        >
+    <section className="bg-slate-50 py-14 px-5">
+      <div className="max-w-[720px] mx-auto">
+        <p className="text-amber-600 text-xs font-semibold tracking-widest text-center mb-3">
+          PRICE
+        </p>
+        <h2 className="text-[clamp(20px,5vw,28px)] font-bold text-slate-900 text-center leading-snug mb-3">
+          「一式◯万円」は、ありません。
+        </h2>
+        <p className="text-sm text-slate-500 text-center mb-8 leading-relaxed">
           平米数・単価・材料名をすべて記載した見積書をお出しします。
         </p>
 
-        <div style={{ borderRadius: "4px", overflow: "hidden", border: "1px solid #E8E3DC", marginBottom: "12px" }}>
-          <div style={{ backgroundColor: M.main, padding: "10px 16px" }}>
-            <div style={{ display: "flex", justifyContent: "space-between" }}>
-              <span style={{ fontSize: "11px", fontWeight: 500, color: "rgba(255,255,255,0.7)", letterSpacing: "0.05em" }}>施工内容</span>
-              <span style={{ fontSize: "11px", fontWeight: 500, color: "rgba(255,255,255,0.7)", letterSpacing: "0.05em" }}>単価（税別）</span>
-            </div>
+        <div className="rounded-lg overflow-hidden border border-slate-200 bg-white mb-4">
+          {/* Header */}
+          <div className="bg-slate-800 px-4 py-2.5 flex justify-between">
+            <span className="text-[11px] font-medium text-slate-400 tracking-wide">施工内容</span>
+            <span className="text-[11px] font-medium text-slate-400 tracking-wide">単価（税別）</span>
           </div>
+          {/* Rows */}
           {rows.map((row, i) => (
             <div
               key={i}
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                padding: "12px 16px",
-                borderBottom: i < rows.length - 1 ? "1px solid #EDE9E4" : "none",
-                backgroundColor: i % 2 === 0 ? C.white : "#FAFAF8",
-                gap: "12px",
-              }}
+              className={`flex justify-between items-center px-4 py-3 gap-3 ${
+                i < rows.length - 1 ? "border-b border-slate-100" : ""
+              } ${i % 2 === 0 ? "bg-white" : "bg-slate-50/50"}`}
             >
-              <span style={{ fontSize: "clamp(12px, 3vw, 13px)", color: C.textDark, lineHeight: 1.5, flex: 1 }}>
-                {row.label}
-              </span>
-              <span style={{ fontSize: "clamp(13px, 3vw, 14px)", color: M.dark, fontWeight: 500, whiteSpace: "nowrap", flexShrink: 0 }}>
-                {row.price}
-              </span>
+              <span className="text-xs text-slate-700 leading-relaxed flex-1">{row.label}</span>
+              <span className="text-sm font-medium text-slate-900 whitespace-nowrap flex-shrink-0">{row.price}</span>
             </div>
           ))}
         </div>
 
-        <p style={{ margin: 0, fontSize: "11px", color: C.warmGray, lineHeight: 1.8, letterSpacing: "0.02em" }}>
+        <p className="text-[11px] text-slate-400 leading-relaxed mb-6">
           ※最低発注金額 35,000円（税別）〜　※使用材料はサンゲツ・リリカラ等のJIS規格品。F☆☆☆☆対応。
         </p>
+
+        <div className="text-center">
+          <a
+            href={LINE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => pushEvent("line_cta_click_manshitsu")}
+            className="inline-flex items-center gap-2 bg-line text-white font-bold text-sm py-3 px-8 rounded shadow-lg shadow-line/30 no-underline hover:brightness-110 transition-all"
+          >
+            管理会社の見積書をLINEで送るだけ
+          </a>
+        </div>
       </div>
     </section>
   );

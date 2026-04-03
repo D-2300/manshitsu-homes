@@ -1,34 +1,29 @@
-import { M, C, TEL_DISPLAY } from "../tokens";
+import { TEL_DISPLAY } from "../tokens";
 
 export default function MFooter() {
   return (
-    <footer style={{ backgroundColor: M.dark, padding: "40px 20px 32px" }}>
-      <div style={{ maxWidth: "720px", margin: "0 auto", textAlign: "center" }}>
-        {/* Logo mark only */}
+    <footer className="bg-slate-950 py-10 px-5">
+      <div className="max-w-[720px] mx-auto text-center">
         <img
           src="/images/logo-manshitsu-mark-white.webp"
           alt="満室デザインLABO"
-          style={{ height: "44px", objectFit: "contain", marginBottom: "12px", opacity: 0.85, display: "block", marginLeft: "auto", marginRight: "auto" }}
+          loading="lazy"
+          className="h-11 object-contain mx-auto mb-3 opacity-80"
         />
-        <p style={{ margin: "0 0 10px", fontSize: "15px", color: C.gold, fontWeight: 500, letterSpacing: "0.06em" }}>
+        <p className="text-amber-500 text-[15px] font-medium tracking-wide mb-2">
           満室デザインLABO
         </p>
-        <p style={{ margin: "0 0 6px", fontSize: "13px", color: "rgba(255,255,255,0.55)", lineHeight: 1.7 }}>
+        <p className="text-white/50 text-[13px] mb-1">
           対応エリア：仙台市・宮城県全域
         </p>
-        <p style={{ margin: "0 0 20px", fontSize: "12px", color: "rgba(255,255,255,0.45)", lineHeight: 1.7 }}>
-          📞 {TEL_DISPLAY}
+        <p className="text-white/40 text-xs mb-5">
+          {TEL_DISPLAY}
         </p>
-        <div
-          style={{
-            borderTop: "1px solid rgba(255,255,255,0.08)",
-            paddingTop: "16px",
-          }}
-        >
-          <p style={{ margin: 0, fontSize: "11px", color: "rgba(255,255,255,0.25)", letterSpacing: "0.04em" }}>
-            © 満室デザインLABO. All rights reserved.
+        <div className="border-t border-white/[0.08] pt-4">
+          <p className="text-white/25 text-[11px] tracking-wide">
+            &copy; 満室デザインLABO. All rights reserved.
           </p>
-          <p style={{ margin: "6px 0 0", fontSize: "10px", color: "rgba(255,255,255,0.15)", letterSpacing: "0.03em" }}>
+          <p className="text-white/15 text-[10px] mt-1">
             Produced by 記憶荘
           </p>
         </div>

@@ -1,53 +1,31 @@
-import { C } from "./tokens";
 import MHero from "./components/MHero";
-import MBridge from "./components/MBridge";
-import MProblem from "./components/MProblem";
-import MAgitate from "./components/MAgitate";
-import MSolve from "./components/MSolve";
-import MBeforeAfter from "./components/MBeforeAfter";
-import MOneStop from "./components/MOneStop";
-import MPrice from "./components/MPrice";
+import MVacancyCost from "./components/MVacancyCost";
+import MService from "./components/MService";
+import MWorks from "./components/MWorks";
+import MTrialOffer from "./components/MTrialOffer";
+import MComparison from "./components/MComparison";
 import MFlow from "./components/MFlow";
+import MPrice from "./components/MPrice";
+import MAbout from "./components/MAbout";
 import MFAQ from "./components/MFAQ";
-import MLastPush from "./components/MLastPush";
-import MCTA from "./components/MCTA";
-import MProfile from "./components/MProfile";
+import MContactCTA from "./components/MContactCTA";
 import MFooter from "./components/MFooter";
-import MContactForm from "./components/MContactForm";
 import MFloatingCTA from "./components/MFloatingCTA";
 
 export default function ManshitsuPage() {
   return (
-    <div
-      style={{
-        fontFamily: "'Noto Sans JP', sans-serif",
-        backgroundColor: C.warmWhite,
-        maxWidth: "720px",
-        margin: "0 auto",
-        paddingBottom: "64px",
-      }}
-    >
+    <div className="font-['Noto_Sans_JP',sans-serif] bg-white max-w-[720px] mx-auto pb-16">
       <MHero />
-      <MBridge text="──こんなこと、思っていませんか。" />
-      <MProblem />
-      <MBridge text="これ、仕組みの問題です。" />
-      <MAgitate />
-      <MBridge text="でも、安いだけじゃありません。" />
-      <MSolve />
-      <MBridge text="実際に、こうなりました。" />
-      <MBeforeAfter />
-      <MBridge text="分離発注の手間は、かかりません。" />
-      <MOneStop />
-      <MBridge text="料金は、すべて明記します。" />
-      <MPrice />
-      <MBridge text="ご依頼は、これだけです。" />
+      <MVacancyCost />
+      <MService />
+      <MWorks />
+      <MTrialOffer />
+      <MComparison />
       <MFlow />
-      <MBridge text="不安、ありますよね。" />
+      <MPrice />
+      <MAbout />
       <MFAQ />
-      <MLastPush />
-      <MCTA />
-      <MContactForm />
-      <MProfile />
+      <MContactCTA />
       <MFooter />
       <MFloatingCTA />
     </div>

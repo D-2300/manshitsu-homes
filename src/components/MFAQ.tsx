@@ -1,27 +1,34 @@
 import { useState } from "react";
-import { M, C } from "../tokens";
-import MSectionHeader from "./MSectionHeader";
+import { ChevronDown, ChevronUp } from "lucide-react";
 
 const faqs = [
   {
-    q: "管理会社に知られませんか？関係が悪くならないか心配です。",
-    a: "当社は裏方に徹します。完了報告書は管理会社様がそのまま使えるクオリティで作成しますので、むしろ「対応が早い」と評価されるケースがほとんどです。",
+    q: "本当に2日で終わりますか？",
+    a: "1K〜1LDKの標準的な原状回復は最短2日で完了します。広さや施工内容次第で3〜5日の場合もありますが、事前にLINEで正確な日数をお伝えします。",
   },
   {
-    q: "店舗内装の会社なのに、賃貸の原状回復もできるんですか？",
-    a: "クロス張替え、CF施工、設備工事、クリーニングは店舗でも住宅でも基本技術は同じです。むしろ店舗の方が要求水準が高いため、住宅の施工は確実にこなせます。",
+    q: "管理会社を通さないで工事して問題ないですか？",
+    a: "問題ありません。オーナー様には発注先を自由に選ぶ権利があります。施工品質・コスト・スピードで比較していただければ幸いです。",
   },
   {
-    q: "安い業者に頼んで仕上がりが悪かった経験があります。品質は大丈夫ですか？",
-    a: "店舗内装は「開店日に間に合わない＝損害賠償」の世界です。その現場で求められてきた品質基準と納期管理をそのまま住宅に持ち込んでいます。",
+    q: "施工後に気になるところがあったら？",
+    a: "LINEで連絡いただければすぐ対応します。管理会社を通さず直接やり取りするから、対応が速い。これが直接取引の強みです。",
   },
   {
-    q: "入居者との敷金精算のサポートはしてもらえますか？",
-    a: "施工箇所の写真記録と明細見積もりは、管理会社様への説明資料としてそのままお使いいただけます。ガイドラインに基づいた経年劣化の判断もお手伝いします。",
+    q: "見積もりは無料ですか？",
+    a: "完全無料です。管理会社の見積書をLINEで送っていただくだけで、比較用の見積もりをお出しします。",
   },
   {
-    q: "施工後に不具合があった場合は？",
-    a: "仙台エリア密着の自社施工ですので、万が一の不具合には即日対応いたします。",
+    q: "遠方の物件でも対応できますか？",
+    a: "仙台市・宮城県全域に対応しています。写真付き施工報告をLINEで共有するので、現地に来られなくても進捗を確認いただけます。",
+  },
+  {
+    q: "急ぎの工事にも対応できますか？",
+    a: "得意です。退去立会い後、当日中に現地確認・概算をお出しすることも可能です。翌日着工も対応しています。",
+  },
+  {
+    q: "初回お試しって何ですか？",
+    a: "初回1部屋限定の特別価格です。スピードと仕上がりを体感していただいてから、継続するかどうかを判断してください。",
   },
 ];
 
@@ -29,60 +36,38 @@ export default function MFAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section style={{ backgroundColor: C.warmWhite, padding: "48px 20px" }}>
-      <div style={{ maxWidth: "720px", margin: "0 auto" }}>
-        <MSectionHeader label="FAQ" heading={"よくあるご質問"} />
+    <section className="bg-slate-50 py-14 px-5">
+      <div className="max-w-[720px] mx-auto">
+        <p className="text-amber-600 text-xs font-semibold tracking-widest text-center mb-3">
+          FAQ
+        </p>
+        <h2 className="text-[clamp(20px,5vw,28px)] font-bold text-slate-900 text-center leading-snug mb-8">
+          よくあるご質問
+        </h2>
 
-        <div>
+        <div className="bg-white rounded-lg border border-slate-200 divide-y divide-slate-100">
           {faqs.map((faq, i) => (
-            <div key={i} style={{ borderTop: "1px solid #E8E3DC" }}>
+            <div key={i}>
               <button
                 onClick={() => setOpen(open === i ? null : i)}
-                style={{
-                  width: "100%",
-                  display: "flex",
-                  alignItems: "flex-start",
-                  justifyContent: "space-between",
-                  gap: "12px",
-                  padding: "18px 0",
-                  background: "none",
-                  border: "none",
-                  cursor: "pointer",
-                  textAlign: "left",
-                }}
+                className="w-full flex items-start justify-between gap-3 p-4 text-left bg-transparent border-none cursor-pointer hover:bg-slate-50/50 transition-colors"
               >
-                <div style={{ display: "flex", gap: "12px", alignItems: "flex-start" }}>
-                  <span style={{ color: M.main, fontWeight: 700, fontSize: "14px", flexShrink: 0, marginTop: "1px" }}>Q</span>
-                  <span style={{ fontSize: "clamp(13px, 3.5vw, 15px)", fontWeight: 500, color: C.textDark, lineHeight: 1.7 }}>
-                    {faq.q}
-                  </span>
+                <div className="flex gap-3 items-start">
+                  <span className="text-amber-600 font-bold text-sm flex-shrink-0 mt-0.5">Q</span>
+                  <span className="text-sm font-medium text-slate-800 leading-relaxed">{faq.q}</span>
                 </div>
-                <span
-                  style={{
-                    color: M.mid,
-                    fontSize: "20px",
-                    flexShrink: 0,
-                    lineHeight: 1,
-                    transform: open === i ? "rotate(45deg)" : "none",
-                    transition: "transform 0.2s",
-                    display: "inline-block",
-                    marginTop: "1px",
-                  }}
-                >
-                  +
+                <span className="flex-shrink-0 text-slate-400 mt-0.5">
+                  {open === i ? <ChevronUp size={18} /> : <ChevronDown size={18} />}
                 </span>
               </button>
               {open === i && (
-                <div style={{ padding: "0 0 18px 26px", display: "flex", gap: "12px" }}>
-                  <span style={{ color: M.light, fontWeight: 700, fontSize: "14px", flexShrink: 0, marginTop: "1px" }}>A</span>
-                  <p style={{ margin: 0, fontSize: "clamp(13px, 3.2vw, 14px)", color: C.textMid, lineHeight: 1.85 }}>
-                    {faq.a}
-                  </p>
+                <div className="px-4 pb-4 pl-11 flex gap-3">
+                  <span className="text-amber-400 font-bold text-sm flex-shrink-0 mt-0.5">A</span>
+                  <p className="text-sm text-slate-500 leading-[1.85] m-0">{faq.a}</p>
                 </div>
               )}
             </div>
           ))}
-          <div style={{ borderTop: "1px solid #E8E3DC" }} />
         </div>
       </div>
     </section>
