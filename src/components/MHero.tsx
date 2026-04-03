@@ -15,24 +15,24 @@ function pushEvent(event: string) {
 export default function MHero() {
   return (
     <section className="relative min-h-[90vh] flex items-end overflow-hidden bg-m-dark">
-      {/* Background image */}
+      {/* Background image — high visibility */}
       <div className="absolute inset-0">
         <img
           src="/images/hero-bg.webp"
           alt="施工完了後の明るい部屋"
-          className="w-full h-full object-cover opacity-40"
+          className="w-full h-full object-cover opacity-90"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-m-dark via-m-dark/70 to-m-dark/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-m-dark/80 via-m-dark/40 to-m-dark/20" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 w-full max-w-[720px] mx-auto px-5 pb-8 pt-20">
-        <h1 className="text-[clamp(28px,7vw,42px)] font-bold text-white leading-[1.3] tracking-tight mb-4">
+        <h1 className="text-[clamp(28px,7vw,42px)] font-bold text-white leading-[1.3] tracking-tight mb-4" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.5)' }}>
           最短2日。<br />
           空室を、収益に戻す。
         </h1>
 
-        <p className="text-[clamp(14px,3.5vw,16px)] text-white/70 leading-[1.85] mb-6">
+        <p className="text-[clamp(14px,3.5vw,16px)] text-white/85 leading-[1.85] mb-6" style={{ textShadow: '0 1px 6px rgba(0,0,0,0.4)' }}>
           退去連絡から最短2日で原状回復完了。<br />
           管理会社を通さないから、速い。<br />
           直接だから、安い。細かい修正もすぐ対応。<br />

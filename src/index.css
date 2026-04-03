@@ -13,3 +13,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+/* Fallback: show content if JS fails to trigger animations */
+noscript ~ * [style*="opacity: 0"] {
+  opacity: 1 !important;
+  transform: none !important;
+}

@@ -56,7 +56,7 @@ export default function Nav() {
       <nav
         style={{
           position: 'fixed', top: 0, left: 0, right: 0, zIndex: 200,
-          height: 60, display: 'flex', alignItems: 'center', padding: '0 20px',
+          height: 64, display: 'flex', alignItems: 'center', padding: '0 20px',
           backgroundColor: show ? 'rgba(68,41,64,0.95)' : 'transparent',
           backdropFilter: show ? 'blur(8px)' : 'none',
           transition: 'background-color 0.3s, backdrop-filter 0.3s',
@@ -66,7 +66,8 @@ export default function Nav() {
           <img
             src="/images/logo-manshitsu-h-gold.png"
             alt="満室デザインLABO"
-            style={{ height: 28, objectFit: 'contain' }}
+            className="hp-nav-logo"
+            style={{ height: 44, objectFit: 'contain' }}
           />
         </Link>
 
@@ -154,7 +155,7 @@ export default function Nav() {
       <style>{`
         .hp-nav-pc{display:flex}
         .hp-nav-ham{display:none!important}
-        @media(max-width:768px){.hp-nav-pc{display:none!important}.hp-nav-ham{display:flex!important}}
+        @media(max-width:768px){.hp-nav-pc{display:none!important}.hp-nav-ham{display:flex!important}.hp-nav-logo{height:36px!important}}
       `}</style>
     </>
   );

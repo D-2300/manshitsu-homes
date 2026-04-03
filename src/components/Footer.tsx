@@ -18,6 +18,12 @@ export default function Footer() {
         >
           {/* Brand */}
           <div>
+            <img
+              src="/images/logo-manshitsu-mark-white.webp"
+              alt="満室デザインLABO"
+              loading="lazy"
+              style={{ height: 44, objectFit: 'contain', opacity: 0.8, marginBottom: 12 }}
+            />
             <div style={{ fontSize: 16, fontWeight: 700, color: C.gold, letterSpacing: '0.05em', marginBottom: 8 }}>
               満室デザインLABO
             </div>

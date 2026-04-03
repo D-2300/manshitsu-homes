@@ -1,3 +1,4 @@
+import { Clock, Zap, Star } from 'lucide-react';
 import { M, C, LINE_URL } from '../tokens';
 
 export default function Hero() {
@@ -16,7 +17,7 @@ export default function Hero() {
         overflow: 'hidden',
       }}
     >
-      {/* Background image */}
+      {/* Background image — high visibility */}
       <img
         src="/images/hero-bg.webp"
         alt=""
@@ -26,15 +27,15 @@ export default function Hero() {
           width: '100%',
           height: '100%',
           objectFit: 'cover',
-          opacity: 0.15,
+          opacity: 0.85,
           zIndex: 0,
         }}
       />
-      {/* Background pattern */}
+      {/* Light overlay for text readability */}
       <div
         style={{
           position: 'absolute', inset: 0, zIndex: 0,
-          background: `radial-gradient(circle at 20% 80%, ${M.main}33 0%, transparent 50%), radial-gradient(circle at 80% 20%, ${C.gold}11 0%, transparent 50%)`,
+          background: `linear-gradient(to top, ${M.dark}cc 0%, ${M.dark}66 40%, ${M.dark}33 100%)`,
         }}
       />
 
@@ -48,6 +49,7 @@ export default function Hero() {
             fontWeight: 300,
             textTransform: 'uppercase',
             marginBottom: 24,
+            textShadow: '0 1px 8px rgba(0,0,0,0.5)',
           }}
         >
           Manshitsu Design LABO
@@ -62,11 +64,12 @@ export default function Hero() {
             color: '#fff',
             letterSpacing: '0.04em',
             marginBottom: 24,
+            textShadow: '0 2px 12px rgba(0,0,0,0.5)',
           }}
         >
-          管理会社を通さない、
+          最短2日。
           <br />
-          原状回復。
+          管理会社を通さない、原状回復。
         </h1>
 
         {/* Sub copy */}
@@ -74,17 +77,18 @@ export default function Hero() {
           style={{
             fontSize: 'clamp(13px, 3vw, 15px)',
             lineHeight: 2,
-            color: 'rgba(255,255,255,0.65)',
+            color: 'rgba(255,255,255,0.85)',
             fontWeight: 300,
             maxWidth: 480,
             margin: '0 auto 40px',
+            textShadow: '0 1px 6px rgba(0,0,0,0.4)',
           }}
         >
+          退去連絡から最短2日で原状回復完了。
+          <br />
           中間マージン0円。
           <br />
-          店舗内装のプロが直接施工する、
-          <br />
-          賃貸オーナーのための修繕サービス。
+          店舗内装のプロが直接施工する修繕サービス。
         </p>
 
         {/* CTA */}
@@ -108,28 +112,39 @@ export default function Hero() {
           LINE で無料見積もり
         </a>
 
-        {/* Trust badges */}
+        {/* Trust badges — LPと統一（最短2日 / 中間マージン0円 / 初回お試し価格） */}
         <div
           style={{
             display: 'flex',
             justifyContent: 'center',
-            gap: 24,
+            gap: 10,
             marginTop: 48,
             flexWrap: 'wrap',
           }}
         >
-          {['クロス 900円/㎡〜', '中間マージン 0円', '見積もり無料'].map((t) => (
+          {[
+            { icon: Clock, label: '最短2日' },
+            { icon: Zap, label: '中間マージン0円' },
+            { icon: Star, label: '初回お試し価格' },
+          ].map(({ icon: Icon, label }) => (
             <span
-              key={t}
+              key={label}
               style={{
-                fontSize: 11,
-                letterSpacing: '0.08em',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: 6,
+                fontSize: 12,
+                fontWeight: 600,
+                letterSpacing: '0.06em',
                 color: C.gold,
-                border: `1px solid ${C.gold}33`,
+                backgroundColor: 'rgba(201,168,76,0.15)',
+                border: `1px solid rgba(201,168,76,0.3)`,
                 padding: '6px 14px',
+                borderRadius: 4,
               }}
             >
-              {t}
+              <Icon size={14} />
+              {label}
             </span>
           ))}
         </div>

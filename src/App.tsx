@@ -5,7 +5,9 @@ import ServiceOverview from './components/ServiceOverview';
 import Work from './components/Work';
 import ArticlePreview from './components/ArticlePreview';
 import WhySection from './components/WhySection';
+import Comparison from './components/Comparison';
 import Pricing from './components/Pricing';
+import TrialOffer from './components/TrialOffer';
 import About from './components/About';
 import FAQ from './components/FAQ';
 import FinalCTA from './components/FinalCTA';
@@ -26,7 +28,9 @@ export default function App() {
       <Work />
       <ArticlePreview />
       <WhySection />
+      <Comparison />
       <Pricing />
+      <TrialOffer />
       <About />
       <FAQ />
       <FinalCTA />
