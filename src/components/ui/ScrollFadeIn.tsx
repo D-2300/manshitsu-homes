@@ -1,60 +1,68 @@
-import { useRef, useState, useEffect } from 'react';
+import { useRef, useEffect } from 'react';
 
 interface Props {
   children: React.ReactNode;
   delay?: number;
 }
 
+// Global scroll-based reveal system — works everywhere, no IntersectionObserver needed
+const pendingEls = new Set<{ el: HTMLElement; delay: number }>();
+let ticking = false;
+
+function checkAll() {
+  const vh = window.innerHeight;
+  pendingEls.forEach((item) => {
+    const rect = item.el.getBoundingClientRect();
+    if (rect.top < vh + 40) {
+      pendingEls.delete(item);
+      const reveal = () => {
+        item.el.classList.remove('sfi-hidden');
+        item.el.classList.add('sfi-visible');
+      };
+      if (item.delay > 0) {
+        setTimeout(reveal, item.delay * 1000);
+      } else {
+        reveal();
+      }
+    }
+  });
+  ticking = false;
+}
+
+function onScrollOrResize() {
+  if (!ticking) {
+    ticking = true;
+    requestAnimationFrame(checkAll);
+  }
+}
+
+// Single global listener
+if (typeof window !== 'undefined') {
+  window.addEventListener('scroll', onScrollOrResize, { passive: true });
+  window.addEventListener('resize', onScrollOrResize, { passive: true });
+}
+
 export default function ScrollFadeIn({ children, delay = 0 }: Props) {
   const ref = useRef<HTMLDivElement>(null);
-  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
 
-    // Fallback: if IntersectionObserver is not supported, show immediately
-    if (typeof IntersectionObserver === 'undefined') {
-      setVisible(true);
-      return;
-    }
+    // Hide via JS class (content visible by default if JS fails)
+    el.classList.add('sfi-hidden');
 
-    const obs = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setVisible(true);
-          obs.unobserve(el);
-        }
-      },
-      {
-        threshold: 0.05,
-        rootMargin: '0px 0px -40px 0px',
-      },
-    );
-    obs.observe(el);
-    return () => obs.disconnect();
-  }, []);
+    const item = { el, delay };
+    pendingEls.add(item);
 
-  // Also check on mount if element is already in viewport (e.g. fast scroll / back nav)
-  useEffect(() => {
-    const el = ref.current;
-    if (!el || visible) return;
-    const rect = el.getBoundingClientRect();
-    if (rect.top < window.innerHeight && rect.bottom > 0) {
-      setVisible(true);
-    }
-  }, [visible]);
+    // Check immediately (element might already be in viewport)
+    requestAnimationFrame(() => checkAll());
+
+    return () => { pendingEls.delete(item); };
+  }, [delay]);
 
   return (
-    <div
-      ref={ref}
-      style={{
-        opacity: visible ? 1 : 0,
-        transform: visible ? 'translateY(0)' : 'translateY(20px)',
-        transition: `opacity 0.6s ease-out ${delay}s, transform 0.6s ease-out ${delay}s`,
-        willChange: 'opacity, transform',
-      }}
-    >
+    <div ref={ref} className="sfi">
       {children}
     </div>
   );
