@@ -48,7 +48,7 @@ export default function SZeitgeist() {
               "自分で客付けする"
             </span>
             <br />
-            大家さんが増えています。
+            アパート経営オーナーが増えています。
           </h2>
 
           <p

@@ -13,7 +13,7 @@ export default function SIfRenovate() {
     >
       <div style={{ maxWidth: 680, margin: "0 auto" }}>
         <ScrollFadeIn>
-          <SectionLabel en="RENOVATION" ja="もし工事するなら" />
+          <SectionLabel en="RENOVATION" ja="リフォーム・リノベーションするなら" />
 
           <h2
             style={{
@@ -27,7 +27,7 @@ export default function SIfRenovate() {
           >
             ステージング画像の内装、
             <br />
-            <span style={{ color: M.main }}>そのまま施工できます。</span>
+            <span style={{ color: M.main }}>そのままリフォームできます。</span>
           </h2>
 
           <p
@@ -50,7 +50,7 @@ export default function SIfRenovate() {
           <div style={{ display: "grid", gap: 10, marginBottom: 24 }}>
             {[
               { num: "30〜50%", label: "管理会社経由より安い", sub: "中間マージンなし・自社施工だから" },
-              { num: "即日〜", label: "選ばれたデザインをすぐ施工", sub: "大工歴20年のKENが直接対応" },
+              { num: "即日〜", label: "クロス張替え・CF張替えも即日", sub: "大工歴20年のKENが直接対応" },
               { num: "明細", label: "項目ごとに費用がわかる", sub: "「一式○○万円」の不透明さなし" },
             ].map((item, i) => (
               <div

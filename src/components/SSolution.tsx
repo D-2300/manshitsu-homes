@@ -38,7 +38,7 @@ export default function SSolution() {
               marginBottom: 12,
             }}
           >
-            原状回復<em style={{ fontStyle: "normal", color: C.gold }}>前</em>に、
+            リフォーム<em style={{ fontStyle: "normal", color: C.gold }}>前</em>に、
             <br />
             入居者を集める方法があります。
           </h2>
@@ -52,11 +52,11 @@ export default function SSolution() {
               marginBottom: 28,
             }}
           >
-            空室写真から内装パターンをAI生成。
+            空室写真からバーチャルホームステージング画像をAI生成。
             <br />
             入居希望者に<strong style={{ color: "rgba(255,255,255,.8)" }}>好みのデザインを選んでもらい</strong>、
             <br />
-            選ばれた内装をそのまま施工します。
+            選ばれた内装でリノベーション施工します。
           </p>
         </ScrollFadeIn>
 
