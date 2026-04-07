@@ -4,9 +4,10 @@ import { M, C, LINE_URL } from '../tokens';
 
 const links = [
   { href: '#service', label: 'サービス' },
-  { href: '#works', label: '施工実績' },
-  { href: '#pricing', label: '料金' },
-  { href: '#faq', label: 'よくある質問' },
+  { href: '#works', label: '事例' },
+  { href: '#about', label: 'チーム' },
+  { href: '#faq', label: 'FAQ' },
+  { href: '#contact', label: 'お問い合わせ' },
   { href: '/articles', label: '記事', isRoute: true },
 ];
 
@@ -56,7 +57,7 @@ export default function Nav() {
       <nav
         style={{
           position: 'fixed', top: 0, left: 0, right: 0, zIndex: 200,
-          height: 64, display: 'flex', alignItems: 'center', padding: '0 20px',
+          height: 72, display: 'flex', alignItems: 'center', padding: '0 20px',
           backgroundColor: show ? 'rgba(68,41,64,0.95)' : 'transparent',
           backdropFilter: show ? 'blur(8px)' : 'none',
           transition: 'background-color 0.3s, backdrop-filter 0.3s',
@@ -67,7 +68,7 @@ export default function Nav() {
             src="/images/logo-manshitsu-h-gold.png"
             alt="満室デザインLABO"
             className="hp-nav-logo"
-            style={{ height: 44, objectFit: 'contain' }}
+            style={{ height: 132, objectFit: 'contain' }}
           />
         </Link>
 
@@ -91,7 +92,7 @@ export default function Nav() {
               padding: '6px 16px', borderRadius: 4,
             }}
           >
-            LINE相談
+            無料ステージング
           </a>
         </div>
 
@@ -148,14 +149,14 @@ export default function Nav() {
             padding: '10px 32px', borderRadius: 4, marginTop: 8,
           }}
         >
-          LINEで無料見積もり
+          無料でステージング画像をもらう
         </a>
       </div>
 
       <style>{`
         .hp-nav-pc{display:flex}
         .hp-nav-ham{display:none!important}
-        @media(max-width:768px){.hp-nav-pc{display:none!important}.hp-nav-ham{display:flex!important}.hp-nav-logo{height:36px!important}}
+        @media(max-width:768px){.hp-nav-pc{display:none!important}.hp-nav-ham{display:flex!important}.hp-nav-logo{height:96px!important}}
       `}</style>
     </>
   );

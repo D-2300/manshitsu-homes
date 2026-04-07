@@ -3,7 +3,7 @@ import { M, C, TEL_DISPLAY } from '../tokens';
 
 export default function Footer() {
   return (
-    <footer style={{ backgroundColor: M.dark, borderTop: `1px solid ${M.main}44`, padding: '48px 24px 32px' }}>
+    <footer style={{ backgroundColor: M.dark, borderTop: `1px solid ${M.main}44`, padding: '36px 24px 24px' }}>
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
         {/* Top row */}
         <div
@@ -12,8 +12,8 @@ export default function Footer() {
             justifyContent: 'space-between',
             alignItems: 'flex-start',
             flexWrap: 'wrap',
-            gap: 32,
-            marginBottom: 32,
+            gap: 24,
+            marginBottom: 24,
           }}
         >
           {/* Brand */}
@@ -38,8 +38,8 @@ export default function Footer() {
           <div style={{ display: 'flex', gap: 24, flexWrap: 'wrap' }}>
             {[
               { href: '/#service', label: 'サービス' },
-              { href: '/#works', label: '施工実績' },
-              { href: '/#pricing', label: '料金' },
+              { href: '/#works', label: '事例' },
+              { href: '/#about', label: 'チーム' },
               { href: '/#faq', label: 'FAQ' },
             ].map((l) => (
               <a

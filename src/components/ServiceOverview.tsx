@@ -1,3 +1,4 @@
+import { Palette, Sofa, Hammer } from 'lucide-react';
 import { M, C } from '../tokens';
 import SectionLabel from './ui/SectionLabel';
 import ScrollFadeIn from './ui/ScrollFadeIn';
@@ -5,18 +6,24 @@ import ScrollFadeIn from './ui/ScrollFadeIn';
 const strengths = [
   {
     num: '01',
-    title: '中間マージン0円',
-    desc: '管理会社を通さず、オーナーから直接ご依頼いただく分離発注方式。同じ工事内容でも、30〜50%のコスト削減が可能です。',
+    icon: Palette,
+    title: 'カラーバリエーションを無料で提案',
+    desc: '空室写真をLINEで送るだけ。AIが壁の色を変えた複数パターンを生成します。ブルー・グリーン・ワインなど、入居希望者が好みの色を選べるようになります。',
+    accent: M.main,
   },
   {
     num: '02',
-    title: '店舗品質の仕上がり',
-    desc: '年間50件以上の店舗内装を手がけるプロの職人が施工。賃貸の原状回復でも、店舗レベルの丁寧さで仕上げます。',
+    icon: Sofa,
+    title: '家具を配置した生活イメージも作成',
+    desc: '選んだカラーに合わせて家具を配置したイメージ画像を生成。入居後の暮らしが想像できるから、内見なしでも「ここに住みたい」と思ってもらえます。',
+    accent: C.gold,
   },
   {
     num: '03',
-    title: 'ただ戻すだけじゃない',
-    desc: '元通りに戻すだけでなく、次の入居者が決まるデザイン提案も可能。アクセントクロスやデザイン照明で空室対策。',
+    icon: Hammer,
+    title: '選ばれた内装をそのまま施工',
+    desc: '入居者が選んだデザインをそのまま施工。管理会社を通さない直接依頼だから中間マージンなし。大工歴20年のKENが自社施工で適正価格を実現します。',
+    accent: M.main,
   },
 ];
 
@@ -26,7 +33,7 @@ export default function ServiceOverview() {
       id="service"
       style={{
         backgroundColor: M.dark,
-        padding: '80px 24px',
+        padding: '56px 24px',
       }}
     >
       <div style={{ maxWidth: 720, margin: '0 auto' }}>
@@ -34,55 +41,92 @@ export default function ServiceOverview() {
           <SectionLabel en="Service" ja="サービス内容" dark />
         </ScrollFadeIn>
 
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 40 }}>
-          {strengths.map((s, i) => (
-            <ScrollFadeIn key={s.num} delay={i * 0.12}>
-              <div
-                style={{
-                  display: 'flex',
-                  gap: 20,
-                  alignItems: 'flex-start',
-                }}
-              >
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+          {strengths.map((s, i) => {
+            const Icon = s.icon;
+            return (
+              <ScrollFadeIn key={s.num} delay={i * 0.12}>
                 <div
                   style={{
-                    fontSize: 28,
-                    fontWeight: 200,
-                    color: C.gold,
-                    fontFamily: "'Cormorant Garamond', serif",
-                    lineHeight: 1,
-                    minWidth: 40,
+                    display: 'flex',
+                    gap: 16,
+                    alignItems: 'flex-start',
+                    background: 'rgba(255,255,255,.06)',
+                    borderRadius: 12,
+                    padding: '20px 18px',
                   }}
                 >
-                  {s.num}
-                </div>
-                <div>
-                  <h3
+                  <div
                     style={{
-                      fontSize: 'clamp(16px, 4vw, 20px)',
-                      fontWeight: 600,
+                      width: 40,
+                      height: 40,
+                      borderRadius: '50%',
+                      backgroundColor: s.accent,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
                       color: '#fff',
-                      marginBottom: 10,
-                      letterSpacing: '0.02em',
+                      flexShrink: 0,
                     }}
                   >
-                    {s.title}
-                  </h3>
-                  <p
-                    style={{
-                      fontSize: 14,
-                      lineHeight: 2,
-                      color: 'rgba(255,255,255,0.75)',
-                      fontWeight: 300,
-                    }}
-                  >
-                    {s.desc}
-                  </p>
+                    <Icon size={18} />
+                  </div>
+                  <div>
+                    <span
+                      style={{
+                        fontSize: 10,
+                        fontWeight: 700,
+                        letterSpacing: '.14em',
+                        color: C.gold,
+                        display: 'block',
+                        marginBottom: 2,
+                      }}
+                    >
+                      STEP {s.num}
+                    </span>
+                    <h3
+                      style={{
+                        fontSize: 'clamp(15px, 3.5vw, 18px)',
+                        fontWeight: 700,
+                        color: '#fff',
+                        marginBottom: 8,
+                        letterSpacing: '0.02em',
+                        lineHeight: 1.4,
+                      }}
+                    >
+                      {s.title}
+                    </h3>
+                    <p
+                      style={{
+                        fontSize: 13,
+                        lineHeight: 1.9,
+                        color: 'rgba(255,255,255,0.55)',
+                        fontWeight: 300,
+                      }}
+                    >
+                      {s.desc}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            </ScrollFadeIn>
-          ))}
+              </ScrollFadeIn>
+            );
+          })}
         </div>
+
+        {/* 補足 */}
+        <ScrollFadeIn delay={0.4}>
+          <p
+            style={{
+              fontSize: 12,
+              color: 'rgba(255,255,255,.35)',
+              textAlign: 'center',
+              lineHeight: 1.7,
+              marginTop: 20,
+            }}
+          >
+            ※ ステージング画像はCG表記でSUUMO・アットホーム・ジモティー・SNSに掲載OK（景品表示法クリア）
+          </p>
+        </ScrollFadeIn>
       </div>
     </section>
   );

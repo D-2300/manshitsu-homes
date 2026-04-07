@@ -1,122 +1,122 @@
-import { M, C, LINE_URL, TEL, TEL_DISPLAY } from '../tokens';
+import { MessageCircle, Camera, FileCheck } from 'lucide-react';
+import { M, C, LINE_URL } from '../tokens';
 import ScrollFadeIn from './ui/ScrollFadeIn';
+import { pushEvent } from '../utils/pushEvent';
+
+const steps = [
+  { icon: <MessageCircle size={20} color="#fff" />, title: 'LINEで友だち追加', time: '30秒' },
+  { icon: <Camera size={20} color="#fff" />, title: '空室の写真を送る', time: '何枚でもOK' },
+  { icon: <FileCheck size={20} color="#fff" />, title: '画像+提案書が届く', time: '最短翌日' },
+];
+
+const badges = ['🔒 断ってOK', '💰 完全無料', '🚫 営業電話なし', '📱 写真送るだけ'];
 
 export default function FinalCTA() {
   return (
     <section
+      data-section="final-cta"
       style={{
         backgroundColor: M.dark,
-        padding: '80px 24px',
+        padding: '56px 24px',
         textAlign: 'center',
       }}
     >
-      <div style={{ maxWidth: 560, margin: '0 auto' }}>
+      <div style={{ maxWidth: 680, margin: '0 auto' }}>
         <ScrollFadeIn>
           <div
             style={{
               fontSize: 11,
-              letterSpacing: '0.25em',
+              letterSpacing: '0.28em',
               color: C.gold,
-              fontWeight: 300,
+              fontWeight: 500,
               textTransform: 'uppercase',
-              marginBottom: 20,
+              marginBottom: 10,
             }}
           >
-            Contact
+            Get Started
           </div>
 
           <h2
             style={{
-              fontSize: 'clamp(20px, 5vw, 28px)',
+              fontSize: 'clamp(20px, 4.5vw, 28px)',
               fontWeight: 700,
               color: '#fff',
-              lineHeight: 1.6,
-              marginBottom: 16,
+              lineHeight: 1.7,
+              marginBottom: 8,
             }}
           >
-            管理会社の見積書、
+            まずは、空室の写真を
             <br />
-            LINEで送るだけ。
+            <span style={{ color: C.gold }}>1枚</span>送ってみてください。
           </h2>
 
           <p
             style={{
-              fontSize: 13,
-              lineHeight: 2,
-              color: 'rgba(255,255,255,0.75)',
-              fontWeight: 300,
-              marginBottom: 40,
+              fontSize: 'clamp(13px, 2.3vw, 15px)',
+              color: 'rgba(255,255,255,.4)',
+              lineHeight: 1.8,
+              marginBottom: 24,
             }}
           >
-            見積書の写真を送っていただくだけで、
-            <br />
-            同じ工事内容での比較見積もりをお出しします。
-            <br />
-            もちろん、相談だけでもOKです。
+            ステージング画像＋改善提案書を、無料でお届けします。
           </p>
+        </ScrollFadeIn>
 
-          <div style={{ display: 'flex', flexDirection: 'column', gap: 12, alignItems: 'center' }}>
-            <a
-              href={LINE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: 8,
-                width: '100%',
-                maxWidth: 320,
-                backgroundColor: C.lineGreen,
-                color: '#fff',
-                fontSize: 15,
-                fontWeight: 600,
-                padding: '16px 24px',
-                borderRadius: 4,
-                textDecoration: 'none',
-                letterSpacing: '0.06em',
-                boxShadow: '0 4px 16px rgba(6,199,85,0.3)',
-                transition: 'opacity 0.2s',
-              }}
-              onMouseEnter={(e) => (e.currentTarget.style.opacity = '0.85')}
-              onMouseLeave={(e) => (e.currentTarget.style.opacity = '1')}
-            >
-              LINEで無料見積もり
-            </a>
-
-            <a
-              href={`tel:${TEL}`}
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: 8,
-                width: '100%',
-                maxWidth: 320,
-                backgroundColor: 'transparent',
-                color: 'rgba(255,255,255,0.85)',
-                fontSize: 14,
-                fontWeight: 400,
-                padding: '14px 24px',
-                borderRadius: 4,
-                textDecoration: 'none',
-                border: '1px solid rgba(255,255,255,0.35)',
-                letterSpacing: '0.04em',
-              }}
-            >
-              📞 {TEL_DISPLAY}
-            </a>
+        {/* 3 Steps */}
+        <ScrollFadeIn delay={0.1}>
+          <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', gap: 'clamp(8px, 2vw, 16px)', marginBottom: 24 }}>
+            {steps.map((s, i) => (
+              <div key={i} style={{ flex: '0 1 140px', textAlign: 'center' }}>
+                <div style={{ width: 44, height: 44, borderRadius: '50%', backgroundColor: M.main, display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 8px' }}>
+                  {s.icon}
+                </div>
+                <p style={{ fontSize: 12, fontWeight: 700, color: '#fff', marginBottom: 4, lineHeight: 1.4 }}>{s.title}</p>
+                <span style={{ fontSize: 11, fontWeight: 600, color: C.gold, background: C.goldPale, padding: '2px 8px', borderRadius: 100 }}>{s.time}</span>
+              </div>
+            ))}
           </div>
+        </ScrollFadeIn>
 
-          <p
+        {/* Trust badges */}
+        <ScrollFadeIn delay={0.15}>
+          <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center', gap: 8, marginBottom: 20 }}>
+            {badges.map((b) => (
+              <span key={b} style={{ fontSize: 12, fontWeight: 600, color: '#555', background: '#fff', borderRadius: 999, padding: '4px 10px' }}>
+                {b}
+              </span>
+            ))}
+          </div>
+        </ScrollFadeIn>
+
+        {/* CTA Button */}
+        <ScrollFadeIn delay={0.2}>
+          <a
+            href={LINE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={() => pushEvent("line_cta_click_staging")}
             style={{
-              fontSize: 11,
-              color: 'rgba(255,255,255,0.5)',
-              marginTop: 24,
-              letterSpacing: '0.04em',
+              display: 'inline-flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              gap: 8,
+              backgroundColor: C.lineGreen,
+              color: '#fff',
+              fontWeight: 700,
+              fontSize: 'clamp(15px, 3vw, 19px)',
+              padding: '16px 36px',
+              borderRadius: 999,
+              textDecoration: 'none',
+              boxShadow: '0 4px 24px rgba(6,199,85,.4)',
+              width: '100%',
+              maxWidth: 400,
             }}
           >
-            対応エリア：仙台市・宮城県全域
+            LINEでステージング画像をもらう
+          </a>
+
+          <p style={{ fontSize: 12, color: 'rgba(255,255,255,.2)', marginTop: 12, lineHeight: 1.7 }}>
+            無料・営業なし・施工しなくてもOK
           </p>
         </ScrollFadeIn>
       </div>
