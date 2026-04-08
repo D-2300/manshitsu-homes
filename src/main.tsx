@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<App />} />
-        <Route path="/lp" element={<StagingLPPage />} />
+        <Route path="/lp/staging" element={<StagingLPPage />} />
         <Route path="/lp/v1" element={<ManshitsuPage />} />
         <Route path="/articles" element={<ArticleListPage />} />
         <Route path="/articles/:slug" element={<ArticlePage />} />
