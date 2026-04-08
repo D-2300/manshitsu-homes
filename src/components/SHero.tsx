@@ -3,15 +3,6 @@ import { M, C, LINE_URL } from "../tokens";
 import ScrollFadeIn from "./ui/ScrollFadeIn";
 import { pushEvent } from "../utils/pushEvent";
 
-const colorVariations = [
-  { src: "/images/vs-color-blue.jpeg", label: "ブルー" },
-  { src: "/images/vs-color-green.jpeg", label: "グリーン" },
-  { src: "/images/vs-color-black.jpeg", label: "ブラック" },
-  { src: "/images/vs-color-wine.jpeg", label: "ワイン" },
-  { src: "/images/vs-color-gray.jpeg", label: "グレー" },
-  { src: "/images/vs-color-yellow.jpeg", label: "イエロー" },
-];
-
 export default function SHero() {
   return (
     <section
@@ -118,75 +109,15 @@ export default function SHero() {
           </p>
         </ScrollFadeIn>
 
-        {/* Before → After (1 → 4) */}
+        {/* Color variation collage */}
         <ScrollFadeIn delay={0.1}>
-          <div style={{ maxWidth: 480, margin: "0 auto 20px" }}>
-            {/* Before image */}
-            <div style={{ position: "relative", borderRadius: 8, overflow: "hidden", marginBottom: 4 }}>
-              <img
-                src="/images/vs-before.jpeg"
-                alt="退去直後の空室"
-                style={{ width: "100%", aspectRatio: "16/9", objectFit: "cover", filter: "brightness(0.85)" }}
-                loading="lazy"
-              />
-              <span
-                style={{
-                  position: "absolute",
-                  top: 8,
-                  left: 8,
-                  fontSize: 10,
-                  fontWeight: 600,
-                  color: "#fff",
-                  background: "rgba(55,65,81,0.85)",
-                  padding: "3px 8px",
-                  borderRadius: 4,
-                  letterSpacing: ".05em",
-                }}
-              >
-                退去後そのまま…
-              </span>
-            </div>
-
-            {/* Arrow */}
-            <p
-              style={{
-                textAlign: "center",
-                fontSize: 12,
-                fontWeight: 600,
-                color: C.gold,
-                margin: "6px 0",
-                letterSpacing: ".08em",
-              }}
-            >
-              ▼ AIがカラーバリエーションを生成
-            </p>
-
-            {/* 6 Color variations */}
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 6 }}>
-              {colorVariations.map((img, i) => (
-                <div key={i}>
-                  <div style={{ position: "relative", borderRadius: 6, overflow: "hidden" }}>
-                    <img
-                      src={img.src}
-                      alt={`カラー: ${img.label}`}
-                      style={{ width: "100%", aspectRatio: "16/10", objectFit: "cover" }}
-                      loading="lazy"
-                    />
-                  </div>
-                  <p
-                    style={{
-                      fontSize: 10,
-                      fontWeight: 600,
-                      color: "rgba(255,255,255,.6)",
-                      textAlign: "center",
-                      marginTop: 3,
-                    }}
-                  >
-                    {img.label}
-                  </p>
-                </div>
-              ))}
-            </div>
+          <div style={{ maxWidth: 480, margin: "0 auto 20px", borderRadius: 8, overflow: "hidden" }}>
+            <img
+              src="/images/vs-collage-text.webp"
+              alt="好きな色を選べるカラーバリエーション — 入居率が大幅UP"
+              style={{ width: "100%", display: "block" }}
+              loading="eager"
+            />
           </div>
         </ScrollFadeIn>
 
