@@ -136,38 +136,6 @@ export default function STrust() {
 
         {/* Studio info */}
         <ScrollFadeIn delay={0.2}>
-          <div
-            style={{
-              textAlign: "center",
-              paddingTop: 16,
-              borderTop: "1px solid #eee",
-            }}
-          >
-            <img
-              src="/images/logo-manshitsu-mark-gold.webp"
-              alt="満室デザインLABO"
-              style={{ height: 32, width: "auto", opacity: 0.6, marginBottom: 8 }}
-              loading="lazy"
-            />
-            <p
-              style={{
-                fontSize: 12,
-                color: C.warmGray,
-                lineHeight: 1.6,
-              }}
-            >
-              満室デザインLABOは、仙台の店舗内装工事会社
-              <a
-                href="https://kiokuso.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{ color: C.gold, textDecoration: "underline" }}
-              >
-                記憶荘
-              </a>
-              が運営しています。
-            </p>
-          </div>
         </ScrollFadeIn>
       </div>
     </section>
