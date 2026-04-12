@@ -1,33 +1,31 @@
-import Nav from "./components/Nav";
-import SHero from "./components/SHero";
-import SProblem from "./components/SProblem";
-import SZeitgeist from "./components/SZeitgeist";
-import SSolution from "./components/SSolution";
-import SListingMockup from "./components/SListingMockup";
-import SWhatYouGet from "./components/SWhatYouGet";
-import SIfRenovate from "./components/SIfRenovate";
-import SCTA from "./components/SCTA";
-import ContactForm from "./components/ContactForm";
-import STrust from "./components/STrust";
-import SFooter from "./components/SFooter";
-import SFloatingCTA from "./components/SFloatingCTA";
+import V3Hero from "./components/v3/V3Hero";
+import V3LPProblem from "./components/v3/V3LPProblem";
+import V3LPReframe from "./components/v3/V3LPReframe";
+import V3MidCTA from "./components/v3/V3MidCTA";
+import V3LPSolution from "./components/v3/V3LPSolution";
+import V3BeforeAfter from "./components/v3/V3BeforeAfter";
+import V3Flow from "./components/v3/V3Flow";
+import V3FAQ from "./components/v3/V3FAQ";
+import V3BottomCTA from "./components/v3/V3BottomCTA";
+import V3Footer from "./components/v3/V3Footer";
+import V3FloatingCTA from "./components/v3/V3FloatingCTA";
+import V3ExitPopup from "./components/v3/V3ExitPopup";
 
 export default function StagingLPPage() {
   return (
-    <div style={{ fontFamily: "'Noto Sans JP', sans-serif" }}>
-      <Nav />
-      <SHero />
-      <SProblem />
-      <SZeitgeist />
-      <SSolution />
-      <SListingMockup />
-      <SWhatYouGet />
-      <SIfRenovate />
-      <SCTA />
-      <ContactForm />
-      <STrust />
-      <SFooter />
-      <SFloatingCTA />
+    <div style={{ fontFamily: "'Noto Sans JP', sans-serif", color: "#333" }}>
+      <V3Hero />
+      <V3LPProblem />
+      <V3LPReframe />
+      <V3MidCTA />
+      <V3LPSolution />
+      <V3BeforeAfter />
+      <V3Flow />
+      <V3FAQ variant="lp" />
+      <V3BottomCTA />
+      <V3Footer />
+      <V3FloatingCTA />
+      <V3ExitPopup />
     </div>
   );
 }
