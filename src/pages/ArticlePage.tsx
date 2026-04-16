@@ -1,11 +1,13 @@
 import { useParams, Link } from 'react-router-dom';
-import { M, C, LINE_URL } from '../tokens';
-import Nav from '../components/Nav';
-import Footer from '../components/Footer';
-import FloatingCTA from '../components/FloatingCTA';
+import { M, C } from '../tokens';
+import ManshitsuNav from '../components/hp/ManshitsuNav';
+import ManshitsuFooter from '../components/hp/ManshitsuFooter';
+import V3FloatingCTA from '../components/v3/V3FloatingCTA';
+import { LineCTAButton } from '../shared';
 import { getArticleBySlug, getAllArticles, categoryLabels } from '../data/articles';
 
-function SectionHeading({ children }: { children: React.ReactNode }) {
+/** 記事本文のセクション見出し（shared/SectionHeading とは別物） */
+function ArticleSectionHeading({ children }: { children: React.ReactNode }) {
   return (
     <h2
       style={{
@@ -38,14 +40,14 @@ export default function ArticlePage() {
   if (!article) {
     return (
       <div style={{ fontFamily: "'Noto Sans JP', sans-serif", backgroundColor: C.warmWhite }}>
-        <Nav />
+        <ManshitsuNav />
         <div style={{ padding: '160px 24px 80px', textAlign: 'center' }}>
           <h1 style={{ fontSize: 24, color: C.textDark }}>記事が見つかりません</h1>
           <Link to="/articles" style={{ color: M.main, fontSize: 14, marginTop: 16, display: 'inline-block' }}>
             ← 記事一覧に戻る
           </Link>
         </div>
-        <Footer />
+        <ManshitsuFooter />
       </div>
     );
   }
@@ -57,7 +59,7 @@ export default function ArticlePage() {
 
   return (
     <div style={{ fontFamily: "'Noto Sans JP', sans-serif", backgroundColor: C.warmWhite }}>
-      <Nav />
+      <ManshitsuNav />
 
       {/* Hero */}
       <section
@@ -160,7 +162,7 @@ export default function ArticlePage() {
           {/* Sections */}
           {article.sections.map((section, i) => (
             <div key={i} style={{ marginBottom: 48 }}>
-              <SectionHeading>{section.heading}</SectionHeading>
+              <ArticleSectionHeading>{section.heading}</ArticleSectionHeading>
               <P>{section.text}</P>
               {section.image && (
                 <img
@@ -181,6 +183,7 @@ export default function ArticlePage() {
               border: `1px solid ${M.light}33`,
               padding: '40px 24px',
               marginBottom: 48,
+              borderRadius: 8,
             }}
           >
             <p style={{ fontSize: 15, fontWeight: 600, color: C.textDark, marginBottom: 8 }}>
@@ -189,23 +192,7 @@ export default function ArticlePage() {
             <p style={{ fontSize: 13, color: C.textMid, marginBottom: 20 }}>
               管理会社の見積書をLINEで送るだけで、比較見積もりをお出しします
             </p>
-            <a
-              href={LINE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                display: 'inline-block',
-                backgroundColor: C.lineGreen,
-                color: '#fff',
-                fontSize: 14,
-                fontWeight: 600,
-                padding: '12px 32px',
-                borderRadius: 4,
-                textDecoration: 'none',
-              }}
-            >
-              LINEで無料相談
-            </a>
+            <LineCTAButton label="LINEで無料相談" />
           </div>
 
           {/* Related articles */}
@@ -270,8 +257,8 @@ export default function ArticlePage() {
         </div>
       </section>
 
-      <Footer />
-      <FloatingCTA />
+      <ManshitsuFooter />
+      <V3FloatingCTA />
     </div>
   );
 }

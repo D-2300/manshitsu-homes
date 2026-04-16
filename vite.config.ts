@@ -9,4 +9,7 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
+  ssr: {
+    noExternal: ['lucide-react'],
+  },
 });

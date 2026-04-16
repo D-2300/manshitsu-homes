@@ -1,7 +1,9 @@
 import ManshitsuNav from "../components/hp/ManshitsuNav";
 import SmallHero from "../components/hp/SmallHero";
 import ManshitsuFooter from "../components/hp/ManshitsuFooter";
-import { M, C } from "../tokens";
+import V3FloatingCTA from "../components/v3/V3FloatingCTA";
+import { GoldDivider, SectionHeading, ScrollFadeIn, LineCTAButton } from "../shared";
+import { M, C, typography, spacing, radius } from "../tokens";
 
 const approaches = [
   {
@@ -26,148 +28,232 @@ const profiles = [
     name: "KAI",
     role: "物件探し・交渉担当",
     img: "/images/about-kai-sm.webp",
-    body: "元不動産業。物件の仲介・管理を経験した後、店舗内装の世界へ。不動産会社との人脈が今もあり、ネットに出回る前の物件情報が入ります。利回り計算や交渉も得意分野。「不動産屋の都合ではなく、大家さんの利益で物件を選ぶ」がモットー。",
+    body:
+      "元不動産業。物件の仲介・管理を経験した後、店舗内装の世界へ。不動産会社との人脈が今もあり、ネットに出回る前の物件情報が入ります。利回り計算や交渉も得意分野。「不動産屋の都合ではなく、大家さんの利益で物件を選ぶ」がモットー。",
     tags: ["元不動産業", "物件交渉", "利回り計算"],
   },
   {
     name: "KEN",
     role: "現場・施工担当",
     img: "/images/about-ken-sm.webp",
-    body: "大工一筋20年以上。店舗内装の設計・施工を年間30件以上手がけています。築古物件の「どこを直せば入居が決まるか」を、現場を見て即判断できます。入居後リフォームの施工は最短2日。",
+    body:
+      "大工一筋20年以上。店舗内装の設計・施工を年間30件以上手がけています。築古物件の「どこを直せば入居が決まるか」を、現場を見て即判断できます。入居後リフォームの施工は最短2日。",
     tags: ["大工歴20年+", "年間30件+施工", "設計〜施工一貫"],
   },
 ];
 
 export default function AboutPage() {
   return (
-    <div style={{ fontFamily: "'Noto Sans JP', sans-serif", color: "#333" }}>
+    <div style={{ fontFamily: typography.fontFamily, color: C.textDark }}>
       <ManshitsuNav />
       <SmallHero title="About" subtitle="私たちについて" />
 
-      {/* Philosophy */}
-      <section style={{ padding: "64px 20px", background: M.dark }}>
-        <div style={{ maxWidth: "680px", margin: "0 auto" }}>
-          <div style={{ width: "1px", height: "40px", background: C.gold, margin: "0 auto 32px" }} />
+      {/* ───────── Philosophy ───────── */}
+      <section style={{ padding: `${spacing.section.lg} ${spacing.pagePadding}`, background: M.dark }}>
+        <div style={{ maxWidth: spacing.contentMax.narrow, margin: "0 auto" }}>
+          <ScrollFadeIn>
+            <GoldDivider margin="0 auto 32px" />
 
-          <blockquote
-            style={{
-              textAlign: "center",
-              fontSize: "clamp(18px, 4vw, 24px)",
-              fontWeight: 700,
-              color: "#f0ede8",
-              lineHeight: 1.8,
-              marginBottom: "32px",
-              padding: 0,
-              border: "none",
-            }}
-          >
-            不動産屋は冷たい。<br />
-            うちは、<em style={{ fontStyle: "normal", color: C.gold }}>どこの物件になってもいい。</em>
-          </blockquote>
+            <blockquote
+              style={{
+                textAlign: "center",
+                fontSize: typography.h3.size,
+                fontWeight: typography.h3.weight,
+                color: "#f0ede8",
+                lineHeight: typography.h3.lineHeight,
+                marginBottom: 32,
+                padding: 0,
+                border: "none",
+              }}
+            >
+              不動産屋は冷たい。<br />
+              うちは、<em style={{ fontStyle: "normal", color: C.gold }}>どこの物件になってもいい。</em>
+            </blockquote>
 
-          <div style={{ width: "40px", height: "1px", background: "rgba(255,255,255,.15)", margin: "0 auto 32px" }} />
+            <div
+              style={{
+                width: 40,
+                height: 1,
+                background: "rgba(255,255,255,.15)",
+                margin: "0 auto 32px",
+              }}
+            />
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-            <p style={{ fontSize: "clamp(14px, 3vw, 16px)", color: "rgba(255,255,255,.7)", lineHeight: 1.9, textAlign: "center" }}>
-              私たちは内装工事の会社です。<br />
-              物件の売買で儲ける立場にいない。<br />
-              だから、<strong style={{ color: "#f0ede8" }}>どの物件を選んでもらっても構わない。</strong>
+            <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
+              <p style={{ fontSize: typography.bodyLarge.size, color: "rgba(255,255,255,.7)", lineHeight: typography.bodyLarge.lineHeight, textAlign: "center" }}>
+                私たちは内装工事の会社です。<br />
+                物件の売買で儲ける立場にいない。<br />
+                だから、<strong style={{ color: "#f0ede8" }}>どの物件を選んでもらっても構わない。</strong>
+              </p>
+              <p style={{ fontSize: typography.bodyLarge.size, color: "rgba(255,255,255,.7)", lineHeight: typography.bodyLarge.lineHeight, textAlign: "center" }}>
+                大家さんにとって本当にいい物件を、一緒に探す。<br />
+                その物件を、一緒に良くする。<br />
+                それが、私たちの仕事のかたちです。
+              </p>
+            </div>
+
+            <GoldDivider margin="40px auto 32px" />
+
+            <h3
+              style={{
+                textAlign: "center",
+                fontSize: typography.h3.size,
+                fontWeight: typography.h3.weight,
+                color: "#f0ede8",
+                lineHeight: typography.h3.lineHeight,
+                marginBottom: 24,
+              }}
+            >
+              入居者が「自分の部屋」を<br />選べる世界をつくる。
+            </h3>
+
+            <p style={{ fontSize: typography.bodyLarge.size, color: "rgba(255,255,255,.7)", lineHeight: typography.bodyLarge.lineHeight, textAlign: "center" }}>
+              入居者が壁紙の色を選べたら、その部屋は「自分の部屋」になる。<br />
+              長く住みたくなる。大切にしたくなる。<br />
+              入居者の満足は、大家さんの安定収益につながる。<br />
+              <strong style={{ color: C.gold }}>「入居後リフォーム」</strong>は、その循環を生むための仕組みです。
             </p>
-            <p style={{ fontSize: "clamp(14px, 3vw, 16px)", color: "rgba(255,255,255,.7)", lineHeight: 1.9, textAlign: "center" }}>
-              大家さんにとって本当にいい物件を、一緒に探す。<br />
-              その物件を、一緒に良くする。<br />
-              それが、私たちの仕事のかたちです。
-            </p>
-          </div>
 
-          <div style={{ width: "1px", height: "40px", background: C.gold, margin: "40px auto 32px" }} />
-
-          <h3 style={{ textAlign: "center", fontSize: "clamp(18px, 4vw, 24px)", fontWeight: 700, color: "#f0ede8", lineHeight: 1.8, marginBottom: "24px" }}>
-            入居者が「自分の部屋」を<br />選べる世界をつくる。
-          </h3>
-
-          <p style={{ fontSize: "clamp(14px, 3vw, 16px)", color: "rgba(255,255,255,.7)", lineHeight: 1.9, textAlign: "center" }}>
-            入居者が壁紙の色を選べたら、その部屋は「自分の部屋」になる。<br />
-            長く住みたくなる。大切にしたくなる。<br />
-            入居者の満足は、大家さんの安定収益につながる。<br />
-            <strong style={{ color: C.gold }}>「入居後リフォーム」</strong>は、その循環を生むための仕組みです。
-          </p>
-
-          <div style={{ width: "1px", height: "40px", background: C.gold, margin: "40px auto 0" }} />
+            <GoldDivider margin="40px auto 0" />
+          </ScrollFadeIn>
         </div>
       </section>
 
-      {/* Our Approach */}
-      <section style={{ padding: "56px 20px", background: C.warmWhite }}>
-        <div style={{ maxWidth: "720px", margin: "0 auto" }}>
-          <p style={{ textAlign: "center", fontSize: "11px", fontWeight: 600, letterSpacing: "0.2em", color: M.mid, marginBottom: "10px" }}>
-            OUR APPROACH
-          </p>
-          <h2 style={{ textAlign: "center", fontSize: "clamp(20px, 4.5vw, 28px)", fontWeight: 700, color: C.textDark, marginBottom: "36px", lineHeight: 1.7 }}>
-            私たちのやり方
-          </h2>
+      {/* ───────── Our Approach ───────── */}
+      <section style={{ padding: `${spacing.section.md} ${spacing.pagePadding}`, background: C.warmWhite }}>
+        <div style={{ maxWidth: spacing.contentMax.normal, margin: "0 auto" }}>
+          <ScrollFadeIn>
+            <SectionHeading en="OUR APPROACH" ja="私たちのやり方" />
+          </ScrollFadeIn>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: 24 }}>
             {approaches.map((a, i) => (
-              <div key={i} style={{ background: "#fff", borderRadius: "14px", padding: "28px 24px", border: "1px solid #e0ddd5" }}>
-                <h3 style={{ fontSize: "clamp(15px, 3vw, 17px)", fontWeight: 700, color: M.main, marginBottom: "12px", lineHeight: 1.6 }}>
-                  {a.question}
-                </h3>
-                <p style={{ fontSize: "clamp(13px, 2.5vw, 15px)", color: C.textMid, lineHeight: 1.9 }}>
-                  {a.answer}
-                </p>
-              </div>
+              <ScrollFadeIn key={i} delay={i * 0.1}>
+                <div
+                  style={{
+                    background: "#fff",
+                    borderRadius: radius.lg,
+                    padding: "28px 24px",
+                    border: `1px solid ${C.border}`,
+                  }}
+                >
+                  <h3
+                    style={{
+                      fontSize: "clamp(15px, 3vw, 17px)",
+                      fontWeight: 700,
+                      color: M.main,
+                      marginBottom: 12,
+                      lineHeight: 1.6,
+                    }}
+                  >
+                    {a.question}
+                  </h3>
+                  <p
+                    style={{
+                      fontSize: "clamp(13px, 2.5vw, 15px)",
+                      color: C.textMid,
+                      lineHeight: 1.9,
+                    }}
+                  >
+                    {a.answer}
+                  </p>
+                </div>
+              </ScrollFadeIn>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Team */}
-      <section style={{ padding: "56px 20px", background: "#fff" }}>
-        <div style={{ maxWidth: "720px", margin: "0 auto" }}>
-          <p style={{ textAlign: "center", fontSize: "11px", fontWeight: 600, letterSpacing: "0.2em", color: M.mid, marginBottom: "10px" }}>
-            TEAM
-          </p>
-          <h2 style={{ textAlign: "center", fontSize: "clamp(20px, 4.5vw, 28px)", fontWeight: 700, color: C.textDark, marginBottom: "28px", lineHeight: 1.7 }}>
-            KAI &amp; KEN
-          </h2>
+      {/* ───────── Team ───────── */}
+      <section style={{ padding: `${spacing.section.md} ${spacing.pagePadding}`, background: "#fff" }}>
+        <div style={{ maxWidth: spacing.contentMax.normal, margin: "0 auto" }}>
+          <ScrollFadeIn>
+            <SectionHeading en="TEAM" ja="KAI & KEN" />
+          </ScrollFadeIn>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
-            {profiles.map((p) => (
-              <div key={p.name} style={{ background: "#f9f8f6", borderRadius: "12px", padding: "20px", display: "flex", gap: "16px", alignItems: "flex-start" }}>
-                <img src={p.img} alt={p.name} style={{ width: "56px", height: "56px", borderRadius: "50%", objectFit: "cover", flexShrink: 0, background: "#e0e0e0" }} />
-                <div>
-                  <p style={{ fontSize: "16px", fontWeight: 900, color: C.textDark, marginBottom: "2px" }}>{p.name}</p>
-                  <p style={{ fontSize: "13px", color: C.warmGray, marginBottom: "8px" }}>{p.role}</p>
-                  <p style={{ fontSize: "clamp(13px, 2.5vw, 15px)", color: C.textMid, lineHeight: 1.75 }}>{p.body}</p>
-                  <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginTop: "10px" }}>
-                    {p.tags.map((tag) => (
-                      <span key={tag} style={{ fontSize: "11px", fontWeight: 500, color: M.main, background: M.bg, padding: "3px 9px", borderRadius: "100px" }}>
-                        {tag}
-                      </span>
-                    ))}
+          <div style={{ display: "flex", flexDirection: "column", gap: 16 }}>
+            {profiles.map((p, i) => (
+              <ScrollFadeIn key={p.name} delay={i * 0.15}>
+                <div
+                  style={{
+                    background: "#f9f8f6",
+                    borderRadius: radius.lg,
+                    padding: 24,
+                    display: "flex",
+                    gap: 16,
+                    alignItems: "flex-start",
+                  }}
+                >
+                  <img
+                    src={p.img}
+                    alt={p.name}
+                    style={{
+                      width: 64,
+                      height: 64,
+                      borderRadius: "50%",
+                      objectFit: "cover",
+                      flexShrink: 0,
+                      background: "#e0e0e0",
+                    }}
+                  />
+                  <div>
+                    <p style={{ fontSize: 16, fontWeight: 900, color: C.textDark, marginBottom: 2 }}>{p.name}</p>
+                    <p style={{ fontSize: 13, color: C.warmGray, marginBottom: 10 }}>{p.role}</p>
+                    <p style={{ fontSize: "clamp(13px, 2.5vw, 15px)", color: C.textMid, lineHeight: 1.8 }}>{p.body}</p>
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: 6, marginTop: 12 }}>
+                      {p.tags.map((tag) => (
+                        <span
+                          key={tag}
+                          style={{
+                            fontSize: 11,
+                            fontWeight: 500,
+                            color: M.main,
+                            background: M.bg,
+                            padding: "3px 9px",
+                            borderRadius: radius.pill,
+                          }}
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 </div>
-              </div>
+              </ScrollFadeIn>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Service Area */}
-      <section style={{ padding: "48px 20px", background: C.warmWhite, textAlign: "center" }}>
-        <div style={{ maxWidth: "720px", margin: "0 auto" }}>
-          <p style={{ fontSize: "11px", fontWeight: 600, letterSpacing: "0.2em", color: M.mid, marginBottom: "10px" }}>
-            SERVICE AREA
-          </p>
-          <p style={{ fontSize: "clamp(14px, 3vw, 16px)", color: C.textMid, lineHeight: 1.8 }}>
-            仙台市・宮城県を中心に対応しています。<br />
-            物件情報のご紹介も改修工事も宮城県内が対象です。
-          </p>
+      {/* ───────── Service Area ───────── */}
+      <section style={{ padding: `${spacing.section.sm} ${spacing.pagePadding}`, background: C.warmWhite }}>
+        <div style={{ maxWidth: spacing.contentMax.normal, margin: "0 auto", textAlign: "center" }}>
+          <ScrollFadeIn>
+            <SectionHeading en="SERVICE AREA" ja="対応エリア" />
+            <p style={{ fontSize: typography.bodyLarge.size, color: C.textMid, lineHeight: 1.8 }}>
+              仙台市・宮城県を中心に対応しています。<br />
+              物件情報のご紹介も改修工事も宮城県内が対象です。
+            </p>
+          </ScrollFadeIn>
+        </div>
+      </section>
+
+      {/* ───────── CTA ───────── */}
+      <section style={{ padding: `${spacing.section.md} ${spacing.pagePadding}`, background: M.dark, textAlign: "center" }}>
+        <div style={{ maxWidth: spacing.contentMax.narrow, margin: "0 auto" }}>
+          <ScrollFadeIn>
+            <SectionHeading en="CONTACT" ja="まずはLINEでお気軽に" dark />
+            <p style={{ fontSize: typography.bodyLarge.size, color: "rgba(255,255,255,.7)", lineHeight: 1.9, marginBottom: 28 }}>
+              物件探し・改修診断・見積もり、すべて無料です。<br />
+              写真を送っていただければ、改修ポイントと概算費用をお返しします。
+            </p>
+            <LineCTAButton size="large" label="LINEで相談する" />
+          </ScrollFadeIn>
         </div>
       </section>
 
       <ManshitsuFooter />
+      <V3FloatingCTA />
     </div>
   );
 }

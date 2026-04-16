@@ -1,8 +1,12 @@
 node_modules
 dist
+dist-server
 .DS_Store
 *.timestamp-*
 
 # Local Netlify folder
 .netlify
 _raw_images/
+
+# Claude Code local settings
+.claude/settings.local.json

@@ -2,21 +2,29 @@ import { Link } from "react-router-dom";
 import ManshitsuNav from "../components/hp/ManshitsuNav";
 import SmallHero from "../components/hp/SmallHero";
 import ManshitsuFooter from "../components/hp/ManshitsuFooter";
+import V3FloatingCTA from "../components/v3/V3FloatingCTA";
+import { SectionHeading, ScrollFadeIn, LineCTAButton } from "../shared";
 import { allWorks } from "../data/works";
-import { M, C } from "../tokens";
+import { M, C, typography, spacing } from "../tokens";
 
 export default function WorksPage() {
   return (
-    <div style={{ fontFamily: "'Noto Sans JP', sans-serif", color: "#333" }}>
+    <div style={{ fontFamily: typography.fontFamily, color: C.textDark }}>
       <ManshitsuNav />
       <SmallHero title="Works" subtitle="施工事例" />
 
-      <section style={{ padding: "56px 20px", background: C.warmWhite }}>
+      <section style={{ padding: `${spacing.section.md} ${spacing.pagePadding}`, background: C.warmWhite }}>
         <div style={{ maxWidth: "800px", margin: "0 auto" }}>
+          <ScrollFadeIn>
+            <SectionHeading
+              en="CASE STUDIES"
+              ja={`${allWorks.length}件の改修事例`}
+            />
+          </ScrollFadeIn>
           <div style={{ display: "flex", flexDirection: "column", gap: "24px" }}>
-            {allWorks.map((work) => (
+            {allWorks.map((work, i) => (
+              <ScrollFadeIn key={work.slug} delay={i * 0.06}>
               <Link
-                key={work.slug}
                 to={`/works/${work.slug}`}
                 style={{
                   display: "block",
@@ -115,12 +123,28 @@ export default function WorksPage() {
                   </p>
                 </div>
               </Link>
+              </ScrollFadeIn>
             ))}
           </div>
         </div>
       </section>
 
+      {/* ───────── CTA ───────── */}
+      <section style={{ padding: `${spacing.section.md} ${spacing.pagePadding}`, background: M.dark, textAlign: "center" }}>
+        <div style={{ maxWidth: spacing.contentMax.narrow, margin: "0 auto" }}>
+          <ScrollFadeIn>
+            <SectionHeading en="CONTACT" ja="同じような改修、ご相談ください" dark />
+            <p style={{ fontSize: typography.bodyLarge.size, color: "rgba(255,255,255,.75)", lineHeight: 1.9, marginBottom: 28 }}>
+              物件の写真をLINEで送っていただければ、<br />
+              改修ポイントと概算費用をお返しします。
+            </p>
+            <LineCTAButton size="large" />
+          </ScrollFadeIn>
+        </div>
+      </section>
+
       <ManshitsuFooter />
+      <V3FloatingCTA />
     </div>
   );
 }

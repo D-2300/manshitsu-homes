@@ -2,13 +2,53 @@
 <html lang="ja">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/webp" href="/images/logo-manshitsu-mark-gold.webp" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>満室デザインLABO｜仙台の賃貸オーナー向け原状回復・空室対策</title>
-    <meta name="description" content="店舗内装のプロが、中間マージンなしで賃貸の原状回復を直接施工。クロス900円/㎡〜。同じ予算で部屋が変わる、仙台・宮城の空室対策。" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/webp" href="/images/logo-manshitsu-mark-gold.webp" />
+    <link rel="apple-touch-icon" href="/images/logo-manshitsu-mark-gold.webp" />
+
+    <!-- SEO -->
+    <title>満室デザインLABO｜仙台・宮城のアパート投資×内装改修</title>
+    <meta
+      name="description"
+      content="店舗内装のプロが、中間マージンなしで賃貸の原状回復・入居後リフォームを直接施工。クロス900円/㎡〜。非公開のアパート投資物件情報も。同じ予算で部屋が変わる、仙台・宮城の空室対策。"
+    />
+    <meta name="robots" content="index,follow" />
+    <link rel="canonical" href="https://manshitsu.homes/" />
+
+    <!-- OGP -->
+    <meta property="og:title" content="満室デザインLABO｜仙台・宮城のアパート投資×内装改修" />
+    <meta
+      property="og:description"
+      content="店舗内装のプロが、中間マージンなしで賃貸の原状回復・入居後リフォームを直接施工。非公開のアパート投資物件情報も。仙台・宮城の空室対策。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://manshitsu.homes/" />
+    <meta property="og:image" content="https://manshitsu.homes/images/hero-bg.webp" />
+    <meta property="og:site_name" content="満室デザインLABO" />
+    <meta property="og:locale" content="ja_JP" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="満室デザインLABO｜仙台・宮城のアパート投資×内装改修" />
+    <meta
+      name="twitter:description"
+      content="店舗内装のプロが直接施工。クロス900円/㎡〜、非公開アパート投資物件情報も。仙台・宮城の空室対策。"
+    />
+    <meta name="twitter:image" content="https://manshitsu.homes/images/hero-bg.webp" />
+
+    <!-- Fonts — load eagerly for LCP (hero text) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap"
+    />
+
+    <!-- Preload hero image for LCP -->
+    <link rel="preload" as="image" type="image/webp" href="/images/hero-bg.webp" />
+
     <!-- Google tag (gtag.js) - Ads + GA4 -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18072645905"></script>
     <script>
@@ -18,8 +58,46 @@
       gtag('config', 'AW-18072645905');
       gtag('config', 'G-RMB4LTPVT1');
     </script>
+
+    <!-- Microsoft Clarity -->
+    <!-- TODO: 満室デザインLABO専用のClarityプロジェクトを作成して projectId を差し替える -->
+    <script type="text/javascript">
+      (function(c,l,a,r,i,t,y){
+        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+      })(window,document,"clarity","script","vuby2q6y09");
+    </script>
+
+    <!-- JSON-LD: LocalBusiness -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "満室デザインLABO",
+        "image": "https://manshitsu.homes/images/logo-manshitsu-mark-gold.webp",
+        "url": "https://manshitsu.homes/",
+        "telephone": "+81-80-6900-3314",
+        "areaServed": "宮城県・仙台市",
+        "address": {
+          "@type": "PostalAddress",
+          "addressCountry": "JP",
+          "addressRegion": "宮城県",
+          "addressLocality": "仙台市"
+        },
+        "description": "仙台・宮城のアパート投資×内装改修。店舗内装のプロによる原状回復・入居後リフォーム・バーチャルステージング。"
+      }
+    </script>
   </head>
   <body>
+    <!-- Netlify hidden form — contact -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input name="bot-field" />
+      <input name="name" />
+      <input name="contact" />
+      <textarea name="message"></textarea>
+    </form>
+
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
