@@ -6,6 +6,7 @@ import WorkDetailPage from './pages/WorkDetailPage';
 import PricingPage from './pages/PricingPage';
 import StagingLPPage from './StagingLPPage';
 import ManshitsuPage from './ManshitsuPage';
+import BukkenLPPage from './BukkenLPPage';
 import ArticleListPage from './pages/ArticleListPage';
 import ArticlePage from './pages/ArticlePage';
 import { ScrollToTop } from './shared';
@@ -22,7 +23,10 @@ export default function AppRoutes() {
         <Route path="/pricing" element={<PricingPage />} />
         <Route path="/articles" element={<ArticleListPage />} />
         <Route path="/articles/:slug" element={<ArticlePage />} />
-        <Route path="/lp/staging" element={<StagingLPPage />} />
+        <Route path="/lp/bukken" element={<BukkenLPPage />} />
+        {/* /lp/staging は既存広告URL継承のため新LPにリダイレクト（旧StagingLPPageは保守として保持） */}
+        <Route path="/lp/staging" element={<BukkenLPPage />} />
+        <Route path="/lp/staging-old" element={<StagingLPPage />} />
         <Route path="/lp/v1" element={<ManshitsuPage />} />
       </Routes>
     </>
