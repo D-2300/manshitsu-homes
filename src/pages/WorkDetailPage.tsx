@@ -5,6 +5,7 @@ import V3FloatingCTA from "../components/v3/V3FloatingCTA";
 import { LineCTAButton } from "../shared";
 import { getWorkBySlug } from "../data/works";
 import { M, C } from "../tokens";
+import { JsonLd, breadcrumbSchema } from "../utils/jsonLd";
 
 export default function WorkDetailPage() {
   const { slug } = useParams<{ slug: string }>();
@@ -25,6 +26,13 @@ export default function WorkDetailPage() {
 
   return (
     <div style={{ fontFamily: "'Noto Sans JP', sans-serif", color: "#333" }}>
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Top", url: "/" },
+          { name: "施工事例", url: "/works" },
+          { name: work.name, url: `/works/${work.slug}` },
+        ])}
+      />
       <ManshitsuNav />
 
       {/* Hero with After image */}

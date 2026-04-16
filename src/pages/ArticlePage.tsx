@@ -5,6 +5,7 @@ import ManshitsuFooter from '../components/hp/ManshitsuFooter';
 import V3FloatingCTA from '../components/v3/V3FloatingCTA';
 import { LineCTAButton } from '../shared';
 import { getArticleBySlug, getAllArticles, categoryLabels } from '../data/articles';
+import { JsonLd, articleSchema, breadcrumbSchema } from '../utils/jsonLd';
 
 /** 記事本文のセクション見出し（shared/SectionHeading とは別物） */
 function ArticleSectionHeading({ children }: { children: React.ReactNode }) {
@@ -59,6 +60,15 @@ export default function ArticlePage() {
 
   return (
     <div style={{ fontFamily: "'Noto Sans JP', sans-serif", backgroundColor: C.warmWhite }}>
+      <JsonLd data={articleSchema(article)} />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: 'Top', url: '/' },
+          { name: '記事一覧', url: '/articles' },
+          { name: categoryLabels[article.category], url: `/articles?category=${article.category}` },
+          { name: article.title, url: `/articles/${article.slug}` },
+        ])}
+      />
       <ManshitsuNav />
 
       {/* Hero */}

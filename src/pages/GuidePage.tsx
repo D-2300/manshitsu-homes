@@ -1,6 +1,24 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { LINE_URL } from "../tokens";
+import { JsonLd, breadcrumbSchema } from "../utils/jsonLd";
+
+const guideSchema = {
+  "@context": "https://schema.org",
+  "@type": "Article",
+  headline: "宮城のアパート投資 攻略ガイド",
+  description: "宮城県の収益物件・中古アパート投資の攻略ガイド。相場データ・築古見極め3ポイント・指値交渉術・改修費単価・失敗事例10選まで内装屋視点で体系化。",
+  image: "https://manshitsu.homes/images/hero-bg.webp",
+  datePublished: "2026-04-17",
+  dateModified: "2026-04-17",
+  author: { "@type": "Organization", name: "満室デザインLABO", url: "https://manshitsu.homes/" },
+  publisher: {
+    "@type": "Organization",
+    name: "満室デザインLABO",
+    logo: { "@type": "ImageObject", url: "https://manshitsu.homes/images/logo-manshitsu-h-gold.webp" },
+  },
+  mainEntityOfPage: { "@type": "WebPage", "@id": "https://manshitsu.homes/guide/bukken" },
+};
 
 /**
  * 宮城のアパート投資 攻略ガイド HTML版
@@ -12,17 +30,33 @@ import { LINE_URL } from "../tokens";
 export default function GuidePage() {
   useEffect(() => {
     document.title = "宮城のアパート投資 攻略ガイド｜満室デザインLABO";
-    const meta = document.querySelector('meta[name="description"]');
-    if (meta) {
-      meta.setAttribute(
-        "content",
-        "宮城県の収益物件・中古アパート投資の攻略ガイド。相場データ・築古見極め3ポイント・指値交渉術・改修費単価・失敗事例10選まで内装屋視点で体系化。"
-      );
-    }
+    const description = "宮城県の収益物件・中古アパート投資の攻略ガイド。相場データ・築古見極め3ポイント・指値交渉術・改修費単価・失敗事例10選まで内装屋視点で体系化。";
+    const ogImage = "https://manshitsu.homes/images/og-guide.png";
+
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute("content", description);
+
+    const setMeta = (selector: string, value: string) => {
+      const el = document.querySelector(selector);
+      if (el) el.setAttribute("content", value);
+    };
+    setMeta('meta[property="og:title"]', "宮城のアパート投資 攻略ガイド｜満室デザインLABO");
+    setMeta('meta[property="og:description"]', description);
+    setMeta('meta[property="og:image"]', ogImage);
+    setMeta('meta[name="twitter:title"]', "宮城のアパート投資 攻略ガイド｜満室デザインLABO");
+    setMeta('meta[name="twitter:description"]', description);
+    setMeta('meta[name="twitter:image"]', ogImage);
   }, []);
 
   return (
     <div className="guide-root">
+      <JsonLd data={guideSchema} />
+      <JsonLd
+        data={breadcrumbSchema([
+          { name: "Top", url: "/" },
+          { name: "無料ガイド", url: "/guide/bukken" },
+        ])}
+      />
       <style>{styles}</style>
 
       {/* スクリーン用ヘッダー（印刷時非表示） */}

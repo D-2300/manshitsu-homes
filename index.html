@@ -25,7 +25,7 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://manshitsu.homes/" />
-    <meta property="og:image" content="https://manshitsu.homes/images/hero-bg.webp" />
+    <meta property="og:image" content="https://manshitsu.homes/images/og-default.png" />
     <meta property="og:site_name" content="満室デザインLABO" />
     <meta property="og:locale" content="ja_JP" />
 
@@ -36,7 +36,7 @@
       name="twitter:description"
       content="物件を買う前から相談できる内装屋。非公開物件情報・古物件の改修診断・バーチャルステージングを一気通貫で。宮城県全域。"
     />
-    <meta name="twitter:image" content="https://manshitsu.homes/images/hero-bg.webp" />
+    <meta name="twitter:image" content="https://manshitsu.homes/images/og-default.png" />
 
     <!-- Fonts — load eagerly for LCP (hero text) -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -73,18 +73,38 @@
       {
         "@context": "https://schema.org",
         "@type": "LocalBusiness",
+        "@id": "https://manshitsu.homes/#business",
         "name": "満室デザインLABO",
         "image": "https://manshitsu.homes/images/logo-manshitsu-mark-gold.webp",
         "url": "https://manshitsu.homes/",
         "telephone": "+81-80-6900-3314",
-        "areaServed": "宮城県・仙台市",
+        "priceRange": "¥¥",
+        "areaServed": [
+          { "@type": "State", "name": "宮城県" },
+          { "@type": "City", "name": "仙台市" }
+        ],
         "address": {
           "@type": "PostalAddress",
           "addressCountry": "JP",
           "addressRegion": "宮城県",
           "addressLocality": "仙台市"
         },
-        "description": "宮城県のアパート投資を、物件探しから手伝う内装屋。非公開物件情報・古物件の改修診断・バーチャルステージングを一気通貫で。"
+        "description": "宮城県のアパート投資を、物件探しから手伝う内装屋。非公開物件情報・古物件の改修診断・バーチャルステージングを一気通貫で。",
+        "knowsAbout": ["収益物件", "中古アパート", "アパート経営", "不動産投資", "入居後リフォーム", "バーチャルステージング", "原状回復", "客付け支援"]
+      }
+    </script>
+
+    <!-- JSON-LD: WebSite -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "@id": "https://manshitsu.homes/#website",
+        "url": "https://manshitsu.homes/",
+        "name": "満室デザインLABO",
+        "description": "宮城の収益物件を、物件探しから手伝う内装屋",
+        "publisher": { "@id": "https://manshitsu.homes/#business" },
+        "inLanguage": "ja"
       }
     </script>
   </head>
