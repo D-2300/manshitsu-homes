@@ -126,24 +126,10 @@ export default function GuidePage() {
         <div className="page-header"><span>Ch.1 はじめに</span></div>
         <h2 className="chapter-heading"><span className="chapter-no">Ch.1</span>はじめに — なぜ今、宮城のアパート投資なのか</h2>
 
-        {/* Illustration: 家と握手 */}
-        <div className="illust">
-          <svg viewBox="0 0 240 120" xmlns="http://www.w3.org/2000/svg">
-            <g fill="none" stroke="#6B4066" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              {/* 家 */}
-              <path d="M 40 80 L 80 40 L 120 80 L 120 110 L 40 110 Z" />
-              <path d="M 68 110 L 68 88 L 92 88 L 92 110" />
-              <rect x="48" y="66" width="12" height="12" />
-              <rect x="100" y="66" width="12" height="12" />
-              {/* 握手のアイコン */}
-              <circle cx="180" cy="60" r="28" stroke="#C9A84C" />
-              <path d="M 164 58 L 172 66 L 188 50" stroke="#C9A84C" strokeWidth="2.5" />
-              {/* 矢印 家→握手 */}
-              <path d="M 128 75 L 150 75" stroke="#C9A84C" strokeDasharray="3 3" />
-              <path d="M 146 72 L 150 75 L 146 78" stroke="#C9A84C" />
-            </g>
-          </svg>
-          <p className="illust-caption">物件を選ぶところから、一緒に</p>
+        {/* Photo: hero */}
+        <div className="photo-block">
+          <img src="/images/m-hero-color.webp" alt="改修された部屋のイメージ" />
+          <p className="photo-caption">改修された部屋 — 物件を選ぶところから、一緒に。</p>
         </div>
 
         <h3 className="section-heading">1-1. このガイドで伝えたいこと</h3>
@@ -179,39 +165,10 @@ export default function GuidePage() {
 
         <p>この章は、このガイドを書いている<strong>「私たちは誰か」</strong>という話です。ここに納得できなければ、以降のノウハウも机上の空論に読めてしまう。だから先にお伝えします。</p>
 
-        {/* Illustration: 旅のような挿絵 */}
-        <div className="illust">
-          <svg viewBox="0 0 280 120" xmlns="http://www.w3.org/2000/svg">
-            <g fill="none" stroke="#6B4066" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              {/* Before: 仲介業（ビル） */}
-              <rect x="20" y="30" width="60" height="80" />
-              <line x1="35" y1="45" x2="45" y2="45" />
-              <line x1="55" y1="45" x2="65" y2="45" />
-              <line x1="35" y1="60" x2="45" y2="60" />
-              <line x1="55" y1="60" x2="65" y2="60" />
-              <line x1="35" y1="75" x2="45" y2="75" />
-              <line x1="55" y1="75" x2="65" y2="75" />
-              <line x1="35" y1="90" x2="45" y2="90" />
-              <line x1="55" y1="90" x2="65" y2="90" />
-              <text x="50" y="22" fontSize="8" textAnchor="middle" fill="#888" stroke="none">仲介業20年</text>
-
-              {/* Arrow */}
-              <path d="M 100 70 L 180 70" stroke="#C9A84C" strokeWidth="2" />
-              <path d="M 172 64 L 180 70 L 172 76" stroke="#C9A84C" strokeWidth="2" />
-              <text x="140" y="62" fontSize="8" textAnchor="middle" fill="#C9A84C" stroke="none">転身</text>
-
-              {/* After: 内装屋（家＋ハンマー） */}
-              <path d="M 200 80 L 240 40 L 280 80 L 280 110 L 200 110 Z" stroke="#C9A84C" />
-              <path d="M 225 110 L 225 92 L 255 92 L 255 110" stroke="#C9A84C" />
-              {/* ハンマーアイコン */}
-              <g transform="translate(215, 55)">
-                <rect x="-4" y="-8" width="14" height="8" fill="#C9A84C" stroke="#C9A84C" />
-                <line x1="-4" y1="-4" x2="-20" y2="12" strokeWidth="2" stroke="#C9A84C" />
-              </g>
-              <text x="240" y="32" fontSize="8" textAnchor="middle" fill="#C9A84C" stroke="none">内装屋</text>
-            </g>
-          </svg>
-          <p className="illust-caption">20年の仲介経験から、買主の味方になれる立場へ</p>
+        {/* Photo: 2人打ち合わせ */}
+        <div className="photo-block">
+          <img src="/images/guide/g-conversation.webp" alt="物件の相談風景" />
+          <p className="photo-caption">大家さんと一緒に物件を見極める</p>
         </div>
 
         <h3 className="section-heading">元・不動産仲介業20年</h3>
@@ -264,11 +221,13 @@ export default function GuidePage() {
         <p>その後、大工歴20年超の<strong>KEN</strong>と意気投合し、内装業としての会社を立ち上げました。</p>
         <div className="profile-cards">
           <div className="profile-card">
+            <img src="/images/about-kai-sm.webp" alt="KAI" className="profile-photo" />
             <p className="profile-name">KAI</p>
             <p className="profile-role">元・不動産業20年</p>
             <p className="profile-desc">物件の見極め・交渉・客付けの実務</p>
           </div>
           <div className="profile-card">
+            <img src="/images/about-ken-sm.webp" alt="KEN" className="profile-photo" />
             <p className="profile-name">KEN</p>
             <p className="profile-role">大工歴20年超</p>
             <p className="profile-desc">設計から施工まで現場を動かす技術</p>
@@ -287,30 +246,10 @@ export default function GuidePage() {
         <div className="page-header"><span>Ch.2 宮城の収益物件相場</span></div>
         <h2 className="chapter-heading"><span className="chapter-no">Ch.2</span>宮城の収益物件相場 — エリア別・築年別の実データ</h2>
 
-        {/* Illustration: 宮城県マップ風 */}
-        <div className="illust">
-          <svg viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg">
-            <g fill="none" stroke="#6B4066" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              {/* 宮城県の輪郭（簡略） */}
-              <path d="M 60 30 L 100 25 L 140 28 L 170 40 L 185 70 L 175 100 L 140 115 L 100 112 L 70 105 L 55 80 L 50 55 Z" />
-              {/* 仙台 */}
-              <circle cx="110" cy="75" r="6" fill="#C9A84C" stroke="#C9A84C" />
-              <text x="110" y="92" fontSize="8" textAnchor="middle" fill="#6B4066" stroke="none">仙台</text>
-              {/* 石巻 */}
-              <circle cx="160" cy="70" r="4" fill="#6B4066" />
-              <text x="160" y="60" fontSize="7" textAnchor="middle" fill="#6B4066" stroke="none">石巻</text>
-              {/* 大崎 */}
-              <circle cx="100" cy="45" r="4" fill="#6B4066" />
-              <text x="100" y="38" fontSize="7" textAnchor="middle" fill="#6B4066" stroke="none">大崎</text>
-              {/* 気仙沼 */}
-              <circle cx="170" cy="42" r="3" fill="#6B4066" />
-              <text x="170" y="34" fontSize="7" textAnchor="middle" fill="#6B4066" stroke="none">気仙沼</text>
-              {/* 名取 */}
-              <circle cx="108" cy="95" r="3" fill="#6B4066" />
-              <text x="108" y="108" fontSize="7" textAnchor="middle" fill="#6B4066" stroke="none">名取</text>
-            </g>
-          </svg>
-          <p className="illust-caption">宮城県 — エリアごとの利回り・価格帯は大きく異なる</p>
+        {/* Photo: エリアマップ */}
+        <div className="photo-block">
+          <img src="/images/guide/g-map.webp" alt="宮城県エリアイメージ" />
+          <p className="photo-caption">宮城県 — エリアごとの利回り・価格帯は大きく異なる</p>
         </div>
 
         <h3 className="section-heading">2-1. エリア別の相場感（2026年4月時点）</h3>
@@ -403,31 +342,22 @@ export default function GuidePage() {
         <div className="page-header"><span>Ch.3 築古アパートの見極め方</span></div>
         <h2 className="chapter-heading"><span className="chapter-no">Ch.3</span>築古アパートの見極め方 — 3つの必須チェック</h2>
 
-        {/* Illustration: 虫眼鏡＋チェックリスト */}
-        <div className="illust">
-          <svg viewBox="0 0 240 120" xmlns="http://www.w3.org/2000/svg">
-            <g fill="none" stroke="#6B4066" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              {/* 家 */}
-              <path d="M 30 90 L 60 60 L 90 90 L 90 110 L 30 110 Z" />
-              <rect x="45" y="80" width="10" height="20" />
-              <rect x="67" y="75" width="10" height="10" />
-              {/* 虫眼鏡 */}
-              <circle cx="60" cy="75" r="20" stroke="#C9A84C" strokeWidth="2" />
-              <line x1="74" y1="89" x2="88" y2="103" stroke="#C9A84C" strokeWidth="3" />
-              {/* チェックリスト */}
-              <rect x="140" y="25" width="80" height="80" rx="4" fill="#FAF8F3" />
-              <line x1="150" y1="38" x2="210" y2="38" stroke="#ddd" />
-              <path d="M 150 45 L 154 49 L 162 41" stroke="#C9A84C" strokeWidth="2" />
-              <line x1="170" y1="45" x2="210" y2="45" />
-              <path d="M 150 60 L 154 64 L 162 56" stroke="#C9A84C" strokeWidth="2" />
-              <line x1="170" y1="60" x2="210" y2="60" />
-              <path d="M 150 75 L 154 79 L 162 71" stroke="#C9A84C" strokeWidth="2" />
-              <line x1="170" y1="75" x2="210" y2="75" />
-              <line x1="150" y1="90" x2="210" y2="90" stroke="#ddd" />
-              <line x1="150" y1="100" x2="200" y2="100" stroke="#ddd" />
-            </g>
-          </svg>
-          <p className="illust-caption">現地で3つのポイントを見るだけで、失敗の8割は防げる</p>
+        {/* Photo: チェックリスト */}
+        <div className="photo-block">
+          <img src="/images/guide/g-checklist.webp" alt="現地チェック" />
+          <p className="photo-caption">現地で3つのポイントを見るだけで、失敗の8割は防げる</p>
+        </div>
+
+        {/* Before / After ペア写真 */}
+        <div className="photo-pair">
+          <div className="photo-pair-item">
+            <img src="/images/m-before-3-sm.webp" alt="改修前の状態" />
+            <span className="photo-pair-label">Before</span>
+          </div>
+          <div className="photo-pair-item">
+            <img src="/images/m-after-green-sm.webp" alt="改修後の状態" />
+            <span className="photo-pair-label after">After</span>
+          </div>
         </div>
 
         <h3 className="section-heading">3-1. チェックポイント① 給排水設備</h3>
@@ -568,30 +498,16 @@ export default function GuidePage() {
         <div className="page-header"><span>Ch.5 改修費の相場早見表</span></div>
         <h2 className="chapter-heading"><span className="chapter-no">Ch.5</span>改修費の相場早見表 — 部屋タイプ別・単価公開</h2>
 
-        {/* Illustration: ツール */}
-        <div className="illust">
-          <svg viewBox="0 0 240 100" xmlns="http://www.w3.org/2000/svg">
-            <g fill="none" stroke="#6B4066" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              {/* ハンマー */}
-              <rect x="30" y="30" width="30" height="14" fill="#C9A84C" stroke="#C9A84C" />
-              <line x1="30" y1="37" x2="12" y2="75" strokeWidth="3" />
-              {/* 刷毛 */}
-              <line x1="120" y1="25" x2="100" y2="60" strokeWidth="3" />
-              <rect x="96" y="58" width="20" height="14" fill="#6B4066" transform="rotate(25 106 65)" />
-              {/* 定規 */}
-              <rect x="140" y="40" width="90" height="10" />
-              <line x1="150" y1="40" x2="150" y2="46" />
-              <line x1="160" y1="40" x2="160" y2="50" />
-              <line x1="170" y1="40" x2="170" y2="46" />
-              <line x1="180" y1="40" x2="180" y2="50" />
-              <line x1="190" y1="40" x2="190" y2="46" />
-              <line x1="200" y1="40" x2="200" y2="50" />
-              <line x1="210" y1="40" x2="210" y2="46" />
-              <line x1="220" y1="40" x2="220" y2="50" />
-            </g>
-            {/* 金額 */}
-            <text x="120" y="92" fontSize="10" textAnchor="middle" fill="#C9A84C" fontWeight="700">単価・㎡数・材料名すべて公開</text>
-          </svg>
+        {/* Photo: 見積書 */}
+        <div className="photo-block">
+          <img src="/images/guide/g-estimate.webp" alt="透明な見積書" />
+          <p className="photo-caption">単価・㎡数・材料名をすべて公開した見積書</p>
+        </div>
+
+        {/* サンプル改修写真 */}
+        <div className="photo-block">
+          <img src="/images/m-after-accent-sm.webp" alt="アクセントクロス施工例" />
+          <p className="photo-caption">アクセントクロス1面で印象が変わる</p>
         </div>
 
         <h3 className="section-heading">5-1. 原状回復（退去後の通常改修）</h3>
@@ -645,34 +561,23 @@ export default function GuidePage() {
         <div className="page-header"><span>Ch.6 客付けの基礎</span></div>
         <h2 className="chapter-heading"><span className="chapter-no">Ch.6</span>客付けの基礎 — バーチャルステージング活用</h2>
 
-        {/* Illustration: Before → After 家具配置 */}
-        <div className="illust">
-          <svg viewBox="0 0 260 110" xmlns="http://www.w3.org/2000/svg">
-            <g fill="none" stroke="#6B4066" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              {/* Before: 空室 */}
-              <rect x="15" y="25" width="90" height="70" />
-              <text x="60" y="18" fontSize="9" textAnchor="middle" fill="#888" stroke="none">Before</text>
-              <text x="60" y="65" fontSize="8" textAnchor="middle" fill="#aaa" stroke="none">空室・家具なし</text>
-              {/* 矢印 */}
-              <path d="M 115 60 L 145 60" stroke="#C9A84C" strokeWidth="2" />
-              <path d="M 138 55 L 145 60 L 138 65" stroke="#C9A84C" strokeWidth="2" />
-              <text x="130" y="52" fontSize="7" textAnchor="middle" fill="#C9A84C" stroke="none">VS</text>
-              {/* After: 家具付き */}
-              <rect x="155" y="25" width="90" height="70" stroke="#C9A84C" />
-              <text x="200" y="18" fontSize="9" textAnchor="middle" fill="#C9A84C" stroke="none">After</text>
-              {/* ソファ */}
-              <rect x="165" y="70" width="30" height="18" rx="3" fill="rgba(201,168,76,0.2)" stroke="#C9A84C" />
-              {/* テーブル */}
-              <circle cx="215" cy="80" r="8" stroke="#C9A84C" />
-              {/* 照明 */}
-              <line x1="200" y1="25" x2="200" y2="40" stroke="#C9A84C" />
-              <path d="M 195 40 L 205 40 L 202 48 L 198 48 Z" fill="rgba(201,168,76,0.3)" stroke="#C9A84C" />
-              {/* 植物 */}
-              <rect x="230" y="58" width="8" height="10" stroke="#C9A84C" />
-              <circle cx="234" cy="55" r="5" stroke="#C9A84C" />
-            </g>
-          </svg>
-          <p className="illust-caption">バーチャルステージングで内見クリック率は2〜3倍に</p>
+        {/* バーチャルステージング写真ペア */}
+        <div className="photo-pair">
+          <div className="photo-pair-item">
+            <img src="/images/vs-before.webp" alt="バーチャルステージング前" />
+            <span className="photo-pair-label">空室写真</span>
+          </div>
+          <div className="photo-pair-item">
+            <img src="/images/vs-staged-green.webp" alt="バーチャルステージング後" />
+            <span className="photo-pair-label after">ステージング後</span>
+          </div>
+        </div>
+        <p className="photo-caption center">バーチャルステージングで内見クリック率は2〜3倍に</p>
+
+        {/* タブレットで見せる */}
+        <div className="photo-block">
+          <img src="/images/guide/g-tablet.webp" alt="バーチャルステージングの運用" />
+          <p className="photo-caption">写真データだけで完成イメージを作れる</p>
         </div>
 
         <h3 className="section-heading">6-1. 客付けの原則</h3>
@@ -717,30 +622,10 @@ export default function GuidePage() {
         <div className="page-header"><span>Ch.7 失敗事例10選</span></div>
         <h2 className="chapter-heading"><span className="chapter-no">Ch.7</span>失敗事例10選 — よくある落とし穴と回避策</h2>
 
-        {/* Illustration: 警告 */}
-        <div className="illust">
-          <svg viewBox="0 0 240 100" xmlns="http://www.w3.org/2000/svg">
-            <g fill="none" stroke="#C44D3F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              {/* 落とし穴のシルエット */}
-              <path d="M 20 70 L 60 70 L 75 85 L 115 85 L 135 70 L 200 70 L 220 70" strokeWidth="2" />
-              {/* 穴 */}
-              <ellipse cx="95" cy="85" rx="22" ry="4" fill="rgba(196,77,63,0.1)" />
-              {/* 歩いている人（棒人間） */}
-              <circle cx="40" cy="50" r="6" />
-              <line x1="40" y1="56" x2="40" y2="68" />
-              <line x1="40" y1="62" x2="32" y2="58" />
-              <line x1="40" y1="62" x2="48" y2="58" />
-              <line x1="40" y1="68" x2="35" y2="74" />
-              <line x1="40" y1="68" x2="45" y2="70" />
-              {/* 警告マーク */}
-              <g transform="translate(170, 30)">
-                <path d="M 0 -16 L 16 12 L -16 12 Z" fill="rgba(196,77,63,0.1)" />
-                <line x1="0" y1="-6" x2="0" y2="4" strokeWidth="2" />
-                <circle cx="0" cy="8" r="1.5" fill="#C44D3F" />
-              </g>
-            </g>
-          </svg>
-          <p className="illust-caption">先人が踏んだ落とし穴を、避けて通ろう</p>
+        {/* 失敗事例のリアル写真 */}
+        <div className="photo-block">
+          <img src="/images/m-before-2-sm.webp" alt="劣化した物件状態" />
+          <p className="photo-caption">買ってから気づいた劣化 — 先人の落とし穴を避けて通ろう</p>
         </div>
 
         {[
@@ -768,33 +653,10 @@ export default function GuidePage() {
         <div className="page-header"><span>Ch.8 まとめ</span></div>
         <h2 className="chapter-heading"><span className="chapter-no">Ch.8</span>まとめ — 次の1歩</h2>
 
-        {/* Illustration: 階段・次の一歩 */}
-        <div className="illust">
-          <svg viewBox="0 0 240 110" xmlns="http://www.w3.org/2000/svg">
-            <g fill="none" stroke="#6B4066" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              {/* 階段 */}
-              <path d="M 20 95 L 60 95 L 60 75 L 100 75 L 100 55 L 140 55 L 140 35 L 200 35" strokeWidth="2" />
-              {/* ステップラベル */}
-              <text x="40" y="110" fontSize="8" textAnchor="middle" fill="#888" stroke="none">Now</text>
-              <text x="80" y="70" fontSize="8" textAnchor="middle" fill="#6B4066" stroke="none">条件</text>
-              <text x="120" y="50" fontSize="8" textAnchor="middle" fill="#6B4066" stroke="none">情報</text>
-              <text x="170" y="30" fontSize="8" textAnchor="middle" fill="#C9A84C" stroke="none">現地</text>
-              {/* 星（ゴール） */}
-              <g transform="translate(210, 20)">
-                <path d="M 0 -8 L 2 -2 L 8 -2 L 3 2 L 5 8 L 0 4 L -5 8 L -3 2 L -8 -2 L -2 -2 Z" fill="#C9A84C" stroke="#C9A84C" />
-              </g>
-              {/* 歩く人 */}
-              <g transform="translate(40, 80)">
-                <circle cx="0" cy="0" r="5" />
-                <line x1="0" y1="5" x2="0" y2="15" />
-                <line x1="0" y1="10" x2="-6" y2="7" />
-                <line x1="0" y1="10" x2="6" y2="7" />
-                <line x1="0" y1="15" x2="-5" y2="22" />
-                <line x1="0" y1="15" x2="5" y2="20" />
-              </g>
-            </g>
-          </svg>
-          <p className="illust-caption">1歩ずつ、確実に</p>
+        {/* 完成形の写真 */}
+        <div className="photo-block">
+          <img src="/images/m-after-led-sm.webp" alt="理想の完成形" />
+          <p className="photo-caption">1歩ずつ、確実に — 理想の形を目指して</p>
         </div>
 
         <h3 className="section-heading">この7つをメモしてください</h3>
@@ -1494,7 +1356,7 @@ const styles = `
   font-weight: 500;
 }
 
-/* Illustration */
+/* Illustration (SVG) */
 .illust {
   margin: 24px auto 32px;
   padding: 20px 16px 12px;
@@ -1519,6 +1381,93 @@ const styles = `
   margin-top: 8px !important;
   margin-bottom: 0 !important;
   letter-spacing: 0.03em;
+}
+
+/* Photo block (実写) */
+.photo-block {
+  margin: 20px auto 28px;
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid #e8e5de;
+  background: #fff;
+}
+
+.photo-block img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 280px;
+  object-fit: cover;
+}
+
+.photo-caption {
+  font-size: 12px !important;
+  color: #6B4066 !important;
+  font-weight: 500;
+  padding: 10px 14px !important;
+  margin: 0 !important;
+  background: #faf7f2;
+  border-top: 1px solid #e8e5de;
+  letter-spacing: 0.02em;
+}
+
+.photo-caption.center {
+  text-align: center;
+  background: transparent;
+  border: none;
+  margin-top: -16px !important;
+  margin-bottom: 24px !important;
+}
+
+/* Before/After ペア */
+.photo-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin: 20px 0 16px;
+}
+
+.photo-pair-item {
+  position: relative;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #e8e5de;
+  aspect-ratio: 4 / 3;
+}
+
+.photo-pair-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.photo-pair-label {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: rgba(55, 65, 81, 0.85);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 3px;
+  letter-spacing: 0.06em;
+}
+
+.photo-pair-label.after {
+  background: rgba(107, 64, 102, 0.85);
+}
+
+/* Profile photo (in cards) */
+.profile-photo {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 12px;
+  display: block;
+  border: 3px solid rgba(201, 168, 76, 0.4);
 }
 
 /* Structure list (仲介業の3つの矛盾 etc) */
