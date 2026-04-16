@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { C, LINE_URL, TEL } from "../../tokens";
+import { trackLineCtaClick, trackPhoneCtaClick } from "../../utils/trackConversion";
 
 export default function V3FloatingCTA() {
   const [visible, setVisible] = useState(false);
@@ -34,10 +35,7 @@ export default function V3FloatingCTA() {
   const isShown = visible && !hiddenByFinalCTA;
 
   const handleClick = () => {
-    window.dataLayer?.push({
-      event: "line_cta_click",
-      cta_location: "floating",
-    });
+    trackLineCtaClick("bukken_floating_cta");
     window.open(LINE_URL, "_blank");
   };
 
@@ -120,9 +118,7 @@ export default function V3FloatingCTA() {
             textDecoration: "none",
           }}
           aria-label="電話で相談する"
-          onClick={() => {
-            window.dataLayer?.push({ event: "phone_cta_click", cta_location: "floating" });
-          }}
+          onClick={() => trackPhoneCtaClick("bukken_floating_cta")}
         >
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
             <path
