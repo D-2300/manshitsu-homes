@@ -61,7 +61,7 @@ export default function HPHero() {
             marginBottom: "8px",
           }}
         >
-          宮城のアパート投資 × 内装改修
+          物件探しから手伝う、宮城の内装屋
         </p>
 
         {/* Location */}
@@ -72,7 +72,7 @@ export default function HPHero() {
             letterSpacing: "0.1em",
           }}
         >
-          仙台・宮城
+          アパート投資 ／ 宮城県全域
         </p>
       </div>
 

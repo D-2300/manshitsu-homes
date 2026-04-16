@@ -231,8 +231,8 @@ export default function AboutPage() {
           <ScrollFadeIn>
             <SectionHeading en="SERVICE AREA" ja="対応エリア" />
             <p style={{ fontSize: typography.bodyLarge.size, color: C.textMid, lineHeight: 1.8 }}>
-              仙台市・宮城県を中心に対応しています。<br />
-              物件情報のご紹介も改修工事も宮城県内が対象です。
+              宮城県全域が対象です。<br />
+              近県（福島・山形・岩手）もご相談ください。
             </p>
           </ScrollFadeIn>
         </div>
@@ -245,7 +245,8 @@ export default function AboutPage() {
             <SectionHeading en="CONTACT" ja="まずはLINEでお気軽に" dark />
             <p style={{ fontSize: typography.bodyLarge.size, color: "rgba(255,255,255,.7)", lineHeight: 1.9, marginBottom: 28 }}>
               物件探し・改修診断・見積もり、すべて無料です。<br />
-              写真を送っていただければ、改修ポイントと概算費用をお返しします。
+              写真を送っていただければ、改修ポイントと概算費用をお返しします。<br />
+              売却のご相談も、買い手の情報は持っています。
             </p>
             <LineCTAButton size="large" label="LINEで相談する" />
           </ScrollFadeIn>

@@ -6,7 +6,7 @@ export default function HPWhatWeDo() {
     <section style={{ padding: `${spacing.section.md} ${spacing.pagePadding}`, background: C.warmWhite }}>
       <div style={{ maxWidth: spacing.contentMax.normal, margin: "0 auto", textAlign: "center" }}>
         <ScrollFadeIn>
-          <SectionHeading en="WHAT WE DO" ja="宮城のアパート投資 × 内装改修" />
+          <SectionHeading en="WHAT WE DO" ja="物件探しから、内装まで" />
           <p
             style={{
               fontSize: typography.bodyLarge.size,
@@ -15,8 +15,8 @@ export default function HPWhatWeDo() {
               marginBottom: 8,
             }}
           >
-            非公開のアパート投資物件情報と、<br />
-            利回りを最大化する内装改修を提供しています。
+            普通の内装屋は、物件を買った後に呼ばれる。<br />
+            うちは、買う前から相談に乗ります。
           </p>
           <p
             style={{
@@ -26,8 +26,8 @@ export default function HPWhatWeDo() {
               marginBottom: 32,
             }}
           >
-            入居後リフォーム・バーチャルステージング・改修診断を組み合わせて、<br />
-            ボロ物件を儲かる物件に変えます。
+            非公開の物件情報・古物件の改修診断・バーチャルステージングを<br />
+            一気通貫で。中間マージンなし、見積ズレなし。
           </p>
 
           {/* Price badges */}
