@@ -29,7 +29,9 @@ const STATIC_ROUTES = [
   "/works",
   "/pricing",
   "/articles",
-  "/lp/v1",
+  "/privacy",
+  "/tokushoho",
+  "/lp/bukken",
   "/lp/staging",
 ];
 

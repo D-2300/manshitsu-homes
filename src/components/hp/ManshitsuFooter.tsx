@@ -103,6 +103,31 @@ export default function ManshitsuFooter() {
         ))}
       </div>
 
+      {/* Legal links */}
+      <div
+        style={{
+          padding: "12px 24px",
+          display: "flex",
+          justifyContent: "center",
+          gap: 20,
+          flexWrap: "wrap",
+          borderBottom: "1px solid rgba(255,255,255,.08)",
+        }}
+      >
+        <Link
+          to="/privacy"
+          style={{ fontSize: 11, color: "rgba(255,255,255,.3)", textDecoration: "none" }}
+        >
+          プライバシーポリシー
+        </Link>
+        <Link
+          to="/tokushoho"
+          style={{ fontSize: 11, color: "rgba(255,255,255,.3)", textDecoration: "none" }}
+        >
+          特定商取引法に基づく表記
+        </Link>
+      </div>
+
       {/* Copyright */}
       <div style={{ padding: "20px 24px", textAlign: "center" }}>
         <p style={{ fontSize: 10, color: "rgba(255,255,255,.2)" }}>
