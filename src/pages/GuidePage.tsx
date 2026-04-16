@@ -108,6 +108,7 @@ export default function GuidePage() {
         <h2 className="chapter-heading-toc">目次</h2>
         <ol className="toc-list">
           <li><span className="toc-num">Ch.1</span><span>はじめに — なぜ今、宮城のアパート投資なのか</span></li>
+          <li><span className="toc-num">Ch.1-4</span><span>誰が書いているのか — 仲介業20年で気づいた構造の限界</span></li>
           <li><span className="toc-num">Ch.2</span><span>宮城の収益物件相場 — エリア別・築年別の実データ</span></li>
           <li><span className="toc-num">Ch.3</span><span>築古アパートの見極め方 — 3つの必須チェック</span></li>
           <li><span className="toc-num">Ch.4</span><span>指値交渉の実践テクニック — 想定問答と事例</span></li>
@@ -125,38 +126,192 @@ export default function GuidePage() {
         <div className="page-header"><span>Ch.1 はじめに</span></div>
         <h2 className="chapter-heading"><span className="chapter-no">Ch.1</span>はじめに — なぜ今、宮城のアパート投資なのか</h2>
 
+        {/* Illustration: 家と握手 */}
+        <div className="illust">
+          <svg viewBox="0 0 240 120" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" stroke="#6B4066" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              {/* 家 */}
+              <path d="M 40 80 L 80 40 L 120 80 L 120 110 L 40 110 Z" />
+              <path d="M 68 110 L 68 88 L 92 88 L 92 110" />
+              <rect x="48" y="66" width="12" height="12" />
+              <rect x="100" y="66" width="12" height="12" />
+              {/* 握手のアイコン */}
+              <circle cx="180" cy="60" r="28" stroke="#C9A84C" />
+              <path d="M 164 58 L 172 66 L 188 50" stroke="#C9A84C" strokeWidth="2.5" />
+              {/* 矢印 家→握手 */}
+              <path d="M 128 75 L 150 75" stroke="#C9A84C" strokeDasharray="3 3" />
+              <path d="M 146 72 L 150 75 L 146 78" stroke="#C9A84C" />
+            </g>
+          </svg>
+          <p className="illust-caption">物件を選ぶところから、一緒に</p>
+        </div>
+
         <h3 className="section-heading">1-1. このガイドで伝えたいこと</h3>
         <p>私たちは「満室デザインLABO」という、宮城県の内装工事チームです。物件を売ってお金をもらう立場にいません。物件を直して満室にして、その対価で生きています。</p>
         <p>この立場から、次のことをお伝えしたい：</p>
         <blockquote className="quote">「物件選びで失敗すれば、どんなに良い内装をしても回らない」</blockquote>
-        <p>これは、10年以上現場で見てきた実感です。どんなに塗装を綺麗にしても、立地が間違っていれば入居者は来ない。どんなに利回りが高い物件でも、躯体がダメなら改修費で利回りが消える。このガイドでは、<strong>物件を買う前に知っておくべきこと</strong>を、内装側から見た視点で体系化しました。</p>
+        <p>これは、20年以上現場で見てきた実感です。どんなに塗装を綺麗にしても、立地が間違っていれば入居者は来ない。どんなに利回りが高い物件でも、躯体がダメなら改修費で利回りが消える。このガイドでは、<strong>物件を買う前に知っておくべきこと</strong>を、内装側から見た視点で体系化しました。</p>
 
         <h3 className="section-heading">1-2. なぜ「宮城」なのか</h3>
         <p>宮城県、特に仙台圏は以下の理由で<strong>個人アパート投資の好適地</strong>です：</p>
         <ol className="ordered">
-          <li><strong>人口密度と賃貸需要</strong>：仙台市は人口109万人、東北唯一の100万都市。単身〜ファミリー層まで賃貸需要が厚い</li>
-          <li><strong>物件価格の妥当性</strong>：東京・大阪と比べ1棟物件が1/3〜1/2の価格。利回りが出しやすい</li>
-          <li><strong>地方都市特有の"非公開物件"が多い</strong>：地元不動産屋のネットワーク経由でしか出ない物件が相当数ある</li>
-          <li><strong>首都圏からの距離感</strong>：新幹線で90分。東京在住オーナーが月1で管理可能</li>
+          <li><strong>人口密度と賃貸需要</strong>：仙台市は人口109万人、東北唯一の100万都市</li>
+          <li><strong>物件価格の妥当性</strong>：東京・大阪と比べ1棟物件が1/3〜1/2の価格</li>
+          <li><strong>地方特有の"非公開物件"が流通</strong>：地元ネットワーク経由の情報が多い</li>
+          <li><strong>首都圏からの距離感</strong>：新幹線で90分。月1管理が可能</li>
         </ol>
-
         <p>一方、注意すべきは：</p>
         <ul>
-          <li><strong>人口減少局面</strong>：仙台市中心部は安定だが、石巻・気仙沼など沿岸部や県北は減少傾向</li>
+          <li><strong>人口減少局面</strong>：仙台市中心部は安定だが、沿岸部や県北は減少傾向</li>
           <li><strong>雪・寒冷地リスク</strong>：屋根・配管・外壁の傷みが西日本より早い</li>
           <li><strong>地震リスク</strong>：1978年以前の旧耐震物件は避ける or 大幅指値</li>
         </ul>
 
         <h3 className="section-heading">1-3. いま動くべきタイミングか</h3>
-        <p>2026年時点で、全国のアパート投資系キーワード検索量は前年比 <strong>-18〜-33%</strong> で減少中です（Google Ads データ）。これは「新規参入する投資家が減っている」ことを意味します。</p>
-        <p>参入者が減る＝競合が減る＝良い物件を<strong>相対的に取りやすくなる</strong>タイミング。金利上昇で買い手が慎重になっている今、<strong>売り急ぎ案件</strong>が出やすいフェーズでもあります。</p>
+        <p>2026年時点で、全国のアパート投資系キーワード検索量は前年比 <strong>-18〜-33%</strong> で減少中。これは「新規参入する投資家が減っている」ことを意味します。参入者が減る＝競合が減る＝良い物件を<strong>相対的に取りやすくなる</strong>タイミング。金利上昇で売り急ぎ案件も出やすいフェーズです。</p>
         <blockquote className="quote">「市場が縮む前にポジションを取る」<br />— これが、長期で勝つアパートオーナーの共通行動です。</blockquote>
+      </article>
+
+      {/* ===== Ch.1-4 誰がやるか（新規追加・独立ページ） ===== */}
+      <article className="page">
+        <div className="page-header"><span>Ch.1 - WHO WE ARE</span></div>
+        <h2 className="chapter-heading"><span className="chapter-no">Ch.1-4</span>誰が書いているのか — 仲介業20年で気づいた"構造の限界"</h2>
+
+        <p>この章は、このガイドを書いている<strong>「私たちは誰か」</strong>という話です。ここに納得できなければ、以降のノウハウも机上の空論に読めてしまう。だから先にお伝えします。</p>
+
+        {/* Illustration: 旅のような挿絵 */}
+        <div className="illust">
+          <svg viewBox="0 0 280 120" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" stroke="#6B4066" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              {/* Before: 仲介業（ビル） */}
+              <rect x="20" y="30" width="60" height="80" />
+              <line x1="35" y1="45" x2="45" y2="45" />
+              <line x1="55" y1="45" x2="65" y2="45" />
+              <line x1="35" y1="60" x2="45" y2="60" />
+              <line x1="55" y1="60" x2="65" y2="60" />
+              <line x1="35" y1="75" x2="45" y2="75" />
+              <line x1="55" y1="75" x2="65" y2="75" />
+              <line x1="35" y1="90" x2="45" y2="90" />
+              <line x1="55" y1="90" x2="65" y2="90" />
+              <text x="50" y="22" fontSize="8" textAnchor="middle" fill="#888" stroke="none">仲介業20年</text>
+
+              {/* Arrow */}
+              <path d="M 100 70 L 180 70" stroke="#C9A84C" strokeWidth="2" />
+              <path d="M 172 64 L 180 70 L 172 76" stroke="#C9A84C" strokeWidth="2" />
+              <text x="140" y="62" fontSize="8" textAnchor="middle" fill="#C9A84C" stroke="none">転身</text>
+
+              {/* After: 内装屋（家＋ハンマー） */}
+              <path d="M 200 80 L 240 40 L 280 80 L 280 110 L 200 110 Z" stroke="#C9A84C" />
+              <path d="M 225 110 L 225 92 L 255 92 L 255 110" stroke="#C9A84C" />
+              {/* ハンマーアイコン */}
+              <g transform="translate(215, 55)">
+                <rect x="-4" y="-8" width="14" height="8" fill="#C9A84C" stroke="#C9A84C" />
+                <line x1="-4" y1="-4" x2="-20" y2="12" strokeWidth="2" stroke="#C9A84C" />
+              </g>
+              <text x="240" y="32" fontSize="8" textAnchor="middle" fill="#C9A84C" stroke="none">内装屋</text>
+            </g>
+          </svg>
+          <p className="illust-caption">20年の仲介経験から、買主の味方になれる立場へ</p>
+        </div>
+
+        <h3 className="section-heading">元・不動産仲介業20年</h3>
+        <p>満室デザインLABOのメンバーの一人（<strong>KAI</strong>）は、宮城県内で<strong>不動産仲介業を約20年</strong>やってきました。住宅・テナント・収益物件、ひと通り扱ってきました。</p>
+        <p>その中で、ずっと抱えていた違和感があります。</p>
+        <blockquote className="quote">「仲介業では、本当の意味でお客様の立場に立ちきれない」</blockquote>
+
+        <h3 className="section-heading">なぜ仲介業では"買主の味方"になれないのか</h3>
+        <p>仲介業には構造的な矛盾があります。</p>
+
+        <div className="structure">
+          <div className="structure-item">
+            <p className="structure-title">① 営業ノルマの圧力</p>
+            <p className="structure-body">月ごとの成約目標があると、「物件を決めなければいけない」という強い営業心が先に立つ。「本当はこの物件は勧めない方がいい」と思っても、他に候補がなければ推してしまう。</p>
+          </div>
+          <div className="structure-item">
+            <p className="structure-title">② 売主の立場にならざるを得ない</p>
+            <p className="structure-body">独立開業して自分で売物件を預かっても、結局「売主から預かった物件を売り切る」ことが仕事になる。買主の代わりに指値を強く入れるほど、売主との関係が悪くなる。</p>
+          </div>
+          <div className="structure-item">
+            <p className="structure-title">③ 仲介手数料は物件単価に比例</p>
+            <p className="structure-body">高い物件を売るほど自分の取り分も増える。客のためには安い物件の方が良くても、自分の利益とは一致しない。</p>
+          </div>
+        </div>
+
+        <p>この3つの構造は、<strong>どこの不動産屋に行っても変わりません</strong>。会社の方針や担当者の人柄の問題ではなく、仲介というビジネスモデル自体が内包する矛盾です。</p>
+
+        <h3 className="section-heading">だから仲介業を"辞めた"</h3>
+        <p>20年続けた仲介業を辞めるのは、簡単な決断ではありませんでした。でも「このまま続けても、お客様の本当の味方にはなれない」という実感が、ある時から消えなくなった。</p>
+        <p>辞めた後、どうやって大家さんの役に立てるかを考えた結論が、<strong>内装業の立場から関わる</strong>という道でした。</p>
+
+        <div className="benefit-list">
+          <div className="benefit-item">
+            <span className="benefit-icon">◆</span>
+            <p><strong>物件売買では儲けない</strong>：どの物件を選んでもらっても構わない</p>
+          </div>
+          <div className="benefit-item">
+            <span className="benefit-icon">◆</span>
+            <p><strong>内装工事で対価をいただく</strong>：物件を「良くする」ことにインセンティブがある</p>
+          </div>
+          <div className="benefit-item">
+            <span className="benefit-icon">◆</span>
+            <p><strong>仲介手数料ゼロ</strong>：大家さんの手取りを減らさない</p>
+          </div>
+        </div>
+
+        <p>この立場なら、20年の仲介経験を活かして「この物件は買うべきではない」と本音で言える。今までできなかったことが、ようやくできるようになりました。</p>
+
+        <h3 className="section-heading">大工KENとの出会い、職人チームへ</h3>
+        <p>その後、大工歴20年超の<strong>KEN</strong>と意気投合し、内装業としての会社を立ち上げました。</p>
+        <div className="profile-cards">
+          <div className="profile-card">
+            <p className="profile-name">KAI</p>
+            <p className="profile-role">元・不動産業20年</p>
+            <p className="profile-desc">物件の見極め・交渉・客付けの実務</p>
+          </div>
+          <div className="profile-card">
+            <p className="profile-name">KEN</p>
+            <p className="profile-role">大工歴20年超</p>
+            <p className="profile-desc">設計から施工まで現場を動かす技術</p>
+          </div>
+        </div>
+        <p>二人で<strong>職人集団として満室デザインLABO</strong>を作ったのが今の形です。不動産の目と職人の手、どちらも揃って初めて、物件探しから内装改修・客付けまで一気通貫で伴走できます。</p>
+
+        <div className="sidebar">
+          <p className="sidebar-label">このガイドで伝える"視点"</p>
+          <p>このガイドの内容は、20年の仲介現場で<strong>「本当はお客様にこう伝えたかった」内容の集大成</strong>です。売主側にいると言えなかったこと、仲介手数料を取る立場では言えなかったこと。全部、<strong>買主・大家側の視点</strong>でまとめました。</p>
+        </div>
       </article>
 
       {/* ===== Ch.2 ===== */}
       <article className="page">
         <div className="page-header"><span>Ch.2 宮城の収益物件相場</span></div>
         <h2 className="chapter-heading"><span className="chapter-no">Ch.2</span>宮城の収益物件相場 — エリア別・築年別の実データ</h2>
+
+        {/* Illustration: 宮城県マップ風 */}
+        <div className="illust">
+          <svg viewBox="0 0 240 140" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" stroke="#6B4066" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              {/* 宮城県の輪郭（簡略） */}
+              <path d="M 60 30 L 100 25 L 140 28 L 170 40 L 185 70 L 175 100 L 140 115 L 100 112 L 70 105 L 55 80 L 50 55 Z" />
+              {/* 仙台 */}
+              <circle cx="110" cy="75" r="6" fill="#C9A84C" stroke="#C9A84C" />
+              <text x="110" y="92" fontSize="8" textAnchor="middle" fill="#6B4066" stroke="none">仙台</text>
+              {/* 石巻 */}
+              <circle cx="160" cy="70" r="4" fill="#6B4066" />
+              <text x="160" y="60" fontSize="7" textAnchor="middle" fill="#6B4066" stroke="none">石巻</text>
+              {/* 大崎 */}
+              <circle cx="100" cy="45" r="4" fill="#6B4066" />
+              <text x="100" y="38" fontSize="7" textAnchor="middle" fill="#6B4066" stroke="none">大崎</text>
+              {/* 気仙沼 */}
+              <circle cx="170" cy="42" r="3" fill="#6B4066" />
+              <text x="170" y="34" fontSize="7" textAnchor="middle" fill="#6B4066" stroke="none">気仙沼</text>
+              {/* 名取 */}
+              <circle cx="108" cy="95" r="3" fill="#6B4066" />
+              <text x="108" y="108" fontSize="7" textAnchor="middle" fill="#6B4066" stroke="none">名取</text>
+            </g>
+          </svg>
+          <p className="illust-caption">宮城県 — エリアごとの利回り・価格帯は大きく異なる</p>
+        </div>
 
         <h3 className="section-heading">2-1. エリア別の相場感（2026年4月時点）</h3>
         <table className="data-table">
@@ -195,21 +350,85 @@ export default function GuidePage() {
         </table>
         <p className="note"><strong>新耐震基準（1981年6月以降建築）</strong>かどうかは必ず確認。旧耐震物件は融資が付きにくく、売却時も苦戦します。</p>
 
-        <h3 className="section-heading">2-3. 実例：現在ご紹介可能な物件の一部</h3>
-        <ul className="bukken-list">
-          <li>仙台市太白区・築22年・1棟4室 — <strong>780万円・利回り12.3%</strong>・満室稼働中</li>
-          <li>多賀城市・築30年・1棟6室 — <strong>450万円・利回り15.8%</strong>・要改修</li>
-          <li>石巻市・築25年・1棟8室 — <strong>620万円・利回り14.1%</strong>・駐車場付</li>
-          <li>大崎市・築32年・1棟6室 — <strong>320万円・利回り18.1%</strong>・空室3/6</li>
-          <li>名取市・築24年・1棟4室 — <strong>540万円・利回り13.2%</strong>・駅徒歩12分</li>
+        <h3 className="section-heading">2-3. "非公開物件"の正体</h3>
+        <p>このガイドを読んでいる方に、最初にお伝えしておきたいことがあります。</p>
+        <blockquote className="quote">「非公開物件＝超お得な物件」ではありません。</blockquote>
+        <p>巷で「非公開物件を紹介します」という営業トークをよく見かけますが、実態は違います。非公開物件が世の中にある理由は、大きく3つです。</p>
+
+        <div className="structure">
+          <div className="structure-item">
+            <p className="structure-title">① 売主が"相場観のつく広告"を避けたい</p>
+            <p className="structure-body">相場感のある買い手に「高すぎる」と見抜かれないよう、露出を絞っているケース。</p>
+          </div>
+          <div className="structure-item">
+            <p className="structure-title">② 物件に表に出しにくい事情がある</p>
+            <p className="structure-body">瑕疵・近隣トラブル・管理の問題など、ネット掲載で顕在化すると困る情報があるケース。</p>
+          </div>
+          <div className="structure-item">
+            <p className="structure-title">③ 業者関係の義理で限定的に流通</p>
+            <p className="structure-body">売主と特定業者のしがらみで、一部にだけ情報が流れるケース。</p>
+          </div>
+        </div>
+
+        <p>つまり、<strong>非公開物件には高条件のものばかりが転がっているわけではありません</strong>。むしろ、普通に公開されている物件の方が条件が良いケースも多い。</p>
+
+        <h3 className="section-heading">弊社が扱う非公開物件の方針</h3>
+        <p>弊社には宮城県内で「市場に出ていない物件情報」が継続的に入ってきます。ただし、これらを誰にでも紹介しているわけではありません。</p>
+        <p><strong>紹介するのは、お客様の属性・資金力・投資方針にフィットした時だけ</strong>です。「非公開物件があります！」と煽って登録を誘うような運用はしません。</p>
+
+        <ul>
+          <li>予算500万円の方に3,000万円の物件を紹介しても意味がない</li>
+          <li>初心者の方に築40年の再生物件を渡しても事故が起きる</li>
+          <li>地元在住の方にしか管理できないエリアを首都圏投資家に勧めない</li>
         </ul>
-        <p className="note">これ以外にも、市場に出ていない物件を常時30〜45件保有。LINEで「物件リクエスト」と送っていただければ、条件に合うものを数日以内にお届けします。</p>
+
+        <p>条件のフィットしない物件を「ご紹介しました」という形式だけ作っても、お客様のためにならない。この方針のため、<strong>ご相談いただいてから、お客様の状況に合うものがあればお送りする</strong>という順序です。</p>
+
+        <div className="sidebar">
+          <p className="sidebar-label">まずは条件をお聞かせください</p>
+          <p>LINEで「物件リクエスト」と送っていただく際に、以下をお伝えください：</p>
+          <p style={{ marginTop: 8 }}>
+            ・<strong>予算の上限</strong>（自己資金と融資想定）<br />
+            ・<strong>エリア希望</strong>（仙台中心部 / 郊外 / 地方都市）<br />
+            ・<strong>物件タイプ</strong>（一棟アパート / 区分 / 戸建て）<br />
+            ・<strong>築年数の許容範囲</strong><br />
+            ・<strong>投資経験</strong>（初めて / 2棟目以降 / ベテラン）
+          </p>
+          <p style={{ marginTop: 8 }}>フィットする物件があれば数日〜数週間以内にお送りします。無ければ<strong>「今はありません」とはっきりお伝えします</strong>。下手な営業で無理に紹介するくらいなら、黙って待つ方が誠実だと思っています。</p>
+        </div>
       </article>
 
       {/* ===== Ch.3 ===== */}
       <article className="page">
         <div className="page-header"><span>Ch.3 築古アパートの見極め方</span></div>
         <h2 className="chapter-heading"><span className="chapter-no">Ch.3</span>築古アパートの見極め方 — 3つの必須チェック</h2>
+
+        {/* Illustration: 虫眼鏡＋チェックリスト */}
+        <div className="illust">
+          <svg viewBox="0 0 240 120" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" stroke="#6B4066" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              {/* 家 */}
+              <path d="M 30 90 L 60 60 L 90 90 L 90 110 L 30 110 Z" />
+              <rect x="45" y="80" width="10" height="20" />
+              <rect x="67" y="75" width="10" height="10" />
+              {/* 虫眼鏡 */}
+              <circle cx="60" cy="75" r="20" stroke="#C9A84C" strokeWidth="2" />
+              <line x1="74" y1="89" x2="88" y2="103" stroke="#C9A84C" strokeWidth="3" />
+              {/* チェックリスト */}
+              <rect x="140" y="25" width="80" height="80" rx="4" fill="#FAF8F3" />
+              <line x1="150" y1="38" x2="210" y2="38" stroke="#ddd" />
+              <path d="M 150 45 L 154 49 L 162 41" stroke="#C9A84C" strokeWidth="2" />
+              <line x1="170" y1="45" x2="210" y2="45" />
+              <path d="M 150 60 L 154 64 L 162 56" stroke="#C9A84C" strokeWidth="2" />
+              <line x1="170" y1="60" x2="210" y2="60" />
+              <path d="M 150 75 L 154 79 L 162 71" stroke="#C9A84C" strokeWidth="2" />
+              <line x1="170" y1="75" x2="210" y2="75" />
+              <line x1="150" y1="90" x2="210" y2="90" stroke="#ddd" />
+              <line x1="150" y1="100" x2="200" y2="100" stroke="#ddd" />
+            </g>
+          </svg>
+          <p className="illust-caption">現地で3つのポイントを見るだけで、失敗の8割は防げる</p>
+        </div>
 
         <h3 className="section-heading">3-1. チェックポイント① 給排水設備</h3>
         <p><strong>なぜ最重要か</strong>：配管の一斉更新は <strong>200〜400万円</strong>。利回り15%の物件でも、購入後すぐ更新が必要なら実質利回りは半減します。</p>
@@ -266,6 +485,34 @@ export default function GuidePage() {
         <div className="page-header"><span>Ch.4 指値交渉の実践テクニック</span></div>
         <h2 className="chapter-heading"><span className="chapter-no">Ch.4</span>指値交渉の実践テクニック — 想定問答と事例</h2>
 
+        {/* Illustration: 天秤（交渉のバランス） */}
+        <div className="illust">
+          <svg viewBox="0 0 240 120" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" stroke="#6B4066" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              {/* 柱 */}
+              <line x1="120" y1="20" x2="120" y2="100" strokeWidth="2" />
+              <rect x="108" y="98" width="24" height="8" />
+              {/* 横棒 */}
+              <line x1="60" y1="40" x2="180" y2="40" strokeWidth="2" />
+              {/* 左皿：売主希望 */}
+              <line x1="60" y1="40" x2="50" y2="60" />
+              <line x1="60" y1="40" x2="70" y2="60" />
+              <path d="M 45 60 Q 60 70 75 60" />
+              <text x="60" y="84" fontSize="8" textAnchor="middle" fill="#888" stroke="none">売主希望</text>
+              <text x="60" y="94" fontSize="9" textAnchor="middle" fontWeight="700" fill="#6B4066" stroke="none">¥¥¥</text>
+              {/* 右皿：指値 */}
+              <line x1="180" y1="40" x2="170" y2="55" />
+              <line x1="180" y1="40" x2="190" y2="55" />
+              <path d="M 165 55 Q 180 62 195 55" stroke="#C9A84C" strokeWidth="2" />
+              <text x="180" y="80" fontSize="8" textAnchor="middle" fill="#C9A84C" stroke="none">根拠ある指値</text>
+              <text x="180" y="90" fontSize="9" textAnchor="middle" fontWeight="700" fill="#C9A84C" stroke="none">¥¥</text>
+              {/* 中心 */}
+              <circle cx="120" cy="40" r="4" fill="#C9A84C" stroke="#C9A84C" />
+            </g>
+          </svg>
+          <p className="illust-caption">根拠があれば、数十〜数百万の調整は十分通る</p>
+        </div>
+
         <h3 className="section-heading">4-1. 指値の基本ルール</h3>
         <p><strong>原則1: 根拠のない指値は通らない</strong><br />「何となく500万円で」は絶対に通りません。売主も仲介も、明確な数字の根拠を持つ買主にだけ応じます。</p>
         <p><strong>原則2: 最初から本命価格を出さない</strong><br />満額+5%くらいで準備しておき、指値交渉の段階で最終価格に落とす。</p>
@@ -321,6 +568,32 @@ export default function GuidePage() {
         <div className="page-header"><span>Ch.5 改修費の相場早見表</span></div>
         <h2 className="chapter-heading"><span className="chapter-no">Ch.5</span>改修費の相場早見表 — 部屋タイプ別・単価公開</h2>
 
+        {/* Illustration: ツール */}
+        <div className="illust">
+          <svg viewBox="0 0 240 100" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" stroke="#6B4066" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              {/* ハンマー */}
+              <rect x="30" y="30" width="30" height="14" fill="#C9A84C" stroke="#C9A84C" />
+              <line x1="30" y1="37" x2="12" y2="75" strokeWidth="3" />
+              {/* 刷毛 */}
+              <line x1="120" y1="25" x2="100" y2="60" strokeWidth="3" />
+              <rect x="96" y="58" width="20" height="14" fill="#6B4066" transform="rotate(25 106 65)" />
+              {/* 定規 */}
+              <rect x="140" y="40" width="90" height="10" />
+              <line x1="150" y1="40" x2="150" y2="46" />
+              <line x1="160" y1="40" x2="160" y2="50" />
+              <line x1="170" y1="40" x2="170" y2="46" />
+              <line x1="180" y1="40" x2="180" y2="50" />
+              <line x1="190" y1="40" x2="190" y2="46" />
+              <line x1="200" y1="40" x2="200" y2="50" />
+              <line x1="210" y1="40" x2="210" y2="46" />
+              <line x1="220" y1="40" x2="220" y2="50" />
+            </g>
+            {/* 金額 */}
+            <text x="120" y="92" fontSize="10" textAnchor="middle" fill="#C9A84C" fontWeight="700">単価・㎡数・材料名すべて公開</text>
+          </svg>
+        </div>
+
         <h3 className="section-heading">5-1. 原状回復（退去後の通常改修）</h3>
         <table className="data-table">
           <thead><tr><th>項目</th><th>単価</th><th>備考</th></tr></thead>
@@ -372,6 +645,36 @@ export default function GuidePage() {
         <div className="page-header"><span>Ch.6 客付けの基礎</span></div>
         <h2 className="chapter-heading"><span className="chapter-no">Ch.6</span>客付けの基礎 — バーチャルステージング活用</h2>
 
+        {/* Illustration: Before → After 家具配置 */}
+        <div className="illust">
+          <svg viewBox="0 0 260 110" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" stroke="#6B4066" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              {/* Before: 空室 */}
+              <rect x="15" y="25" width="90" height="70" />
+              <text x="60" y="18" fontSize="9" textAnchor="middle" fill="#888" stroke="none">Before</text>
+              <text x="60" y="65" fontSize="8" textAnchor="middle" fill="#aaa" stroke="none">空室・家具なし</text>
+              {/* 矢印 */}
+              <path d="M 115 60 L 145 60" stroke="#C9A84C" strokeWidth="2" />
+              <path d="M 138 55 L 145 60 L 138 65" stroke="#C9A84C" strokeWidth="2" />
+              <text x="130" y="52" fontSize="7" textAnchor="middle" fill="#C9A84C" stroke="none">VS</text>
+              {/* After: 家具付き */}
+              <rect x="155" y="25" width="90" height="70" stroke="#C9A84C" />
+              <text x="200" y="18" fontSize="9" textAnchor="middle" fill="#C9A84C" stroke="none">After</text>
+              {/* ソファ */}
+              <rect x="165" y="70" width="30" height="18" rx="3" fill="rgba(201,168,76,0.2)" stroke="#C9A84C" />
+              {/* テーブル */}
+              <circle cx="215" cy="80" r="8" stroke="#C9A84C" />
+              {/* 照明 */}
+              <line x1="200" y1="25" x2="200" y2="40" stroke="#C9A84C" />
+              <path d="M 195 40 L 205 40 L 202 48 L 198 48 Z" fill="rgba(201,168,76,0.3)" stroke="#C9A84C" />
+              {/* 植物 */}
+              <rect x="230" y="58" width="8" height="10" stroke="#C9A84C" />
+              <circle cx="234" cy="55" r="5" stroke="#C9A84C" />
+            </g>
+          </svg>
+          <p className="illust-caption">バーチャルステージングで内見クリック率は2〜3倍に</p>
+        </div>
+
         <h3 className="section-heading">6-1. 客付けの原則</h3>
         <p>アパート投資は「<strong>満室で初めて利回り通り</strong>」。いかに空室を減らすかが全てです。</p>
         <p>客付けの成功率は以下の3要素で決まります：</p>
@@ -414,6 +717,32 @@ export default function GuidePage() {
         <div className="page-header"><span>Ch.7 失敗事例10選</span></div>
         <h2 className="chapter-heading"><span className="chapter-no">Ch.7</span>失敗事例10選 — よくある落とし穴と回避策</h2>
 
+        {/* Illustration: 警告 */}
+        <div className="illust">
+          <svg viewBox="0 0 240 100" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" stroke="#C44D3F" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              {/* 落とし穴のシルエット */}
+              <path d="M 20 70 L 60 70 L 75 85 L 115 85 L 135 70 L 200 70 L 220 70" strokeWidth="2" />
+              {/* 穴 */}
+              <ellipse cx="95" cy="85" rx="22" ry="4" fill="rgba(196,77,63,0.1)" />
+              {/* 歩いている人（棒人間） */}
+              <circle cx="40" cy="50" r="6" />
+              <line x1="40" y1="56" x2="40" y2="68" />
+              <line x1="40" y1="62" x2="32" y2="58" />
+              <line x1="40" y1="62" x2="48" y2="58" />
+              <line x1="40" y1="68" x2="35" y2="74" />
+              <line x1="40" y1="68" x2="45" y2="70" />
+              {/* 警告マーク */}
+              <g transform="translate(170, 30)">
+                <path d="M 0 -16 L 16 12 L -16 12 Z" fill="rgba(196,77,63,0.1)" />
+                <line x1="0" y1="-6" x2="0" y2="4" strokeWidth="2" />
+                <circle cx="0" cy="8" r="1.5" fill="#C44D3F" />
+              </g>
+            </g>
+          </svg>
+          <p className="illust-caption">先人が踏んだ落とし穴を、避けて通ろう</p>
+        </div>
+
         {[
           { n: 1, title: "表面利回りだけで飛びついた", sym: "利回り20%の物件を購入 → 改修費300万円 → 実質12%に", sol: "Ch.3のチェックリストを現地で必ず実施" },
           { n: 2, title: "旧耐震物件を知らず買った", sym: "1980年築を購入 → 融資付かず売却困難", sol: "1981年6月以降建築を厳守" },
@@ -438,6 +767,35 @@ export default function GuidePage() {
       <article className="page">
         <div className="page-header"><span>Ch.8 まとめ</span></div>
         <h2 className="chapter-heading"><span className="chapter-no">Ch.8</span>まとめ — 次の1歩</h2>
+
+        {/* Illustration: 階段・次の一歩 */}
+        <div className="illust">
+          <svg viewBox="0 0 240 110" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" stroke="#6B4066" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+              {/* 階段 */}
+              <path d="M 20 95 L 60 95 L 60 75 L 100 75 L 100 55 L 140 55 L 140 35 L 200 35" strokeWidth="2" />
+              {/* ステップラベル */}
+              <text x="40" y="110" fontSize="8" textAnchor="middle" fill="#888" stroke="none">Now</text>
+              <text x="80" y="70" fontSize="8" textAnchor="middle" fill="#6B4066" stroke="none">条件</text>
+              <text x="120" y="50" fontSize="8" textAnchor="middle" fill="#6B4066" stroke="none">情報</text>
+              <text x="170" y="30" fontSize="8" textAnchor="middle" fill="#C9A84C" stroke="none">現地</text>
+              {/* 星（ゴール） */}
+              <g transform="translate(210, 20)">
+                <path d="M 0 -8 L 2 -2 L 8 -2 L 3 2 L 5 8 L 0 4 L -5 8 L -3 2 L -8 -2 L -2 -2 Z" fill="#C9A84C" stroke="#C9A84C" />
+              </g>
+              {/* 歩く人 */}
+              <g transform="translate(40, 80)">
+                <circle cx="0" cy="0" r="5" />
+                <line x1="0" y1="5" x2="0" y2="15" />
+                <line x1="0" y1="10" x2="-6" y2="7" />
+                <line x1="0" y1="10" x2="6" y2="7" />
+                <line x1="0" y1="15" x2="-5" y2="22" />
+                <line x1="0" y1="15" x2="5" y2="20" />
+              </g>
+            </g>
+          </svg>
+          <p className="illust-caption">1歩ずつ、確実に</p>
+        </div>
 
         <h3 className="section-heading">この7つをメモしてください</h3>
         <ol className="ordered big">
@@ -1136,6 +1494,138 @@ const styles = `
   font-weight: 500;
 }
 
+/* Illustration */
+.illust {
+  margin: 24px auto 32px;
+  padding: 20px 16px 12px;
+  background: linear-gradient(180deg, #faf7f2 0%, #fff 100%);
+  border: 1px solid #e8e5de;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.illust svg {
+  width: 100%;
+  max-width: 280px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.illust-caption {
+  font-size: 12px !important;
+  color: #6B4066 !important;
+  font-weight: 500;
+  margin-top: 8px !important;
+  margin-bottom: 0 !important;
+  letter-spacing: 0.03em;
+}
+
+/* Structure list (仲介業の3つの矛盾 etc) */
+.structure {
+  margin: 20px 0;
+}
+
+.structure-item {
+  background: #fff;
+  border-left: 4px solid #6B4066;
+  border-top: 1px solid #e0d8cc;
+  border-right: 1px solid #e0d8cc;
+  border-bottom: 1px solid #e0d8cc;
+  border-radius: 0 8px 8px 0;
+  padding: 14px 18px;
+  margin-bottom: 10px;
+}
+
+.structure-title {
+  font-size: 14px !important;
+  font-weight: 700;
+  color: #442940;
+  margin-bottom: 6px !important;
+}
+
+.structure-body {
+  font-size: 13px !important;
+  color: #555 !important;
+  line-height: 1.8 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Benefit list (内装屋の立場の利点) */
+.benefit-list {
+  background: linear-gradient(135deg, #F0E6ED 0%, #f5eef3 100%);
+  border: 1px solid #d8c8d4;
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin: 20px 0;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.benefit-item:last-child {
+  margin-bottom: 0;
+}
+
+.benefit-icon {
+  color: #C9A84C;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.4;
+  flex-shrink: 0;
+}
+
+.benefit-item p {
+  margin-bottom: 0 !important;
+  font-size: 14px !important;
+  color: #442940 !important;
+  line-height: 1.7 !important;
+}
+
+/* Profile cards (KAI & KEN) */
+.profile-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.profile-card {
+  background: #442940;
+  color: #fff;
+  border-radius: 10px;
+  padding: 20px 16px;
+  text-align: center;
+  border: 1px solid #6B4066;
+}
+
+.profile-name {
+  font-size: 22px !important;
+  font-weight: 900;
+  color: #fff !important;
+  margin-bottom: 4px !important;
+  letter-spacing: 0.1em;
+}
+
+.profile-role {
+  font-size: 11px !important;
+  color: #C9A84C !important;
+  margin-bottom: 10px !important;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.profile-desc {
+  font-size: 12px !important;
+  color: rgba(255,255,255,0.7) !important;
+  line-height: 1.7 !important;
+  margin-bottom: 0 !important;
+}
+
 @media (max-width: 640px) {
   .page {
     padding: 40px 24px;
@@ -1145,6 +1635,9 @@ const styles = `
   }
   .cover-title-l2, .cover-title-l3 {
     font-size: 40px;
+  }
+  .profile-cards {
+    grid-template-columns: 1fr;
   }
 }
 
