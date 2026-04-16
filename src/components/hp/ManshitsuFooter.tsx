@@ -71,7 +71,7 @@ export default function ManshitsuFooter() {
             lineHeight: 1.8,
           }}
         >
-          仙台市・宮城県を中心に対応しています。
+          宮城県全域が対象です。近県もご相談ください。
         </p>
       </div>
 
