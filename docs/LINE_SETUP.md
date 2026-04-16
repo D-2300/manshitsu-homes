@@ -103,7 +103,7 @@
 ━━━━━━━━━━━━━━━
 
 ⬇ こちらからダウンロード
-https://manshitsu.homes/guide/bukken-guide.pdf
+https://manshitsu.homes/guide/bukken
 ```
 ※ PDFがまだ無い場合は、この行を **「PDFは準備中です。明日までにお送りします！」** に一時差し替え。完成後更新。
 
@@ -210,7 +210,7 @@ https://manshitsu.homes/guide/bukken-guide.pdf
 📖 無料ガイド「宮城のアパート投資 攻略ガイド」
 
 ▼ こちらから再ダウンロードいただけます
-https://manshitsu.homes/guide/bukken-guide.pdf
+https://manshitsu.homes/guide/bukken
 
 ダウンロードできない場合は
 「ガイドが開けない」と返信ください🙏

@@ -31,6 +31,7 @@ const STATIC_ROUTES = [
   "/articles",
   "/privacy",
   "/tokushoho",
+  "/guide/bukken",
   "/lp/bukken",
   "/lp/staging",
 ];

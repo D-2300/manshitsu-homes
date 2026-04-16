@@ -9,6 +9,7 @@ import ArticleListPage from './pages/ArticleListPage';
 import ArticlePage from './pages/ArticlePage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TokushohoPage from './pages/TokushohoPage';
+import GuidePage from './pages/GuidePage';
 import { ScrollToTop } from './shared';
 
 export default function AppRoutes() {
@@ -25,6 +26,7 @@ export default function AppRoutes() {
         <Route path="/articles/:slug" element={<ArticlePage />} />
         <Route path="/privacy" element={<PrivacyPolicyPage />} />
         <Route path="/tokushoho" element={<TokushohoPage />} />
+        <Route path="/guide/bukken" element={<GuidePage />} />
         <Route path="/lp/bukken" element={<BukkenLPPage />} />
         {/* /lp/staging は既存広告URL継承のため新LPへルーティング */}
         <Route path="/lp/staging" element={<BukkenLPPage />} />
