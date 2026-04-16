@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1800" viewBox="0 0 1200 1800">
+  <!-- 満室デザインLABO 攻略ガイド 表紙 -->
+  <!-- A4比率・LINE送信用 1200×1800 -->
+
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#442940"/>
+      <stop offset="60%" stop-color="#5A3454"/>
+      <stop offset="100%" stop-color="#6B4066"/>
+    </linearGradient>
+    <radialGradient id="spotlight" cx="50%" cy="30%" r="55%">
+      <stop offset="0%" stop-color="rgba(201,168,76,0.25)"/>
+      <stop offset="70%" stop-color="rgba(201,168,76,0.05)"/>
+      <stop offset="100%" stop-color="rgba(201,168,76,0)"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="1800" fill="url(#bg)"/>
+  <rect width="1200" height="1800" fill="url(#spotlight)"/>
+
+  <!-- Top gold bar -->
+  <rect x="0" y="0" width="1200" height="6" fill="#C9A84C"/>
+  <!-- Bottom gold bar -->
+  <rect x="0" y="1794" width="1200" height="6" fill="#C9A84C"/>
+
+  <!-- Category label -->
+  <text x="600" y="260" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', sans-serif" font-size="28" font-weight="500" fill="#C9A84C" letter-spacing="12">FREE GUIDE</text>
+
+  <!-- Gold divider -->
+  <line x1="540" y1="310" x2="660" y2="310" stroke="#C9A84C" stroke-width="2"/>
+
+  <!-- Main title (大) -->
+  <g>
+    <text x="600" y="550" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Mincho Pro', 'Yu Mincho', serif" font-size="110" font-weight="700" fill="#FFFFFF" letter-spacing="8">宮城の</text>
+    <text x="600" y="720" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Mincho Pro', 'Yu Mincho', serif" font-size="140" font-weight="700" fill="#FFFFFF" letter-spacing="10">アパート投資</text>
+    <text x="600" y="880" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Mincho Pro', 'Yu Mincho', serif" font-size="140" font-weight="700" fill="#C9A84C" letter-spacing="12">攻略ガイド</text>
+  </g>
+
+  <!-- Subtitle -->
+  <text x="600" y="990" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="32" font-weight="400" fill="rgba(255,255,255,0.65)" letter-spacing="4">— 内装屋だから見えている、物件選びの勝ち筋 —</text>
+
+  <!-- Chapter list -->
+  <g transform="translate(250, 1140)">
+    <text x="0" y="0" font-family="'Noto Sans JP', sans-serif" font-size="28" font-weight="500" fill="rgba(255,255,255,0.8)">◆ 宮城の収益物件 相場データ</text>
+    <text x="0" y="60" font-family="'Noto Sans JP', sans-serif" font-size="28" font-weight="500" fill="rgba(255,255,255,0.8)">◆ 築古アパートの見極め3ポイント</text>
+    <text x="0" y="120" font-family="'Noto Sans JP', sans-serif" font-size="28" font-weight="500" fill="rgba(255,255,255,0.8)">◆ 指値交渉の実践テクニック</text>
+    <text x="0" y="180" font-family="'Noto Sans JP', sans-serif" font-size="28" font-weight="500" fill="rgba(255,255,255,0.8)">◆ 改修費の相場早見表</text>
+    <text x="0" y="240" font-family="'Noto Sans JP', sans-serif" font-size="28" font-weight="500" fill="rgba(255,255,255,0.8)">◆ 客付けの基礎</text>
+    <text x="0" y="300" font-family="'Noto Sans JP', sans-serif" font-size="28" font-weight="500" fill="rgba(255,255,255,0.8)">◆ 失敗事例10選</text>
+  </g>
+
+  <!-- Bottom brand mark -->
+  <g transform="translate(600, 1640)">
+    <line x1="-100" y1="-50" x2="100" y2="-50" stroke="#C9A84C" stroke-width="1" stroke-opacity="0.5"/>
+    <text x="0" y="0" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="30" font-weight="700" fill="#FFFFFF" letter-spacing="3">満室デザインLABO</text>
+    <text x="0" y="40" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="20" font-weight="300" fill="rgba(201,168,76,0.8)" letter-spacing="4">KAI &amp; KEN</text>
+    <text x="0" y="90" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="18" font-weight="300" fill="rgba(255,255,255,0.4)" letter-spacing="2">manshitsu.homes</text>
+  </g>
+</svg>
