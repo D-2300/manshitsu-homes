@@ -6,7 +6,8 @@ import { JsonLd, breadcrumbSchema, faqSchema } from "../utils/jsonLd";
 const guideFaqs = [
   { q: "このガイドは本当に無料ですか？", a: "はい、完全無料です。弊社の本業は内装工事で、物件改修をご依頼いただいた段階で対価をいただきます。物件選びの段階で費用を請求することはありません。" },
   { q: "宮城県外でも参考になりますか？", a: "相場の数字は宮城県のものですが、築古物件の見極め方・指値交渉・改修費の考え方・客付け力チェックなどの方法論は地域を問わず使えます。福島・山形・岩手の近県の方からもご相談いただいています。" },
-  { q: "戸建投資にも使えますか？", a: "ガイド本体はアパート1棟投資が主軸ですが、物件選びの考え方の大半は戸建投資にも応用できます。戸建固有の論点（再販戦略・小規模融資・ファミリー客付けなど）は別記事で詳しく解説しています。" },
+  { q: "戸建投資にも使えますか？", a: "はい、むしろ戸建は私たちの主軸の一つです。一棟アパート／区分／築古戸建すべてで「物件探しから内装屋の目で見極める」という関わり方は同じです。戸建固有の論点（小規模融資・ファミリー客付け・実需出口）は付録Cと別記事で解説しています。" },
+  { q: "DIYで自分で改修したい部分があるのですが対応できますか？", a: "歓迎します。私たちは「全部任せてください」派ではなく、「ここだけプロに」という頼み方を推奨しています。水回り・電気・屋根外壁・構造など事故リスクが高い領域だけ弊社で請け、クロス・塗装・造作などDIY可能な領域はご自身で進めていただく形が、実は一番コストが下がって利回りも出やすいです。詳しくは付録Cをご覧ください。" },
   { q: "不動産投資の初心者ですが、理解できますか？", a: "業界用語は付録Bの用語集で解説しています。初学者でも読める難度で書いていますが、検索意図と検索意味の違いなど、初心者本では触れない実務知識も含んでいるため、初級〜中級者の橋渡しになります。" },
   { q: "他の不動産投資本との違いは何ですか？", a: "多くの投資本は仲介業や投資コンサルが書いており、物件売買で利益を出す立場の視点です。本ガイドは内装工事会社が物件売買では儲けない立場で書いているため、買わない方が良い物件・避けるべき業者についても率直に書いています。" },
   { q: "個別相談はできますか？", a: "LINE公式アカウント（@074uzmls）で個別相談を承っています。検討中の物件URLや写真を送っていただければ、客付け力チェック・改修費概算・実質利回りベースのレビューを無料でお返しします。" },
@@ -15,7 +16,7 @@ const guideFaqs = [
 const guideSchema = {
   "@context": "https://schema.org",
   "@type": "Article",
-  headline: "宮城のアパート投資 攻略ガイド",
+  headline: "宮城の収益物件 攻略ガイド",
   description: "宮城県の収益物件・中古アパート投資の攻略ガイド。相場データ・築古見極め3ポイント・指値交渉術・改修費単価・失敗事例10選まで内装屋視点で体系化。",
   image: "https://manshitsu.homes/images/hero-bg.webp",
   datePublished: "2026-04-17",
@@ -30,7 +31,7 @@ const guideSchema = {
 };
 
 /**
- * 宮城のアパート投資 攻略ガイド HTML版
+ * 宮城の収益物件 攻略ガイド HTML版
  *
  * 原稿: docs/guide-bukken-manuscript.md
  * 配布: /guide/bukken
@@ -38,7 +39,7 @@ const guideSchema = {
  */
 export default function GuidePage() {
   useEffect(() => {
-    document.title = "宮城のアパート投資 攻略ガイド｜満室デザインLABO";
+    document.title = "宮城の収益物件 攻略ガイド｜満室デザインLABO";
     const description = "宮城県の収益物件・中古アパート投資の攻略ガイド。相場データ・築古見極め3ポイント・指値交渉術・改修費単価・失敗事例10選まで内装屋視点で体系化。";
     const ogImage = "https://manshitsu.homes/images/og-guide.png";
 
@@ -49,10 +50,10 @@ export default function GuidePage() {
       const el = document.querySelector(selector);
       if (el) el.setAttribute("content", value);
     };
-    setMeta('meta[property="og:title"]', "宮城のアパート投資 攻略ガイド｜満室デザインLABO");
+    setMeta('meta[property="og:title"]', "宮城の収益物件 攻略ガイド｜満室デザインLABO");
     setMeta('meta[property="og:description"]', description);
     setMeta('meta[property="og:image"]', ogImage);
-    setMeta('meta[name="twitter:title"]', "宮城のアパート投資 攻略ガイド｜満室デザインLABO");
+    setMeta('meta[name="twitter:title"]', "宮城の収益物件 攻略ガイド｜満室デザインLABO");
     setMeta('meta[name="twitter:description"]', description);
     setMeta('meta[name="twitter:image"]', ogImage);
   }, []);
@@ -89,14 +90,14 @@ export default function GuidePage() {
         <hr className="cover-hr" />
         <h1 className="cover-title">
           <span className="cover-title-l1">宮城の</span>
-          <span className="cover-title-l2">アパート投資</span>
+          <span className="cover-title-l2">収益物件</span>
           <span className="cover-title-l3">攻略ガイド</span>
         </h1>
         <p className="cover-subtitle">— 内装屋だから見えている、物件選びの勝ち筋 —</p>
 
         <ul className="cover-chapters">
           <li>◆ 宮城の収益物件 相場データ</li>
-          <li>◆ 築古アパートの見極め3ポイント</li>
+          <li>◆ 築古物件の見極め3ポイント</li>
           <li>◆ 指値交渉の実践テクニック</li>
           <li>◆ 改修費の相場早見表</li>
           <li>◆ 客付けの基礎</li>
@@ -106,7 +107,6 @@ export default function GuidePage() {
         <div className="cover-footer">
           <hr className="cover-footer-hr" />
           <p className="cover-brand">満室デザインLABO</p>
-          <p className="cover-team">KAI &amp; KEN</p>
           <p className="cover-url">manshitsu.homes</p>
         </div>
         <div className="cover-accent-bottom" />
@@ -117,10 +117,10 @@ export default function GuidePage() {
         <div className="page-header"><span>CONTENTS</span></div>
         <h2 className="chapter-heading-toc">目次</h2>
         <ol className="toc-list">
-          <li><span className="toc-num">Ch.1</span><span>はじめに — なぜ今、宮城のアパート投資なのか</span></li>
+          <li><span className="toc-num">Ch.1</span><span>はじめに — なぜ今、宮城の収益物件投資なのか</span></li>
           <li><span className="toc-num">Ch.1-4</span><span>誰が書いているのか — 仲介業20年で気づいた構造の限界</span></li>
           <li><span className="toc-num">Ch.2</span><span>宮城の収益物件相場 — エリア別・築年別の実データ</span></li>
-          <li><span className="toc-num">Ch.3</span><span>築古アパートの見極め方 — 3つの必須チェック</span></li>
+          <li><span className="toc-num">Ch.3</span><span>築古物件の見極め方 — 3つの必須チェック</span></li>
           <li><span className="toc-num">Ch.4</span><span>指値交渉の実践テクニック — 想定問答と事例</span></li>
           <li><span className="toc-num">Ch.5</span><span>改修費の相場早見表 — 部屋タイプ別・単価公開</span></li>
           <li><span className="toc-num">Ch.6</span><span>客付けの基礎 — バーチャルステージング活用</span></li>
@@ -128,14 +128,15 @@ export default function GuidePage() {
           <li><span className="toc-num">Ch.8</span><span>まとめ — 次の1歩</span></li>
           <li><span className="toc-num">付録A</span><span>市町村別 平均利回りデータ</span></li>
           <li><span className="toc-num">付録B</span><span>用語集</span></li>
-          <li><span className="toc-num">付録C</span><span>よくある質問</span></li>
+          <li><span className="toc-num">付録C</span><span>戸建投資と"使い分け" — DIYとプロの境界線</span></li>
+          <li><span className="toc-num">付録D</span><span>よくある質問</span></li>
         </ol>
       </article>
 
       {/* ===== Ch.1 ===== */}
       <article className="page">
         <div className="page-header"><span>Ch.1 はじめに</span></div>
-        <h2 className="chapter-heading"><span className="chapter-no">Ch.1</span>はじめに — なぜ今、宮城のアパート投資なのか</h2>
+        <h2 className="chapter-heading"><span className="chapter-no">Ch.1</span>はじめに — なぜ今、宮城の収益物件投資なのか</h2>
 
         {/* Photo: hero */}
         <div className="photo-block">
@@ -148,7 +149,7 @@ export default function GuidePage() {
         <p>この立場から、次のことをお伝えしたい：</p>
         <blockquote className="quote">「物件選びで失敗すれば、どんなに良い内装をしても回らない」</blockquote>
         <p>これは、20年以上現場で見てきた実感です。どんなに塗装を綺麗にしても、立地が間違っていれば入居者は来ない。どんなに利回りが高い物件でも、躯体がダメなら改修費で利回りが消える。このガイドでは、<strong>物件を買う前に知っておくべきこと</strong>を、内装側から見た視点で体系化しました。</p>
-        <p style={{ fontSize: "0.9em", color: "#6a5a4a", marginTop: "12px" }}>※ 本ガイドはアパート1棟投資を主軸に解説しますが、考え方の大半は<strong>区分マンション・築古戸建</strong>にも応用できます。戸建投資の固有論点については別記事「<a href="/articles/chuko-kodate-toshi-miyagi">築古戸建の投資物件｜宮城</a>」をご参照ください。</p>
+        <p style={{ fontSize: "0.9em", color: "#6a5a4a", marginTop: "12px" }}>※ 本ガイドは<strong>一棟アパート・区分マンション・築古戸建</strong>すべてを「収益物件」として扱います。Ch.3〜Ch.5の見極め・改修費・客付けの考え方は共通です。戸建固有論点とDIY・プロの使い分けは<strong>付録C</strong>と別記事「<a href="/articles/chuko-kodate-toshi-miyagi">築古戸建の投資物件｜宮城</a>」で解説しています。</p>
 
         <h3 className="section-heading">1-2. なぜ「宮城」なのか</h3>
         <p>宮城県、特に仙台圏は以下の理由で<strong>個人アパート投資の好適地</strong>です：</p>
@@ -333,8 +334,8 @@ export default function GuidePage() {
 
       {/* ===== Ch.3 ===== */}
       <article className="page">
-        <div className="page-header"><span>Ch.3 築古アパートの見極め方</span></div>
-        <h2 className="chapter-heading"><span className="chapter-no">Ch.3</span>築古アパートの見極め方 — 3つの必須チェック</h2>
+        <div className="page-header"><span>Ch.3 築古物件の見極め方</span></div>
+        <h2 className="chapter-heading"><span className="chapter-no">Ch.3</span>築古物件の見極め方 — 3つの必須チェック</h2>
 
         {/* Photo: チェックリスト */}
         <div className="photo-block">
@@ -461,6 +462,16 @@ export default function GuidePage() {
             <li>売主希望：<strong>850万円</strong></li>
             <li>指摘：「近隣の類似物件が平均680〜780万円で成約」</li>
             <li>成約：<strong className="gold">780万円</strong>（-70万円）</li>
+          </ul>
+        </div>
+
+        <div className="jirei">
+          <p className="jirei-title">事例4：大崎市 築古戸建・築38年（DIY併用）</p>
+          <ul>
+            <li>売主希望：<strong>380万円</strong></li>
+            <li>指摘：「給湯器更新＋外壁塗装で150万円。屋根瓦一部割れで+30万円」</li>
+            <li>成約：<strong className="gold">250万円</strong>（-130万円）</li>
+            <li>購入後は水回りと屋根のみ弊社で施工、クロス・塗装は買主DIY。<strong>総改修費を圧縮して利回り15%超</strong>で満室稼働</li>
           </ul>
         </div>
       </article>
@@ -714,10 +725,47 @@ export default function GuidePage() {
         </dl>
       </article>
 
-      {/* ===== 付録C FAQ ===== */}
+      {/* ===== 付録C 戸建投資と使い分け ===== */}
       <article className="page">
-        <div className="page-header"><span>付録C よくある質問</span></div>
-        <h2 className="chapter-heading"><span className="chapter-no">付録C</span>よくある質問</h2>
+        <div className="page-header"><span>付録C 戸建投資と"使い分け"</span></div>
+        <h2 className="chapter-heading"><span className="chapter-no">付録C</span>戸建投資と"使い分け"について</h2>
+
+        <h3 className="section-heading">C-1. このガイドで「収益物件」と呼ぶ理由</h3>
+        <p>本ガイドは一棟アパートを主軸に書いていますが、私たちが実際に手伝っている物件は<strong>一棟アパート・区分・築古戸建</strong>まで幅があります。共通するのは「<strong>物件探しの段階から、内装屋の目で一緒に見極める</strong>」という関わり方です。Ch.3〜Ch.5の見極め・改修費・客付けの考え方は、戸建にもほぼそのまま応用できます。</p>
+
+        <h3 className="section-heading">C-2. 戸建投資ならではの論点</h3>
+        <ul>
+          <li><strong>小規模融資の使い分け</strong>：戸建は500〜1,500万円レンジが中心。住宅ローン残債のある個人でも、日本政策金融公庫やノンバンクでの小規模融資が組みやすい</li>
+          <li><strong>ファミリー客付けの特性</strong>：単身向けアパートより入居期間が長く（平均5〜8年）、退去コストが安定しやすい</li>
+          <li><strong>再販戦略（出口）の柔軟さ</strong>：賃貸で回した後、<strong>実需（マイホーム購入層）に売却</strong>できるのは戸建の強み。出口価格が落ちにくい</li>
+          <li><strong>寒冷地・築古特有の躯体リスク</strong>：戸建は屋根・基礎のダメージが直撃しやすい。築40年超はCh.3の躯体チェックを一段厳しく</li>
+        </ul>
+        <p style={{ fontSize: "0.9em", color: "#6a5a4a" }}>戸建投資の詳細は別記事「<a href="/articles/chuko-kodate-toshi-miyagi">築古戸建の投資物件｜宮城</a>」をご参照ください。</p>
+
+        <h3 className="section-heading">C-3. DIYで触って良い所／プロに任せる所</h3>
+        <p><strong>「DIYで全部自分でやりたい」という方</strong>も、私たちは歓迎しています。切り捨てません。ただ、<strong>「ここは絶対にプロに任せた方がいい」という境界線</strong>があります。これを最初に一緒に引くだけで、DIY失敗で余計に高くつく事故がほぼ防げます。</p>
+
+        <div className="structure">
+          <div className="structure-item">
+            <p className="structure-title">◆ DIYで触って良い領域</p>
+            <p className="structure-body">室内塗装（壁・天井）／クロス貼替（6畳程度まで）／クッションフロア貼替／棚・収納の造作／建具・金物の交換／庭木伐採・外構の簡易整備</p>
+          </div>
+          <div className="structure-item">
+            <p className="structure-title">◆ プロに任せた方が結局安くつく領域</p>
+            <p className="structure-body"><strong>水回り（給排水管・給湯器）</strong>：漏水事故で階下賠償数百万円／<strong>電気工事</strong>：電気工事士資格が必要・自前は違法かつ火災リスク／<strong>屋根・外壁の高所作業</strong>：墜落リスクと足場コストで結局割高／<strong>構造補強・耐震改修</strong>：計算根拠がないと確認申請が通らない／<strong>解体・廃棄物処理</strong>：マニフェスト未発行は不法投棄として罪に問われる</p>
+          </div>
+        </div>
+
+        <h3 className="section-heading">C-4. 「ここだけプロ」という頼み方</h3>
+        <p>私たちは<strong>「全部任せてください」派ではありません</strong>。</p>
+        <blockquote className="quote">「躯体と水回りだけ満室デザインLABOに。内装のクロスと塗装は自分でやります」 — これで全然OKです。むしろコストが下がって利回りが出やすくなります。</blockquote>
+        <p>LINEでご相談いただく際も「<strong>どこまで自分でやりたいか</strong>」を最初に教えてください。それに合わせた最小構成の見積もりをお出しします。</p>
+      </article>
+
+      {/* ===== 付録D FAQ ===== */}
+      <article className="page">
+        <div className="page-header"><span>付録D よくある質問</span></div>
+        <h2 className="chapter-heading"><span className="chapter-no">付録D</span>よくある質問</h2>
         <dl className="yougoshu">
           {guideFaqs.map((faq, i) => (
             <div key={i} style={{ marginBottom: "16px" }}>
@@ -728,7 +776,7 @@ export default function GuidePage() {
         </dl>
 
         <div className="closing">
-          <p>© 2026 満室デザインLABO ／ KAI &amp; KEN</p>
+          <p>© 2026 満室デザインLABO</p>
           <p className="closing-sub">宮城の収益物件を、物件探しから手伝う内装屋。</p>
           <p>manshitsu.homes ／ LINE: @074uzmls</p>
         </div>

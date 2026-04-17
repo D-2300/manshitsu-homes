@@ -34,7 +34,7 @@
   <!-- Main title (大) -->
   <g>
     <text x="600" y="550" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Mincho Pro', 'Yu Mincho', serif" font-size="110" font-weight="700" fill="#FFFFFF" letter-spacing="8">宮城の</text>
-    <text x="600" y="720" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Mincho Pro', 'Yu Mincho', serif" font-size="140" font-weight="700" fill="#FFFFFF" letter-spacing="10">アパート投資</text>
+    <text x="600" y="720" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Mincho Pro', 'Yu Mincho', serif" font-size="140" font-weight="700" fill="#FFFFFF" letter-spacing="10">収益物件</text>
     <text x="600" y="880" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Mincho Pro', 'Yu Mincho', serif" font-size="140" font-weight="700" fill="#C9A84C" letter-spacing="12">攻略ガイド</text>
   </g>
 
@@ -44,7 +44,7 @@
   <!-- Chapter list -->
   <g transform="translate(250, 1140)">
     <text x="0" y="0" font-family="'Noto Sans JP', sans-serif" font-size="28" font-weight="500" fill="rgba(255,255,255,0.8)">◆ 宮城の収益物件 相場データ</text>
-    <text x="0" y="60" font-family="'Noto Sans JP', sans-serif" font-size="28" font-weight="500" fill="rgba(255,255,255,0.8)">◆ 築古アパートの見極め3ポイント</text>
+    <text x="0" y="60" font-family="'Noto Sans JP', sans-serif" font-size="28" font-weight="500" fill="rgba(255,255,255,0.8)">◆ 築古物件の見極め3ポイント</text>
     <text x="0" y="120" font-family="'Noto Sans JP', sans-serif" font-size="28" font-weight="500" fill="rgba(255,255,255,0.8)">◆ 指値交渉の実践テクニック</text>
     <text x="0" y="180" font-family="'Noto Sans JP', sans-serif" font-size="28" font-weight="500" fill="rgba(255,255,255,0.8)">◆ 改修費の相場早見表</text>
     <text x="0" y="240" font-family="'Noto Sans JP', sans-serif" font-size="28" font-weight="500" fill="rgba(255,255,255,0.8)">◆ 客付けの基礎</text>
@@ -55,7 +55,6 @@
   <g transform="translate(600, 1640)">
     <line x1="-100" y1="-50" x2="100" y2="-50" stroke="#C9A84C" stroke-width="1" stroke-opacity="0.5"/>
     <text x="0" y="0" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="30" font-weight="700" fill="#FFFFFF" letter-spacing="3">満室デザインLABO</text>
-    <text x="0" y="40" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="20" font-weight="300" fill="rgba(201,168,76,0.8)" letter-spacing="4">KAI &amp; KEN</text>
-    <text x="0" y="90" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="18" font-weight="300" fill="rgba(255,255,255,0.4)" letter-spacing="2">manshitsu.homes</text>
+    <text x="0" y="50" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="18" font-weight="300" fill="rgba(255,255,255,0.4)" letter-spacing="2">manshitsu.homes</text>
   </g>
 </svg>
