@@ -1,141 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <svg xmlns="http://www.w3.org/2000/svg" width="2500" height="1686" viewBox="0 0 2500 1686">
-  <!-- 満室デザインLABO LINE リッチメニュー 3×2 -->
-  <!-- 2500×1686 / 各セル 833×843 -->
-
+  <!-- 満室デザインLABO LINE リッチメニュー 3×2 ブランド紫×ゴールド統一版 -->
   <defs>
-    <!-- メイン背景グラデーション -->
-    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#442940"/>
-      <stop offset="50%" stop-color="#5A3454"/>
-      <stop offset="100%" stop-color="#6B4066"/>
+    <linearGradient id="bgMain" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F7EEF4"/>
+      <stop offset="100%" stop-color="#E4D2E0"/>
     </linearGradient>
-
-    <!-- セルホバー用（使わないが統一性のため） -->
-    <linearGradient id="cellGrad" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="rgba(255,255,255,0.02)"/>
-      <stop offset="100%" stop-color="rgba(0,0,0,0.15)"/>
+    <linearGradient id="tile" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#F7EDF3"/>
+      <stop offset="100%" stop-color="#DEC6D9"/>
     </linearGradient>
   </defs>
 
-  <!-- Background -->
-  <rect width="2500" height="1686" fill="url(#bgGrad)"/>
-  <rect width="2500" height="1686" fill="url(#cellGrad)"/>
-
-  <!-- Gold dividers -->
-  <!-- Horizontal divider (middle row) -->
-  <line x1="0" y1="843" x2="2500" y2="843" stroke="#C9A84C" stroke-opacity="0.4" stroke-width="2"/>
-  <!-- Vertical dividers -->
-  <line x1="833" y1="0" x2="833" y2="1686" stroke="#C9A84C" stroke-opacity="0.4" stroke-width="2"/>
-  <line x1="1667" y1="0" x2="1667" y2="1686" stroke="#C9A84C" stroke-opacity="0.4" stroke-width="2"/>
+  <rect width="2500" height="1686" fill="url(#bgMain)"/>
 
   <!-- === Cell 1: 左上 物件リクエスト === -->
   <g>
-    <!-- Icon: 家 + 検索虫眼鏡 -->
-    <g transform="translate(416, 320)" stroke="#C9A84C" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <!-- 家のアウトライン -->
-      <path d="M -110 40 L 0 -70 L 110 40 L 110 130 L -110 130 Z"/>
-      <path d="M -50 130 L -50 70 L 50 70 L 50 130" fill="#C9A84C" fill-opacity="0.15"/>
-      <!-- 虫眼鏡 -->
-      <circle cx="90" cy="10" r="45" stroke="#FFFFFF" stroke-width="10" fill="rgba(68,41,64,0.8)"/>
-      <line x1="120" y1="40" x2="155" y2="75" stroke="#FFFFFF" stroke-width="12"/>
+    <rect x="40" y="40" width="753" height="763" rx="48" fill="url(#tile)" stroke="#C9A84C" stroke-width="5"/>
+    <g transform="translate(416, 290)" stroke="#6B4066" stroke-width="11" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M -110 40 L 0 -70 L 110 40 L 110 130 L -110 130 Z" fill="#FFFFFF"/>
+      <path d="M -50 130 L -50 70 L 50 70 L 50 130" fill="#C9A84C" fill-opacity="0.75" stroke-width="9"/>
+      <circle cx="90" cy="10" r="48" stroke="#C9A84C" stroke-width="12" fill="#FFFFFF"/>
+      <line x1="124" y1="44" x2="165" y2="85" stroke="#C9A84C" stroke-width="14"/>
     </g>
-    <!-- Label -->
-    <text x="416" y="620" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="72" font-weight="700" fill="#FFFFFF" letter-spacing="4">物件リクエスト</text>
-    <text x="416" y="710" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', sans-serif" font-size="34" font-weight="400" fill="#C9A84C" letter-spacing="8">PROPERTY REQUEST</text>
+    <text x="416" y="580" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="98" font-weight="800" fill="#442940" letter-spacing="2">物件リクエスト</text>
+    <text x="416" y="670" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="34" font-weight="600" fill="#C9A84C" letter-spacing="10">PROPERTY REQUEST</text>
   </g>
 
-  <!-- === Cell 2: 中央上 ガイドDL === -->
+  <!-- === Cell 2: 中央上 攻略ガイド === -->
   <g>
-    <!-- Icon: 本 -->
-    <g transform="translate(1250, 320)" stroke="#C9A84C" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <!-- 本のシルエット -->
-      <path d="M -100 -80 L 100 -80 L 120 -60 L 120 100 L -120 100 L -120 -60 Z" fill="rgba(201,168,76,0.12)"/>
-      <path d="M 0 -80 L 0 100"/>
-      <path d="M -120 -60 L -100 -80 M 120 -60 L 100 -80"/>
-      <!-- 本のページ線 -->
-      <line x1="-80" y1="-30" x2="-30" y2="-30" stroke="#FFFFFF" stroke-width="5"/>
-      <line x1="-80" y1="0" x2="-30" y2="0" stroke="#FFFFFF" stroke-width="5"/>
-      <line x1="-80" y1="30" x2="-20" y2="30" stroke="#FFFFFF" stroke-width="5"/>
-      <line x1="30" y1="-30" x2="80" y2="-30" stroke="#FFFFFF" stroke-width="5"/>
-      <line x1="30" y1="0" x2="80" y2="0" stroke="#FFFFFF" stroke-width="5"/>
-      <line x1="20" y1="30" x2="80" y2="30" stroke="#FFFFFF" stroke-width="5"/>
+    <rect x="873" y="40" width="753" height="763" rx="48" fill="url(#tile)" stroke="#C9A84C" stroke-width="5"/>
+    <g transform="translate(1250, 290)" stroke="#6B4066" stroke-width="11" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M -110 -80 L 110 -80 L 130 -60 L 130 110 L -130 110 L -130 -60 Z" fill="#FFFFFF"/>
+      <path d="M 0 -80 L 0 110"/>
+      <path d="M -130 -60 L -110 -80 M 130 -60 L 110 -80"/>
+      <line x1="-90" y1="-30" x2="-30" y2="-30" stroke="#6B4066" stroke-width="7"/>
+      <line x1="-90" y1="5" x2="-30" y2="5" stroke="#6B4066" stroke-width="7"/>
+      <line x1="-90" y1="40" x2="-20" y2="40" stroke="#6B4066" stroke-width="7"/>
+      <line x1="30" y1="-30" x2="90" y2="-30" stroke="#6B4066" stroke-width="7"/>
+      <line x1="30" y1="5" x2="90" y2="5" stroke="#6B4066" stroke-width="7"/>
+      <line x1="20" y1="40" x2="90" y2="40" stroke="#6B4066" stroke-width="7"/>
     </g>
-    <!-- Label -->
-    <text x="1250" y="620" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="72" font-weight="700" fill="#FFFFFF" letter-spacing="4">攻略ガイド</text>
-    <text x="1250" y="710" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', sans-serif" font-size="34" font-weight="400" fill="#C9A84C" letter-spacing="8">FREE GUIDE</text>
+    <text x="1250" y="580" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="98" font-weight="800" fill="#442940" letter-spacing="2">攻略ガイド</text>
+    <text x="1250" y="670" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="34" font-weight="600" fill="#C9A84C" letter-spacing="10">FREE GUIDE</text>
   </g>
 
   <!-- === Cell 3: 右上 相談予約 === -->
   <g>
-    <!-- Icon: チャット吹き出し -->
-    <g transform="translate(2083, 320)" stroke="#C9A84C" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M -110 -70 L 110 -70 L 110 40 L 20 40 L -20 90 L -20 40 L -110 40 Z" fill="rgba(201,168,76,0.12)"/>
-      <circle cx="-50" cy="-15" r="8" fill="#FFFFFF" stroke="none"/>
-      <circle cx="0" cy="-15" r="8" fill="#FFFFFF" stroke="none"/>
-      <circle cx="50" cy="-15" r="8" fill="#FFFFFF" stroke="none"/>
+    <rect x="1707" y="40" width="753" height="763" rx="48" fill="url(#tile)" stroke="#C9A84C" stroke-width="5"/>
+    <g transform="translate(2083, 290)" stroke="#6B4066" stroke-width="11" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M -120 -80 L 120 -80 L 120 50 L 25 50 L -25 105 L -25 50 L -120 50 Z" fill="#FFFFFF"/>
+      <circle cx="-50" cy="-15" r="10" fill="#6B4066" stroke="none"/>
+      <circle cx="0" cy="-15" r="10" fill="#6B4066" stroke="none"/>
+      <circle cx="50" cy="-15" r="10" fill="#6B4066" stroke="none"/>
     </g>
-    <!-- Label -->
-    <text x="2083" y="620" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="72" font-weight="700" fill="#FFFFFF" letter-spacing="4">相談予約</text>
-    <text x="2083" y="710" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', sans-serif" font-size="34" font-weight="400" fill="#C9A84C" letter-spacing="8">CONSULT</text>
+    <text x="2083" y="580" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="98" font-weight="800" fill="#442940" letter-spacing="2">相談予約</text>
+    <text x="2083" y="670" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="34" font-weight="600" fill="#C9A84C" letter-spacing="10">CONSULT</text>
   </g>
 
   <!-- === Cell 4: 左下 施工事例 === -->
   <g>
-    <!-- Icon: 刷毛/ペイント -->
-    <g transform="translate(416, 1160)" stroke="#C9A84C" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <!-- 家の外枠 -->
-      <path d="M -110 40 L 0 -70 L 110 40 L 110 130 L -110 130 Z"/>
-      <!-- Before/Afterのスラッシュ -->
-      <line x1="-40" y1="-50" x2="60" y2="150" stroke="#C9A84C" stroke-width="6"/>
-      <!-- 左: BEFORE ダーク -->
-      <path d="M -110 40 L 0 -70 L -40 -50 L -60 130 L -110 130 Z" fill="rgba(0,0,0,0.3)"/>
-      <!-- 右: AFTER ゴールド -->
-      <path d="M 60 150 L 110 40 L 110 130 Z" fill="rgba(201,168,76,0.3)"/>
+    <rect x="40" y="883" width="753" height="763" rx="48" fill="url(#tile)" stroke="#C9A84C" stroke-width="5"/>
+    <g transform="translate(416, 1130)" stroke="#6B4066" stroke-width="11" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M -110 40 L 0 -70 L 110 40 L 110 130 L -110 130 Z" fill="#FFFFFF"/>
+      <line x1="-40" y1="-50" x2="60" y2="150" stroke="#C9A84C" stroke-width="10"/>
+      <path d="M -110 40 L 0 -70 L -40 -50 L -60 130 L -110 130 Z" fill="#6B4066" fill-opacity="0.22"/>
+      <path d="M 60 150 L 110 40 L 110 130 Z" fill="#C9A84C" fill-opacity="0.8"/>
     </g>
-    <!-- Label -->
-    <text x="416" y="1470" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="72" font-weight="700" fill="#FFFFFF" letter-spacing="4">施工事例</text>
-    <text x="416" y="1560" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', sans-serif" font-size="34" font-weight="400" fill="#C9A84C" letter-spacing="8">WORKS</text>
+    <text x="416" y="1420" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="98" font-weight="800" fill="#442940" letter-spacing="2">施工事例</text>
+    <text x="416" y="1510" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="34" font-weight="600" fill="#C9A84C" letter-spacing="10">WORKS</text>
   </g>
 
   <!-- === Cell 5: 中央下 料金表 === -->
   <g>
-    <!-- Icon: 円マーク・グラフ -->
-    <g transform="translate(1250, 1160)" stroke="#C9A84C" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <!-- 円 -->
-      <circle cx="0" cy="10" r="90"/>
-      <!-- 横線 ¥ -->
+    <rect x="873" y="883" width="753" height="763" rx="48" fill="url(#tile)" stroke="#C9A84C" stroke-width="5"/>
+    <g transform="translate(1250, 1130)" stroke="#6B4066" stroke-width="11" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="0" cy="10" r="95" fill="#FFFFFF"/>
       <line x1="-40" y1="-15" x2="40" y2="-15"/>
       <line x1="-40" y1="15" x2="40" y2="15"/>
-      <!-- 縦線 -->
-      <line x1="0" y1="-40" x2="-20" y2="0"/>
-      <line x1="0" y1="-40" x2="20" y2="0"/>
-      <line x1="0" y1="0" x2="0" y2="60"/>
+      <line x1="0" y1="-40" x2="-22" y2="0"/>
+      <line x1="0" y1="-40" x2="22" y2="0"/>
+      <line x1="0" y1="0" x2="0" y2="62"/>
     </g>
-    <!-- Label -->
-    <text x="1250" y="1470" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="72" font-weight="700" fill="#FFFFFF" letter-spacing="4">料金表</text>
-    <text x="1250" y="1560" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', sans-serif" font-size="34" font-weight="400" fill="#C9A84C" letter-spacing="8">PRICING</text>
+    <text x="1250" y="1420" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="98" font-weight="800" fill="#442940" letter-spacing="2">料金表</text>
+    <text x="1250" y="1510" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="34" font-weight="600" fill="#C9A84C" letter-spacing="10">PRICING</text>
   </g>
 
   <!-- === Cell 6: 右下 Webサイト === -->
   <g>
-    <!-- Icon: 地球儀/Web -->
-    <g transform="translate(2083, 1160)" stroke="#C9A84C" stroke-width="8" fill="none" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="0" cy="10" r="90"/>
-      <ellipse cx="0" cy="10" rx="35" ry="90"/>
-      <line x1="-90" y1="10" x2="90" y2="10"/>
-      <line x1="-85" y1="-20" x2="85" y2="-20" stroke-width="5"/>
-      <line x1="-85" y1="40" x2="85" y2="40" stroke-width="5"/>
+    <rect x="1707" y="883" width="753" height="763" rx="48" fill="url(#tile)" stroke="#C9A84C" stroke-width="5"/>
+    <g transform="translate(2083, 1130)" stroke="#6B4066" stroke-width="11" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="0" cy="10" r="95" fill="#FFFFFF"/>
+      <ellipse cx="0" cy="10" rx="38" ry="95"/>
+      <line x1="-95" y1="10" x2="95" y2="10"/>
+      <line x1="-90" y1="-22" x2="90" y2="-22" stroke-width="7"/>
+      <line x1="-90" y1="42" x2="90" y2="42" stroke-width="7"/>
     </g>
-    <!-- Label -->
-    <text x="2083" y="1470" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="72" font-weight="700" fill="#FFFFFF" letter-spacing="4">Webサイト</text>
-    <text x="2083" y="1560" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', sans-serif" font-size="34" font-weight="400" fill="#C9A84C" letter-spacing="8">WEBSITE</text>
-  </g>
-
-  <!-- 上部中央 ブランドマーク -->
-  <g transform="translate(1250, 90)">
-    <rect x="-220" y="-40" width="440" height="80" rx="40" fill="rgba(201,168,76,0.08)" stroke="#C9A84C" stroke-width="2" stroke-opacity="0.5"/>
-    <text x="0" y="-4" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="22" font-weight="300" fill="#C9A84C" letter-spacing="6">MANSHITSU DESIGN LABO</text>
-    <text x="0" y="26" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="16" font-weight="400" fill="rgba(255,255,255,0.5)" letter-spacing="4">宮城の収益物件 ／ 物件探しから手伝う内装屋</text>
+    <text x="2083" y="1420" text-anchor="middle" font-family="'Noto Sans JP', 'Hiragino Sans', 'Yu Gothic', sans-serif" font-size="98" font-weight="800" fill="#442940" letter-spacing="2">Webサイト</text>
+    <text x="2083" y="1510" text-anchor="middle" font-family="'Noto Sans JP', sans-serif" font-size="34" font-weight="600" fill="#C9A84C" letter-spacing="10">WEBSITE</text>
   </g>
 </svg>
