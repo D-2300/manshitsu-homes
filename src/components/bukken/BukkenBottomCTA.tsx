@@ -11,7 +11,7 @@ export default function BukkenBottomCTA() {
         <em style={{ fontStyle: "normal", color: "#C9A84C" }}>損してからでは遅い</em>のです。
       </h2>
       <p style={{ fontSize: "clamp(14px, 3vw, 16px)", color: "rgba(255,255,255,.4)", marginBottom: "28px", lineHeight: 1.8 }}>
-        無料ガイド + 非公開収益物件情報 + 個別アドバイス。<br />まずは気軽にLINEしてください。
+        無料ガイド + ご紹介可能な収益物件情報 + 個別アドバイス。<br />まずは気軽にLINEしてください。
       </p>
       <a
         href={LINE_URL}

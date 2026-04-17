@@ -10,7 +10,7 @@ export default function BukkenMidCTA() {
         ここまで読んで気になった方へ
       </p>
       <p style={{ fontSize: "clamp(13px, 2.3vw, 15px)", color: "#888", marginBottom: "20px", lineHeight: 1.7 }}>
-        非公開の収益物件リスト + 無料ガイドを<br />今すぐお届けします。
+        ご紹介可能な収益物件情報 + 無料ガイドを<br />今すぐお届けします。
       </p>
       <a
         href={LINE_URL}
