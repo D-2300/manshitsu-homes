@@ -137,6 +137,7 @@ export default function GuidePage() {
         <p>この立場から、次のことをお伝えしたい：</p>
         <blockquote className="quote">「物件選びで失敗すれば、どんなに良い内装をしても回らない」</blockquote>
         <p>これは、20年以上現場で見てきた実感です。どんなに塗装を綺麗にしても、立地が間違っていれば入居者は来ない。どんなに利回りが高い物件でも、躯体がダメなら改修費で利回りが消える。このガイドでは、<strong>物件を買う前に知っておくべきこと</strong>を、内装側から見た視点で体系化しました。</p>
+        <p style={{ fontSize: "0.9em", color: "#6a5a4a", marginTop: "12px" }}>※ 本ガイドはアパート1棟投資を主軸に解説しますが、考え方の大半は<strong>区分マンション・築古戸建</strong>にも応用できます。戸建投資の固有論点については別記事「<a href="/articles/chuko-kodate-toshi-miyagi">築古戸建の投資物件｜宮城</a>」をご参照ください。</p>
 
         <h3 className="section-heading">1-2. なぜ「宮城」なのか</h3>
         <p>宮城県、特に仙台圏は以下の理由で<strong>個人アパート投資の好適地</strong>です：</p>

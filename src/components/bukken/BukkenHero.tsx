@@ -134,7 +134,7 @@ export default function BukkenHero() {
               marginBottom: "28px",
             }}
           >
-            宮城のアパート投資家向け
+            宮城の収益物件オーナー向け（アパート・戸建）
           </div>
 
           {/* Category */}
@@ -167,7 +167,7 @@ export default function BukkenHero() {
             }}
           >
             内装をつくる側だから、「この物件で利回りが出るか」から<br />
-            一緒に考えられます。収益物件探しから、内装改修まで。
+            一緒に考えられます。アパート1棟・区分・戸建まで対応。
           </p>
         </div>
       </section>
