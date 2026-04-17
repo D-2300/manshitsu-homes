@@ -625,3 +625,77 @@ cdcfe92 docs(line): paste-ready を全Phase完了状態に同期
 - DIY受容は FAQ 追加のみ（LINEあいさつには追加しない決定事項）
 
 — 2026-04-17 3回目セッション終了時、Claude Opus 4.7 より
+
+---
+
+## §17. 前回セッション（4回目／2026-04-17）の差分と次やること
+
+### 完了した内容（push済・Netlifyデプロイ済）
+
+**ガイド「収益物件」ブランドへ主軸移行**
+- 表紙タイトル：`アパート投資` → `収益物件`
+- 表紙・閉じから `KAI & KEN` 削除（LINE運用の「伊藤」名と整合）
+- 章リスト2行目：`築古アパート` → `築古物件`
+- `docs/line-setup-output/guide-cover.svg/png` 同期（LINE Manager再アップロード作業は手動待ち）
+
+**ガイドWeb版（`src/pages/GuidePage.tsx`）全面更新**
+- schema/meta/TOC/Ch.1・Ch.3見出しを「収益物件」で統一
+- 付録C新設：「戸建投資と"使い分け" — DIYとプロの境界線」（C-1〜C-4）
+- 付録D：旧付録C FAQ を付録Dに改名、DIY対応Q&Aと戸建Q&Aを主軸化に合わせ書き直し
+- Ch.4 事例4追加：大崎市 築古戸建・DIY併用（水回り+屋根だけプロ）
+
+**マニュスクリプト（`docs/guide-bukken-manuscript.md`）同期**
+- タイトル/目次/章見出し統一
+- 付録C「戸建投資と使い分け」追加
+- v1.1に改訂
+
+**SEO記事7本追加（§16優先度中を全消化）**
+- `shueki-bukken-deguchi-senryaku-miyagi`（出口戦略）
+- `fudosan-toushi-kakuteishinkoku-miyagi`（確定申告と税金）
+- `salaryman-oyahou-hojin-nari-timing`（法人成りタイミング）
+- `miyagi-jinkou-doutai-chintai-2026`（宮城の人口動態2026）
+- `shuuzen-tsumitate-keikaku-chikufuru`（修繕積立計画）
+- `akiya-toushi-hajimekata-miyagi`（空き家投資の始め方・DIY併用）
+- `kodate-mini-apato-senryaku`（戸建ミニアパート化戦略）
+- `public/sitemap.xml` にも全7本追加
+
+### 🚀 次セッションで最初にやること
+
+#### 優先度高（手動作業・ユーザー側）
+1. **LINE Manager でガイド表紙画像を再アップロード**
+   - URL: https://manager.line.biz/
+   - アカウント: `@074uzmls`（満室デザインLABO）
+   - あいさつメッセージ② → リッチ画像 → `docs/line-setup-output/guide-cover.png`（新版1200×1800）に差し替え
+   - ※このセッション中にユーザーが実施したかは未確認。未済なら最優先
+
+#### 優先度中（コード／コンテンツ）
+2. **記事の内部リンク整備**：新規7本と既存15本の相互リンクを整備（SEO内部流入強化）。特に新規記事から既存ガイド（`/guide/bukken`）への導線追加
+3. **ArticleListPage のカテゴリフィルタ確認**：新記事は全て `category: 'seo'`。記事が22本に増えたので、カテゴリ別表示の体験を確認
+4. **事例カテゴリの戸建ケース追加**：今回の§16方針で「戸建主軸化」を進めたが、`case-study` カテゴリの戸建実例記事はまだ `genjokaifuku-cost-down` しかない。築古戸建DIY併用の施工事例を1本書き足すと主軸化が完成
+5. **LP Hero とLINEあいさつは据え置き**（§16決定事項：DIYは奥に置く）
+
+#### 優先度低（外部連携・データ待ち）
+6. Microsoft Clarity 満室専用ID取得 → `index.html` 差し替え
+7. 配信30日後の論文改訂（実CTR/CPC/CVRで `BUSINESS_THESIS.md §7` 改訂）
+8. 配信60日後のシナリオC（学習層追加）拡大判断
+9. 画像最適化監査（未使用webp削除・heroImage重複解消）
+
+### この時点で守るべきこと（再掲＋今回追加）
+- §4 非公開物件方針、§5 段階的開示マップ、§13 禁じ手リスト
+- §16 戸建は主軸／DIY受容は奥に置く
+- **§17追加：記事は内装屋の一人称視点を崩さない**（「弊社は〜」「〜とお返しします」のクロージングパターンを継承）
+- **§17追加：新記事は必ず末尾にLINE導線セクションを置く**（LINE公式 @074uzmls への送客が全記事の共通出口）
+
+### 直近コミット（このセッション分）
+```
+976c6c2 feat(articles): SEO記事7本追加（出口戦略／税金／法人成り／人口動態／修繕積立／空き家／ミニアパート化）
+6de15d8 feat(guide): 収益物件ブランドへ主軸移行＋付録C「戸建・DIY使い分け」追加
+```
+
+### 記事の内部リンク設計メモ（次セッション用）
+- 戸建3本（`chuko-kodate-toshi-miyagi` / `kodate-vs-apato-toushi` / `kodate-renove-saihan` / `akiya-toushi-hajimekata-miyagi` / `kodate-mini-apato-senryaku`）は相互にリンクさせる
+- 融資×確定申告×法人成りは「資金・税務」クラスターとしてグルーピング
+- 人口動態・出口戦略・修繕積立は「運用・エリア」クラスター
+- 各クラスター内で最低2本の相互リンクが理想
+
+— 2026-04-17 4回目セッション終了時、Claude Opus 4.7 より
