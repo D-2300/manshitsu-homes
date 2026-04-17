@@ -1,9 +1,10 @@
 # セッション引き継ぎ書 — 満室デザインLABO
 
-- 作成日: 2026-04-17
+- 作成日: 2026-04-17（初版）
+- **最終更新: 2026-04-17（2回目セッション終了時／コンテキストクリア前）**
 - 対象: 次回セッションの Claude Code
 - 目的: コンテキストクリア後も、このドキュメントだけで作業を継続できるようにする
-- **必読順**: §1 → §4（非公開物件方針・超重要） → §5（段階的開示） → §11（次セッション最初にすること）
+- **必読順**: §1 → §4（非公開物件方針・超重要） → §5（段階的開示） → §11（次セッション最初にすること） → §15（前回セッション差分）
 
 ---
 
@@ -182,17 +183,23 @@
 | `/privacy` | プライバシーポリシー |
 | `/tokushoho` | 特定商取引法に基づく表記 |
 
-### 記事一覧
-1. genjokaifuku-cost-down
-2. accent-cross-value-up
-3. nyukyo-go-reform
-4. virtual-staging-guide
-5. boro-bukken-rimawari
+### 記事一覧（16本）
+1. genjokaifuku-cost-down（事例）
+2. accent-cross-value-up（事例）
+3. nyukyo-go-reform（事例）
+4. virtual-staging-guide（コラム）
+5. boro-bukken-rimawari（事例）
 6. miyagi-shueki-bukken-7points（SEO）
-7. chuko-apato-sashine-jirei（SEO）
-8. sendai-rimawari-2026（SEO）
+7. chuko-apato-sashine-jirei（SEO・指値）
+8. sendai-rimawari-2026（SEO・利回り相場）
 9. hyomen-jisshitsu-rimawari（SEO・LINE Day 2/5/9 連動）
 10. kokai-bukken-kachi（SEO・LINE Day 14-30 連動／§5段階開示中層）
+11. kyakuzuke-tsuyoi-yowai-bukken（SEO・客付け力チェック6項目）
+12. chuko-kodate-toshi-miyagi（SEO・戸建投資 入門）
+13. kodate-vs-apato-toushi（SEO・戸建vsアパート比較）
+14. kodate-renove-saihan（SEO・リノベ再販戦略）
+15. kanri-gaisha-erabikata-miyagi（SEO・管理会社選び6項目）
+16. apato-toushi-yushi-miyagi（SEO・銀行融資4ルート）
 
 ### SEO / 構造化データ
 - `sitemap.xml`（22+ URL）
@@ -464,3 +471,80 @@ git status             # 未コミット変更確認
 ---
 
 — 2026-04-17 作成、Claude Opus 4.6 より
+
+---
+
+## §15. 前回セッション（2回目／2026-04-17）の差分と次やること
+
+### 完了した内容（push済・Netlifyデプロイ済）
+
+**コンテンツ追加**
+- SEO記事 8 → **16本**（+6本：表面vs実質利回り、公開物件価値、客付け力、戸建投資、戸建vsアパート、リノベ再販、管理会社、銀行融資）
+
+**LP/ガイド改善**
+- LP Hero badge: 「アパート投資家向け」→「収益物件オーナー向け（アパート・戸建）」
+- LP Hero subcopy に戸建パス追加
+- LP MidCTA/BottomCTA の「非公開」→「ご紹介可能な」に緩和（C案・§4期待値コントロール）
+- ガイドCh.1-1 末尾に戸建記事への導線追加
+- ガイド付録C「よくある質問」新設＋FAQPage JSON-LD
+- LP BukkenFAQ に FAQPage JSON-LD 追加
+
+**LINE設定書（Cowork配布用）**
+- `docs/line-setup-output/LINE_CONTENT_PASTEREADY.md` を最終版同期：
+  - Phase 1.2 ステータスメッセージを実deploy版（19字）に修正
+  - Phase 1.3-1.5 自己紹介・基本情報・応答設定を現UI仕様に更新
+  - Phase 2/4.2 のガイド案内を https://manshitsu.homes/guide/bukken に切替
+  - Phase 4.1 物件リクエストに業者ガード文（買う意思の明確な方限定）追加
+  - Phase 5 Day 5 を具体物件3件→エリア相場感に変更（§13禁じ手準拠）
+  - Phase 7 自己テスト手順 + 進捗チェックリスト + 作業順序ガイド追加
+
+### 🚀 次セッションで最初にやること
+
+#### 優先度高（ユーザー手動作業待ち）
+1. **LINE Manager Phase 1-c 以降の貼り付け作業**
+   - ファイル: `docs/line-setup-output/LINE_CONTENT_PASTEREADY.md`
+   - 進捗チェックリスト冒頭にあり。Phase 1-c → 7 まで上から順
+   - Coworkで詰まったら手動フォールバックでユーザーが貼る
+   - 私側でやれるのは：文面の追加修正・スクリーン上の動作確認程度
+
+#### 優先度中（コード／コンテンツ）
+2. **記事もう数本追加候補**（量産可）
+   - 「築古アパートの出口戦略 — 売却・建替・解体」
+   - 「アパート投資の確定申告と税金」
+   - 「サラリーマン大家の法人成りタイミング」
+   - 「宮城の人口動態と賃貸需要 2026年版」
+   - 「修繕積立計画の作り方（築古アパート）」
+3. **画像最適化監査**
+   - 未使用 webp の削除（articles/ 配下とルート/images/）
+   - heroImage の重複解消（複数記事で同画像使用中）
+4. **ガイド本体への戸建セクション追加検討**（現在は脚注で記事誘導のみ）
+
+#### 優先度低（待ち or 外部連携）
+5. **Microsoft Clarity 満室専用ID取得 → index.html 差し替え**（現在は記憶荘と共通の `vuby2q6y09`）
+6. **配信30日後の論文改訂**（実CTR/CPC/CVRで `BUSINESS_THESIS.md §7` 改訂）
+7. **配信60日後のシナリオC（学習層追加）拡大判断**
+
+### この時点で守るべきこと（再掲）
+- §4 非公開物件方針：登録時点の信仰は壊さない、ガイド/LPでの暴露禁止
+- §5 段階的開示マップ：トーンレベルを守る
+- §13 禁じ手リスト：特に「具体物件リスト掲載」「ユーザー確認なしの大方向転換」
+- LP Hero の「Available Now」物件リスト＝今回はC案で残置。将来A/B案検討の余地あり（§10意思決定6参照）
+
+### 直近コミット（このセッション分）
+```
+7e9f6ea feat(guide): 付録C「よくある質問」+ FAQPage JSON-LD
+8779a18 feat(articles): 管理会社・銀行融資 2本追加
+76d9fa5 feat(lp): BukkenFAQ に FAQPage JSON-LD
+7fae7c0 feat(articles): リノベ再販戦略
+db7fb07 feat(lp,guide): LP/ガイドに戸建パス追加
+303b698 feat(articles): 戸建vsアパート
+aa26998 feat(articles): 築古戸建の投資物件
+50f33a0 feat(articles): 客付けに強い物件・弱い物件
+9a7a48d feat(lp): MidCTA/BottomCTA 非公開→ご紹介可能な
+3fe339a docs: 引き継ぎ書を最新化
+adc5500 feat(articles): ネット公開物件にも価値
+f2aede6 feat(articles): 表面利回り vs 実質利回り
+3f028cb docs(line): paste-ready をHTMLガイド公開・現UI仕様に同期
+```
+
+— 2026-04-17 2回目セッション終了時、Claude Opus 4.7 より
