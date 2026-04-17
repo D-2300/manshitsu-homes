@@ -25,11 +25,13 @@ export interface Article {
   keywords: string[];
   leadText: string;
   sections: ArticleSection[];
+  relatedSlugs?: string[];
 }
 
 export const articles: Article[] = [
   {
     slug: 'genjokaifuku-cost-down',
+    relatedSlugs: ['boro-bukken-rimawari', 'accent-cross-value-up', 'nyukyo-go-reform'],
     title: '原状回復費用を半額以下にした方法 — 仙台市1LDKオーナーの実例',
     category: 'case-study',
     date: '2026-03-15',
@@ -61,6 +63,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'accent-cross-value-up',
+    relatedSlugs: ['virtual-staging-guide', 'nyukyo-go-reform', 'genjokaifuku-cost-down'],
     title: 'アクセントクロスで空室対策 — 低コストで「選ばれる部屋」にする方法',
     category: 'column',
     date: '2026-03-28',
@@ -88,6 +91,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'nyukyo-go-reform',
+    relatedSlugs: ['accent-cross-value-up', 'virtual-staging-guide', 'genjokaifuku-cost-down'],
     title: '入居後リフォームとは？大家のリスクゼロで空室を埋める新しい方法',
     category: 'column' as ArticleCategory,
     date: '2026-04-05',
@@ -119,6 +123,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'virtual-staging-guide',
+    relatedSlugs: ['accent-cross-value-up', 'nyukyo-go-reform', 'kyakuzuke-tsuyoi-yowai-bukken'],
     title: 'バーチャルステージングで広告費0円。空室写真の活用術',
     category: 'column' as ArticleCategory,
     date: '2026-04-08',
@@ -150,6 +155,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'miyagi-shueki-bukken-7points',
+    relatedSlugs: ['chuko-apato-sashine-jirei', 'sendai-rimawari-2026', 'hyomen-jisshitsu-rimawari'],
     title: '宮城の収益物件を買う前に見るべき7つのポイント｜内装屋が教える失敗しない物件選び',
     category: 'seo' as ArticleCategory,
     date: '2026-04-17',
@@ -197,6 +203,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'chuko-apato-sashine-jirei',
+    relatedSlugs: ['miyagi-shueki-bukken-7points', 'kokai-bukken-kachi', 'boro-bukken-rimawari'],
     title: '中古アパートの指値交渉 — 宮城の成約事例3つで分かる"通る指値"',
     category: 'seo' as ArticleCategory,
     date: '2026-04-17',
@@ -240,6 +247,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'sendai-rimawari-2026',
+    relatedSlugs: ['miyagi-jinkou-doutai-chintai-2026', 'apato-toushi-yushi-miyagi', 'hyomen-jisshitsu-rimawari'],
     title: '仙台の利回り相場 2026年版｜エリア別・築年別のリアルな数字',
     category: 'seo' as ArticleCategory,
     date: '2026-04-17',
@@ -287,6 +295,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'boro-bukken-rimawari',
+    relatedSlugs: ['genjokaifuku-cost-down', 'chuko-apato-sashine-jirei', 'kokai-bukken-kachi'],
     title: '築古ボロ物件の利回り改善事例｜改修費10万円で利回り6%→12%に',
     category: 'case-study' as ArticleCategory,
     date: '2026-04-10',
@@ -318,6 +327,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'hyomen-jisshitsu-rimawari',
+    relatedSlugs: ['sendai-rimawari-2026', 'kyakuzuke-tsuyoi-yowai-bukken', 'miyagi-shueki-bukken-7points'],
     title: '「表面利回り」と「実質利回り」の違い ─ 宮城のアパート投資で本当に手元に残る数字の出し方',
     category: 'seo' as ArticleCategory,
     date: '2026-04-17',
@@ -357,6 +367,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'kokai-bukken-kachi',
+    relatedSlugs: ['chuko-apato-sashine-jirei', 'kyakuzuke-tsuyoi-yowai-bukken', 'boro-bukken-rimawari'],
     title: 'ネット公開物件にも価値はある ─ 「非公開信仰」に振り回されない物件選び',
     category: 'seo' as ArticleCategory,
     date: '2026-04-17',
@@ -392,6 +403,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'kyakuzuke-tsuyoi-yowai-bukken',
+    relatedSlugs: ['kokai-bukken-kachi', 'hyomen-jisshitsu-rimawari', 'kanri-gaisha-erabikata-miyagi'],
     title: '客付けに強い物件・弱い物件の見分け方｜宮城のアパート投資で空室リスクを最小化する',
     category: 'seo' as ArticleCategory,
     date: '2026-04-17',
@@ -443,6 +455,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'chuko-kodate-toshi-miyagi',
+    relatedSlugs: ['kodate-vs-apato-toushi', 'kodate-renove-saihan', 'akiya-toushi-hajimekata-miyagi'],
     title: '築古戸建の投資物件｜宮城で見落とされている「100万円台から始める」小規模投資戦略',
     category: 'seo' as ArticleCategory,
     date: '2026-04-17',
@@ -490,6 +503,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'kodate-vs-apato-toushi',
+    relatedSlugs: ['chuko-kodate-toshi-miyagi', 'kodate-mini-apato-senryaku', 'kodate-renove-saihan'],
     title: '戸建賃貸 vs アパート投資 ─ 宮城で最初の1棟をどちらから始めるべきか',
     category: 'seo' as ArticleCategory,
     date: '2026-04-17',
@@ -537,6 +551,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'kodate-renove-saihan',
+    relatedSlugs: ['chuko-kodate-toshi-miyagi', 'kodate-vs-apato-toushi', 'akiya-toushi-hajimekata-miyagi'],
     title: '築古戸建のリノベ再販戦略｜宮城で半年〜1年で資金回収する出口モデル',
     category: 'seo' as ArticleCategory,
     date: '2026-04-17',
@@ -584,6 +599,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'kanri-gaisha-erabikata-miyagi',
+    relatedSlugs: ['kyakuzuke-tsuyoi-yowai-bukken', 'miyagi-jinkou-doutai-chintai-2026', 'shuuzen-tsumitate-keikaku-chikufuru'],
     title: 'アパート管理会社の選び方｜宮城で任せる前に必ずチェックする6項目',
     category: 'seo' as ArticleCategory,
     date: '2026-04-17',
@@ -635,6 +651,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'apato-toushi-yushi-miyagi',
+    relatedSlugs: ['fudosan-toushi-kakuteishinkoku-miyagi', 'salaryman-oyahou-hojin-nari-timing', 'sendai-rimawari-2026'],
     title: 'アパート投資で使える銀行融資｜宮城のパッケージローンと地銀プロパー融資の使い分け',
     category: 'seo' as ArticleCategory,
     date: '2026-04-17',
@@ -682,6 +699,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'shueki-bukken-deguchi-senryaku-miyagi',
+    relatedSlugs: ['miyagi-jinkou-doutai-chintai-2026', 'shuuzen-tsumitate-keikaku-chikufuru', 'salaryman-oyahou-hojin-nari-timing'],
     title: '収益物件の出口戦略｜宮城で売却・建替・解体を使い分ける判断基準',
     category: 'seo' as ArticleCategory,
     date: '2026-04-18',
@@ -729,6 +747,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'fudosan-toushi-kakuteishinkoku-miyagi',
+    relatedSlugs: ['salaryman-oyahou-hojin-nari-timing', 'apato-toushi-yushi-miyagi', 'shuuzen-tsumitate-keikaku-chikufuru'],
     title: '不動産投資の確定申告と税金｜宮城の大家が押さえる減価償却と青色申告の実務',
     category: 'seo' as ArticleCategory,
     date: '2026-04-18',
@@ -776,6 +795,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'salaryman-oyahou-hojin-nari-timing',
+    relatedSlugs: ['fudosan-toushi-kakuteishinkoku-miyagi', 'apato-toushi-yushi-miyagi', 'shueki-bukken-deguchi-senryaku-miyagi'],
     title: 'サラリーマン大家の法人成りタイミング｜課税所得・物件数・相続の3視点',
     category: 'seo' as ArticleCategory,
     date: '2026-04-18',
@@ -823,6 +843,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'miyagi-jinkou-doutai-chintai-2026',
+    relatedSlugs: ['sendai-rimawari-2026', 'shueki-bukken-deguchi-senryaku-miyagi', 'kanri-gaisha-erabikata-miyagi'],
     title: '宮城の人口動態と賃貸需要 2026年版｜仙台圏と県北・沿岸の温度差',
     category: 'seo' as ArticleCategory,
     date: '2026-04-18',
@@ -870,6 +891,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'shuuzen-tsumitate-keikaku-chikufuru',
+    relatedSlugs: ['shueki-bukken-deguchi-senryaku-miyagi', 'miyagi-jinkou-doutai-chintai-2026', 'kodate-renove-saihan'],
     title: '修繕積立計画の作り方｜築古アパート・戸建を長く回す積立テンプレート',
     category: 'seo' as ArticleCategory,
     date: '2026-04-18',
@@ -917,6 +939,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'akiya-toushi-hajimekata-miyagi',
+    relatedSlugs: ['chuko-kodate-toshi-miyagi', 'kodate-renove-saihan', 'kodate-mini-apato-senryaku'],
     title: '空き家投資の始め方｜「戸建が怖い」人のための宮城版入門',
     category: 'seo' as ArticleCategory,
     date: '2026-04-18',
@@ -964,6 +987,7 @@ export const articles: Article[] = [
   },
   {
     slug: 'kodate-mini-apato-senryaku',
+    relatedSlugs: ['kodate-vs-apato-toushi', 'akiya-toushi-hajimekata-miyagi', 'chuko-kodate-toshi-miyagi'],
     title: '戸建をミニアパート化する戦略｜シェアハウス・2世帯活用で利回りを底上げ',
     category: 'seo' as ArticleCategory,
     date: '2026-04-18',

@@ -53,10 +53,13 @@ export default function ArticlePage() {
     );
   }
 
-  // Related articles (same category, exclude current, max 3)
-  const related = getAllArticles()
-    .filter((a) => a.category === article.category && a.slug !== article.slug)
-    .slice(0, 3);
+  // Related articles: curated relatedSlugs if present, else same-category fallback
+  const allArticles = getAllArticles();
+  const related = article.relatedSlugs?.length
+    ? (article.relatedSlugs
+        .map((s) => allArticles.find((a) => a.slug === s))
+        .filter((a): a is NonNullable<typeof a> => Boolean(a)))
+    : allArticles.filter((a) => a.category === article.category && a.slug !== article.slug).slice(0, 3);
 
   return (
     <div style={{ fontFamily: "'Noto Sans JP', sans-serif", backgroundColor: C.warmWhite }}>
@@ -184,6 +187,31 @@ export default function ArticlePage() {
               )}
             </div>
           ))}
+
+          {/* Guide link */}
+          <Link
+            to="/guide/bukken"
+            style={{
+              display: 'block',
+              border: `1px solid ${C.gold}`,
+              backgroundColor: C.goldPale,
+              padding: '20px 24px',
+              marginBottom: 32,
+              textDecoration: 'none',
+              color: 'inherit',
+              borderRadius: 6,
+            }}
+          >
+            <div style={{ fontSize: 11, color: C.gold, fontWeight: 600, letterSpacing: 1, marginBottom: 6 }}>
+              完全ガイド
+            </div>
+            <div style={{ fontSize: 15, fontWeight: 600, color: C.textDark, marginBottom: 4 }}>
+              宮城で収益物件を買うときの完全ガイド（無料）
+            </div>
+            <div style={{ fontSize: 12, color: C.textMid, lineHeight: 1.6 }}>
+              非公開物件の動かし方・利回りの見極め・改修単価・出口戦略まで、1本にまとめました →
+            </div>
+          </Link>
 
           {/* LINE CTA */}
           <div
