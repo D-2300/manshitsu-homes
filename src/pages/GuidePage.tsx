@@ -1,7 +1,16 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { LINE_URL } from "../tokens";
-import { JsonLd, breadcrumbSchema } from "../utils/jsonLd";
+import { JsonLd, breadcrumbSchema, faqSchema } from "../utils/jsonLd";
+
+const guideFaqs = [
+  { q: "このガイドは本当に無料ですか？", a: "はい、完全無料です。弊社の本業は内装工事で、物件改修をご依頼いただいた段階で対価をいただきます。物件選びの段階で費用を請求することはありません。" },
+  { q: "宮城県外でも参考になりますか？", a: "相場の数字は宮城県のものですが、築古物件の見極め方・指値交渉・改修費の考え方・客付け力チェックなどの方法論は地域を問わず使えます。福島・山形・岩手の近県の方からもご相談いただいています。" },
+  { q: "戸建投資にも使えますか？", a: "ガイド本体はアパート1棟投資が主軸ですが、物件選びの考え方の大半は戸建投資にも応用できます。戸建固有の論点（再販戦略・小規模融資・ファミリー客付けなど）は別記事で詳しく解説しています。" },
+  { q: "不動産投資の初心者ですが、理解できますか？", a: "業界用語は付録Bの用語集で解説しています。初学者でも読める難度で書いていますが、検索意図と検索意味の違いなど、初心者本では触れない実務知識も含んでいるため、初級〜中級者の橋渡しになります。" },
+  { q: "他の不動産投資本との違いは何ですか？", a: "多くの投資本は仲介業や投資コンサルが書いており、物件売買で利益を出す立場の視点です。本ガイドは内装工事会社が物件売買では儲けない立場で書いているため、買わない方が良い物件・避けるべき業者についても率直に書いています。" },
+  { q: "個別相談はできますか？", a: "LINE公式アカウント（@074uzmls）で個別相談を承っています。検討中の物件URLや写真を送っていただければ、客付け力チェック・改修費概算・実質利回りベースのレビューを無料でお返しします。" },
+];
 
 const guideSchema = {
   "@context": "https://schema.org",
@@ -51,6 +60,7 @@ export default function GuidePage() {
   return (
     <div className="guide-root">
       <JsonLd data={guideSchema} />
+      <JsonLd data={faqSchema(guideFaqs.map((f) => ({ question: f.q, answer: f.a })))} />
       <JsonLd
         data={breadcrumbSchema([
           { name: "Top", url: "/" },
@@ -118,6 +128,7 @@ export default function GuidePage() {
           <li><span className="toc-num">Ch.8</span><span>まとめ — 次の1歩</span></li>
           <li><span className="toc-num">付録A</span><span>市町村別 平均利回りデータ</span></li>
           <li><span className="toc-num">付録B</span><span>用語集</span></li>
+          <li><span className="toc-num">付録C</span><span>よくある質問</span></li>
         </ol>
       </article>
 
@@ -700,6 +711,20 @@ export default function GuidePage() {
           <dt>バーチャルステージング</dt><dd>空室の写真に家具をCG合成する客付け手法。</dd>
           <dt>満室想定利回り</dt><dd>満室だった場合の家賃で計算した利回り。実勢と乖離注意。</dd>
           <dt>レインズ（REINS）</dt><dd>不動産業者間の物件情報ネットワーク。</dd>
+        </dl>
+      </article>
+
+      {/* ===== 付録C FAQ ===== */}
+      <article className="page">
+        <div className="page-header"><span>付録C よくある質問</span></div>
+        <h2 className="chapter-heading"><span className="chapter-no">付録C</span>よくある質問</h2>
+        <dl className="yougoshu">
+          {guideFaqs.map((faq, i) => (
+            <div key={i} style={{ marginBottom: "16px" }}>
+              <dt>Q. {faq.q}</dt>
+              <dd>A. {faq.a}</dd>
+            </div>
+          ))}
         </dl>
 
         <div className="closing">
