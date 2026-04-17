@@ -191,6 +191,8 @@
 6. miyagi-shueki-bukken-7points（SEO）
 7. chuko-apato-sashine-jirei（SEO）
 8. sendai-rimawari-2026（SEO）
+9. hyomen-jisshitsu-rimawari（SEO・LINE Day 2/5/9 連動）
+10. kokai-bukken-kachi（SEO・LINE Day 14-30 連動／§5段階開示中層）
 
 ### SEO / 構造化データ
 - `sitemap.xml`（22+ URL）
@@ -267,6 +269,9 @@
 - [x] ガイドに実写画像9枚挿入
 - [x] Ch.1-4「誰がやるか」追加
 - [x] Ch.2-3「売主の事情」軸に改訂＋業者スクリーニング節追加
+- [x] LINE paste-ready を HTMLガイド公開・現UI仕様・段階開示方針に同期（2026-04-17）
+- [x] SEO記事9本目「表面利回り vs 実質利回り」追加（LINE Day 2/5/9 連動）
+- [x] SEO記事10本目「ネット公開物件にも価値はある」追加（LINE Day 14-30 連動）
 
 ### 🏃 進行中（Cowork担当）
 - LINE公式アカウント設定（Phase 1-a/1-b 完了、1-c以降進行中）
