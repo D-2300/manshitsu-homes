@@ -289,52 +289,32 @@ export default function GuidePage() {
         </table>
         <p className="note"><strong>新耐震基準（1981年6月以降建築）</strong>かどうかは必ず確認。旧耐震物件は融資が付きにくく、売却時も苦戦します。</p>
 
-        <h3 className="section-heading">2-3. "非公開物件"の正体</h3>
-        <p>このガイドを読んでいる方に、最初にお伝えしておきたいことがあります。</p>
-        <blockquote className="quote">「非公開物件＝超お得な物件」ではありません。</blockquote>
-        <p>巷で「非公開物件を紹介します」という営業トークをよく見かけますが、実態は違います。非公開物件が世の中にある理由は、大きく3つです。</p>
-
-        <div className="structure">
-          <div className="structure-item">
-            <p className="structure-title">① 売主が"相場観のつく広告"を避けたい</p>
-            <p className="structure-body">相場感のある買い手に「高すぎる」と見抜かれないよう、露出を絞っているケース。</p>
-          </div>
-          <div className="structure-item">
-            <p className="structure-title">② 物件に表に出しにくい事情がある</p>
-            <p className="structure-body">瑕疵・近隣トラブル・管理の問題など、ネット掲載で顕在化すると困る情報があるケース。</p>
-          </div>
-          <div className="structure-item">
-            <p className="structure-title">③ 業者関係の義理で限定的に流通</p>
-            <p className="structure-body">売主と特定業者のしがらみで、一部にだけ情報が流れるケース。</p>
-          </div>
-        </div>
-
-        <p>つまり、<strong>非公開物件には高条件のものばかりが転がっているわけではありません</strong>。むしろ、普通に公開されている物件の方が条件が良いケースも多い。</p>
-
-        <h3 className="section-heading">弊社が扱う非公開物件の方針</h3>
-        <p>弊社には宮城県内で「市場に出ていない物件情報」が継続的に入ってきます。ただし、これらを誰にでも紹介しているわけではありません。</p>
-        <p><strong>紹介するのは、お客様の属性・資金力・投資方針にフィットした時だけ</strong>です。「非公開物件があります！」と煽って登録を誘うような運用はしません。</p>
+        <h3 className="section-heading">2-3. 弊社の物件情報と、ご紹介の方針について</h3>
+        <p>非公開物件は、弊社にも継続的に入ってきます。</p>
+        <p>ただし、非公開として流通している物件には、売主側にさまざまな<strong>人間的な事情</strong>があるケースが少なくありません。</p>
 
         <ul>
-          <li>予算500万円の方に3,000万円の物件を紹介しても意味がない</li>
-          <li>初心者の方に築40年の再生物件を渡しても事故が起きる</li>
-          <li>地元在住の方にしか管理できないエリアを首都圏投資家に勧めない</li>
+          <li>ご家族の離婚に伴って売却せざるを得ない</li>
+          <li>相続の整理として処分する必要がある</li>
+          <li>経営上の都合で、表立った市場に出さずに打診している</li>
         </ul>
 
-        <p>条件のフィットしない物件を「ご紹介しました」という形式だけ作っても、お客様のためにならない。この方針のため、<strong>ご相談いただいてから、お客様の状況に合うものがあればお送りする</strong>という順序です。</p>
+        <p>こうした物件は<strong>売主のプライバシーや心情を大切にする必要がある</strong>ため、広く公開されないまま水面下で動きます。必ずしも"お得"とは限らず、大切なのはお客様の状況（予算・エリア・物件タイプ）にフィットするかどうかです。</p>
 
         <div className="sidebar">
-          <p className="sidebar-label">まずは条件をお聞かせください</p>
-          <p>LINEで「物件リクエスト」と送っていただく際に、以下をお伝えください：</p>
-          <p style={{ marginTop: 8 }}>
-            ・<strong>予算の上限</strong>（自己資金と融資想定）<br />
-            ・<strong>エリア希望</strong>（仙台中心部 / 郊外 / 地方都市）<br />
-            ・<strong>物件タイプ</strong>（一棟アパート / 区分 / 戸建て）<br />
-            ・<strong>築年数の許容範囲</strong><br />
-            ・<strong>投資経験</strong>（初めて / 2棟目以降 / ベテラン）
-          </p>
-          <p style={{ marginTop: 8 }}>フィットする物件があれば数日〜数週間以内にお送りします。無ければ<strong>「今はありません」とはっきりお伝えします</strong>。下手な営業で無理に紹介するくらいなら、黙って待つ方が誠実だと思っています。</p>
+          <p className="sidebar-label">ご紹介の方針</p>
+          <p>条件のフィットしない物件を「ご紹介しました」という形式だけ作っても、お客様のためになりません。</p>
+          <p style={{ marginTop: 8 }}>だから、まずは条件をお聞かせください。フィットする物件があればお送りします。<strong>無ければ「今はありません」と正直にお伝えします</strong>。無理に紹介する営業はしません。</p>
         </div>
+
+        <p>LINEで「物件リクエスト」と送っていただく際に、以下をお伝えください：</p>
+        <ul>
+          <li><strong>予算の上限</strong>（自己資金と融資想定）</li>
+          <li><strong>エリア希望</strong>（仙台中心部 / 郊外 / 地方都市）</li>
+          <li><strong>物件タイプ</strong>（一棟アパート / 区分 / 戸建て）</li>
+          <li><strong>築年数の許容範囲</strong></li>
+          <li><strong>投資経験</strong>（初めて / 2棟目以降 / ベテラン）</li>
+        </ul>
       </article>
 
       {/* ===== Ch.3 ===== */}
@@ -415,32 +395,10 @@ export default function GuidePage() {
         <div className="page-header"><span>Ch.4 指値交渉の実践テクニック</span></div>
         <h2 className="chapter-heading"><span className="chapter-no">Ch.4</span>指値交渉の実践テクニック — 想定問答と事例</h2>
 
-        {/* Illustration: 天秤（交渉のバランス） */}
-        <div className="illust">
-          <svg viewBox="0 0 240 120" xmlns="http://www.w3.org/2000/svg">
-            <g fill="none" stroke="#6B4066" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-              {/* 柱 */}
-              <line x1="120" y1="20" x2="120" y2="100" strokeWidth="2" />
-              <rect x="108" y="98" width="24" height="8" />
-              {/* 横棒 */}
-              <line x1="60" y1="40" x2="180" y2="40" strokeWidth="2" />
-              {/* 左皿：売主希望 */}
-              <line x1="60" y1="40" x2="50" y2="60" />
-              <line x1="60" y1="40" x2="70" y2="60" />
-              <path d="M 45 60 Q 60 70 75 60" />
-              <text x="60" y="84" fontSize="8" textAnchor="middle" fill="#888" stroke="none">売主希望</text>
-              <text x="60" y="94" fontSize="9" textAnchor="middle" fontWeight="700" fill="#6B4066" stroke="none">¥¥¥</text>
-              {/* 右皿：指値 */}
-              <line x1="180" y1="40" x2="170" y2="55" />
-              <line x1="180" y1="40" x2="190" y2="55" />
-              <path d="M 165 55 Q 180 62 195 55" stroke="#C9A84C" strokeWidth="2" />
-              <text x="180" y="80" fontSize="8" textAnchor="middle" fill="#C9A84C" stroke="none">根拠ある指値</text>
-              <text x="180" y="90" fontSize="9" textAnchor="middle" fontWeight="700" fill="#C9A84C" stroke="none">¥¥</text>
-              {/* 中心 */}
-              <circle cx="120" cy="40" r="4" fill="#C9A84C" stroke="#C9A84C" />
-            </g>
-          </svg>
-          <p className="illust-caption">根拠があれば、数十〜数百万の調整は十分通る</p>
+        {/* Photo: 見積書・交渉 */}
+        <div className="photo-block">
+          <img src="/images/guide/g-negotiation.webp" alt="見積書を確認する" />
+          <p className="photo-caption">根拠があれば、数十〜数百万の調整は十分通る</p>
         </div>
 
         <h3 className="section-heading">4-1. 指値の基本ルール</h3>
