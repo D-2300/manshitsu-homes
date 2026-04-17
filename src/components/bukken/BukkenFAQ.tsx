@@ -1,3 +1,5 @@
+import { JsonLd, faqSchema } from "../../utils/jsonLd";
+
 const faqs = [
   {
     q: "なんで無料なの？",
@@ -26,8 +28,10 @@ const faqs = [
 ];
 
 export default function BukkenFAQ() {
+  const schema = faqSchema(faqs.map((f) => ({ question: f.q, answer: f.a })));
   return (
     <section style={{ padding: "64px 24px", background: "#f9f8f6" }}>
+      <JsonLd data={schema} />
       <div style={{ maxWidth: "720px", margin: "0 auto" }}>
         <h2 style={{ fontSize: "clamp(20px, 4.5vw, 28px)", fontWeight: 700, color: "#222", textAlign: "center", marginBottom: "40px", lineHeight: 1.7 }}>
           よくある質問
