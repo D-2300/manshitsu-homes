@@ -1,4 +1,3 @@
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { LINE_URL } from "../tokens";
 import { JsonLd, breadcrumbSchema, faqSchema } from "../utils/jsonLd";
@@ -38,26 +37,6 @@ const guideSchema = {
  * 印刷: Ctrl+P → PDFで保存 → 画面と同じデザインでダウンロード可
  */
 export default function GuidePage() {
-  useEffect(() => {
-    document.title = "宮城の収益物件 攻略ガイド｜満室デザインLABO";
-    const description = "宮城県の収益物件・中古アパート投資の攻略ガイド。相場データ・築古見極め3ポイント・指値交渉術・改修費単価・失敗事例10選まで内装屋視点で体系化。";
-    const ogImage = "https://manshitsu.homes/images/og-guide.png";
-
-    const metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) metaDesc.setAttribute("content", description);
-
-    const setMeta = (selector: string, value: string) => {
-      const el = document.querySelector(selector);
-      if (el) el.setAttribute("content", value);
-    };
-    setMeta('meta[property="og:title"]', "宮城の収益物件 攻略ガイド｜満室デザインLABO");
-    setMeta('meta[property="og:description"]', description);
-    setMeta('meta[property="og:image"]', ogImage);
-    setMeta('meta[name="twitter:title"]', "宮城の収益物件 攻略ガイド｜満室デザインLABO");
-    setMeta('meta[name="twitter:description"]', description);
-    setMeta('meta[name="twitter:image"]', ogImage);
-  }, []);
-
   return (
     <div className="guide-root">
       <JsonLd data={guideSchema} />
