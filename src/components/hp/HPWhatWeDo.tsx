@@ -30,30 +30,66 @@ export default function HPWhatWeDo() {
             一気通貫で。中間マージンなし、見積ズレなし。
           </p>
 
-          {/* Price badges */}
-          <div style={{ display: "flex", justifyContent: "center", gap: 16, flexWrap: "wrap" }}>
-            <div
-              style={{
-                padding: "14px 28px",
-                border: `1px solid ${M.light}`,
-                borderRadius: radius.md,
-                background: "#fff",
-              }}
-            >
-              <span style={{ fontSize: 13, color: C.textMid }}>改修費</span>{" "}
-              <span style={{ fontSize: 18, fontWeight: 700, color: M.main }}>8.8万円〜</span>
-            </div>
-            <div
-              style={{
-                padding: "14px 28px",
-                border: `1px solid ${M.light}`,
-                borderRadius: radius.md,
-                background: "#fff",
-              }}
-            >
-              <span style={{ fontSize: 13, color: C.textMid }}>バーチャルステージング</span>{" "}
-              <span style={{ fontSize: 18, fontWeight: 700, color: C.gold }}>¥0</span>
-            </div>
+          {/* Price badges（LPプラーク風・◆コーナー付き） */}
+          <div style={{ display: "flex", justifyContent: "center", gap: 12, flexWrap: "wrap" }}>
+            {[
+              { label: "改修費", value: "8.8", unit: "万円〜", color: M.main },
+              { label: "バーチャルステージング", value: "¥0", unit: "", color: C.gold },
+            ].map((b) => (
+              <div
+                key={b.label}
+                style={{
+                  padding: "16px 24px 12px",
+                  border: `1px solid rgba(201,168,76,.45)`,
+                  borderRadius: radius.md,
+                  background: "linear-gradient(180deg, #fff 0%, #faf7f2 100%)",
+                  position: "relative",
+                  boxShadow: "0 2px 10px rgba(201,168,76,.1), inset 0 1px 0 rgba(255,240,200,.5)",
+                  minWidth: "120px",
+                  textAlign: "center",
+                }}
+              >
+                <span
+                  style={{
+                    position: "absolute",
+                    top: "-5px",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    fontSize: "7px",
+                    color: C.gold,
+                    background: C.warmWhite,
+                    padding: "0 4px",
+                  }}
+                >
+                  ◆
+                </span>
+                <div style={{ fontSize: 11, color: C.textMid, marginBottom: 4, letterSpacing: ".05em" }}>
+                  {b.label}
+                </div>
+                <div
+                  style={{
+                    fontFamily: "'Cormorant Garamond', serif",
+                    fontSize: 24,
+                    fontWeight: 700,
+                    color: b.color,
+                    letterSpacing: ".01em",
+                    lineHeight: 1,
+                  }}
+                >
+                  {b.value}
+                  <span
+                    style={{
+                      fontFamily: "'Noto Sans JP', sans-serif",
+                      fontSize: 12,
+                      fontWeight: 700,
+                      marginLeft: 2,
+                    }}
+                  >
+                    {b.unit}
+                  </span>
+                </div>
+              </div>
+            ))}
           </div>
         </ScrollFadeIn>
       </div>

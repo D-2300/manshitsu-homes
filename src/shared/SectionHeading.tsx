@@ -5,14 +5,16 @@ interface SectionHeadingProps {
   ja?: string;
   align?: "center" | "left";
   dark?: boolean;
-  /** 下線（32px gold）を出すか。デフォルト true */
+  /** 下線（金色ライン）を出すか。デフォルト true */
   underline?: boolean;
   marginBottom?: number | string;
 }
 
 /**
  * セクション見出し（EN + JA + goldライン）
- * 満室ブランド版: EN は M.mid / JA は warmGray / dark=true で白系
+ * LP の CRAFTSMANSHIP スタイルに統一:
+ *   両翼ヘアライン（グラデフェード）で EN を挟む
+ *   JA はグレーの補助、下線は短い金ヘアライン
  */
 export default function SectionHeading({
   en,
@@ -22,32 +24,62 @@ export default function SectionHeading({
   underline = true,
   marginBottom = 40,
 }: SectionHeadingProps) {
-  const enColor = dark ? "rgba(255,255,255,0.7)" : M.mid;
-  const jaColor = dark ? "rgba(255,255,255,0.45)" : C.warmGray;
+  const enColor = dark ? "rgba(255,255,255,0.85)" : C.gold;
+  const jaColor = dark ? "rgba(255,255,255,0.8)" : M.dark;
+  const lineColor = dark ? "rgba(255,255,255,.3)" : "rgba(201,168,76,.45)";
 
   return (
     <div style={{ textAlign: align, marginBottom }}>
-      <p
+      {/* 両翼ヘアライン + EN ラベル（CRAFTSMANSHIP スタイル） */}
+      <div
         style={{
-          fontSize: typography.sectionEn.size,
-          fontWeight: 600,
-          letterSpacing: typography.sectionEn.letterSpacing,
-          color: enColor,
-          margin: 0,
-          textTransform: "uppercase",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: align === "center" ? "center" : "flex-start",
+          gap: "12px",
+          maxWidth: "420px",
+          margin: align === "center" ? "0 auto 8px" : "0 0 8px",
         }}
       >
-        {en}
-      </p>
+        {align === "center" && (
+          <span
+            style={{
+              flex: 1,
+              height: "1px",
+              background: `linear-gradient(90deg, transparent, ${lineColor})`,
+            }}
+          />
+        )}
+        <span
+          style={{
+            fontSize: typography.sectionEn.size,
+            fontWeight: 600,
+            letterSpacing: ".3em",
+            color: enColor,
+            textTransform: "uppercase",
+            whiteSpace: "nowrap",
+          }}
+        >
+          {en}
+        </span>
+        <span
+          style={{
+            flex: 1,
+            height: "1px",
+            background: `linear-gradient(90deg, ${lineColor}, transparent)`,
+          }}
+        />
+      </div>
+
       {ja && (
         <p
           style={{
-            fontSize: typography.sectionJa.size,
-            fontWeight: typography.sectionJa.weight,
-            letterSpacing: typography.sectionJa.letterSpacing,
+            fontSize: "clamp(17px, 3.8vw, 22px)",
+            fontWeight: 700,
+            letterSpacing: ".03em",
             color: jaColor,
-            marginTop: 6,
-            marginBottom: 0,
+            margin: "0",
+            lineHeight: 1.5,
           }}
         >
           {ja}
@@ -56,10 +88,10 @@ export default function SectionHeading({
       {underline && (
         <div
           style={{
-            width: 32,
+            width: 40,
             height: 1,
-            background: C.gold,
-            margin: align === "center" ? "12px auto 0" : "12px 0 0",
+            background: `linear-gradient(90deg, transparent, ${C.gold}, transparent)`,
+            margin: align === "center" ? "14px auto 0" : "14px 0 0",
           }}
         />
       )}
