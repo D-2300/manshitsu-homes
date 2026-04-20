@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { M, C, spacing, radius } from "../../tokens";
 import { SectionHeading, LineCTAButton } from "../../shared";
+import { getWeeklyPropertyCount } from "../bukken/weeklyCount";
 
 interface Property {
   area: string;
@@ -29,6 +30,7 @@ function shuffle<T>(arr: T[]): T[] {
 
 export default function HPPropertyTeaser() {
   const [selected] = useState(() => shuffle(sampleProperties).slice(0, 4));
+  const [remainingCount] = useState<number>(() => getWeeklyPropertyCount());
   const [animatedRows, setAnimatedRows] = useState<number[]>([]);
   const hasStarted = useRef(false);
   const sectionRef = useRef<HTMLElement>(null);
@@ -154,7 +156,7 @@ export default function HPPropertyTeaser() {
             <div style={{ fontSize: 11, color: "#8a7a6a" }}>
               他にも{" "}
               <strong style={{ color: M.main }}>
-                30件以上
+                {remainingCount}件
               </strong>
               {" "}の非公開情報があります
             </div>

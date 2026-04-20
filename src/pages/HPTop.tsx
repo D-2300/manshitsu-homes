@@ -1,5 +1,5 @@
 import ManshitsuNav from "../components/hp/ManshitsuNav";
-import HPHero from "../components/hp/HPHero";
+import HPHero from "../components/hp/HPHeroV2";
 import HPWhatWeDo from "../components/hp/HPWhatWeDo";
 import HPVoice from "../components/hp/HPVoice";
 import HPWorksPreview from "../components/hp/HPWorksPreview";

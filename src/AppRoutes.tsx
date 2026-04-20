@@ -7,6 +7,7 @@ import PricingPage from './pages/PricingPage';
 import BukkenLPPage from './BukkenLPPage';
 import BukkenLPPageV2Phase2 from './BukkenLPPageV2Phase2';
 import BukkenHeroV2 from './components/bukken/BukkenHeroV2';
+import HPHeroV2 from './components/hp/HPHeroV2';
 import ArticleListPage from './pages/ArticleListPage';
 import ArticlePage from './pages/ArticlePage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
@@ -36,6 +37,8 @@ export default function AppRoutes() {
         <Route path="/mock/hero-v2" element={<BukkenHeroV2 />} />
         {/* モック: Phase 2 トリム版LP */}
         <Route path="/mock/lp-phase2" element={<BukkenLPPageV2Phase2 />} />
+        {/* モック: 新HP Hero */}
+        <Route path="/mock/hp-hero-v2" element={<HPHeroV2 />} />
       </Routes>
     </>
   );
