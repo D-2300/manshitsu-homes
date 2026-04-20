@@ -42,7 +42,7 @@ export default function ManshitsuFooter() {
         >
           物件未定でもOK。断りはLINE1本で完了です。
         </p>
-        <LineCTAButton size="normal" label="LINEで相談する" />
+        <LineCTAButton size="normal" label="LINEで相談する" location="hp_footer" />
       </div>
 
       {/* Service Area */}

@@ -163,7 +163,7 @@ export default function HPPropertyTeaser() {
 
         {/* CTA */}
         <div style={{ textAlign: "center", marginTop: 28 }}>
-          <LineCTAButton size="large" label="非公開の物件情報を見る" />
+          <LineCTAButton size="large" label="非公開の物件情報を見る" location="hp_property_teaser" />
           <p style={{ fontSize: 12, color: "#8a7a6a", marginTop: 10 }}>
             1分で完了・営業なし・いつでもブロック可能
           </p>

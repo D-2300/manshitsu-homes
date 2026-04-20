@@ -1,4 +1,5 @@
 import { C, LINE_URL, radius, transitions } from "../tokens";
+import { trackLineCtaClick } from "../utils/trackConversion";
 
 interface LineCTAButtonProps {
   size?: "normal" | "small" | "large";
@@ -6,6 +7,8 @@ interface LineCTAButtonProps {
   disabled?: boolean;
   fullWidth?: boolean;
   href?: string;
+  /** Google Ads検索語句分析で使う識別子。未指定でも計測は発火する。 */
+  location?: string;
 }
 
 const sizeMap = {
@@ -25,6 +28,7 @@ export default function LineCTAButton({
   disabled = false,
   fullWidth = false,
   href,
+  location = "hp_line_cta",
 }: LineCTAButtonProps) {
   const { padding, fontSize } = sizeMap[size];
   const width = fullWidth ? "100%" : undefined;
@@ -66,6 +70,7 @@ export default function LineCTAButton({
       href={href ?? LINE_URL}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={() => trackLineCtaClick(location)}
       style={{
         display: fullWidth ? "block" : "inline-block",
         backgroundColor: C.lineGreen,

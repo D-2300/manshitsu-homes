@@ -1,4 +1,5 @@
 import { M, C, LINE_URL } from "../../tokens";
+import { trackLineCtaClick } from "../../utils/trackConversion";
 
 export default function HPHero() {
   return (
@@ -85,6 +86,7 @@ export default function HPHero() {
             href={LINE_URL}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackLineCtaClick("hp_hero")}
             style={{
               display: "inline-block",
               background: C.lineGreen,
