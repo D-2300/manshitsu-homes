@@ -699,3 +699,94 @@ cdcfe92 docs(line): paste-ready を全Phase完了状態に同期
 - 各クラスター内で最低2本の相互リンクが理想
 
 — 2026-04-17 4回目セッション終了時、Claude Opus 4.7 より
+
+---
+
+## §18. 前回セッション（5回目／2026-04-18〜04-20）の差分と次やること
+
+### このセッションでやったこと（全てpush済・Netlifyデプロイ反映中）
+
+**1. 記事の内部リンク整備（commit `4f9897c`）**
+- `Article` 型に `relatedSlugs?: string[]` を追加
+- 23本すべてに curated 3本の関連記事を付与（戸建5本／資金税務3本／運用エリア3本 クラスター相互リンク）
+- `ArticlePage` で relatedSlugs を優先使用（fallbackは同カテゴリ）
+- 各記事末尾に `/guide/bukken` への導線ブロックを追加
+
+**2. 戸建DIY併用リノベ事例を追加（commit `8e74f8e`）**
+- `kodate-diy-heiyou-osaki-case` を case-study に新設
+- 大崎市・築45年戸建280万円を総投資495万円で利回り15.8%に再生、水回り＋屋根はプロ／内装・建具・外構はDIYという線引きの実例
+- sitemap.xml にも追加、計23本に
+
+**3. 🔴 SEOの本丸：prerender の `<head>` ページ別注入（commit `8f3b1f3`）**
+- **問題**：`prerender.mjs` が `<div id="root">` しか差し替えておらず、全URLが同一 `<title>`／`description`／OGタグで配信されていた（プロジェクト開始時から潜在していた）
+- **影響**：SERP上で全記事が同じタイトル→CTR激減、LPの広告品質スコアも頭打ち
+- **修正**：`prerender.mjs` を書き直し、`Article` / `WorkItem` データから title・metaDescription・heroImage を抽出して各ルートに注入。静的ページ10本分の固有meta定義も追加
+- **対象計39ルート**：Top・About・Works・Pricing・Articles・Privacy・Tokushoho・Guide・LP×2・記事23本・事例5本
+
+**4. sitemap 末尾スラッシュ統一（commit `24070cc`）**
+- 全URLに末尾 `/` 付与（Netlifyのpretty URLsで301される問題の解消）
+- Google Adsの最終URLは保存時に自動で末尾スラッシュが消える仕様なので、そちらは301のまま（影響は+50〜200msのレイテンシ程度）
+
+**5. 🔴 姉妹プロジェクト hp-lp (`kiokuso.jp`) にも同じ修正を移植（hp-lp commit `73c9684`）**
+- hp-lp 側の `prerender.mjs` も全く同じ `<head>` 共通問題を抱えていた（検証済み）
+- manshitsu版を移植、記事9本＋固定ページ15本の計24ルートに固有meta注入
+- 記事データの `thumbnail: \`${IMG}/foo.webp\`` のようなテンプレートリテラル参照を定数解決する処理を追加
+- なお hp-lp にはそもそも sitemap.xml が無い（次回課題）
+
+### 🚀 次セッションで最初にやること
+
+#### 優先度高（手動作業・ユーザー側）
+1. **LINE Manager でガイド表紙画像を再アップロード**（§17から継続・未確認なら最優先）
+   - URL: https://manager.line.biz/
+   - アカウント: `@074uzmls`（満室デザインLABO）
+   - あいさつメッセージ② → リッチ画像 → `docs/line-setup-output/guide-cover.png`（1200×1800）に差し替え
+2. **Google Ads の最終URL確認**（§18-4の残件）
+   - Ads管理画面で `/lp/bukken` と保存される（末尾スラッシュは自動で消える、仕様）
+   - 気にしなくてOK。どうしても301を消したい場合のみ `_redirects` に200 rewrite を追加する選択肢あり
+3. **Search Console・Clarity・GA4 で SEO修正の効果を観測**（デプロイ後1〜2週間）
+   - 記事個別タイトルでのインデックス登録／CTR改善
+   - LP `/lp/bukken` の直帰率・滞在時間の変化
+   - 配信30日後の論文改訂（`BUSINESS_THESIS.md §7`）へつなげる
+
+#### 優先度中（コード／コンテンツ）
+4. **hp-lp に sitemap.xml を新規作成**
+   - manshitsu版をテンプレに、kiokuso.jp の24ルート分を列挙
+   - `public/sitemap.xml` に配置、`robots.txt` に Sitemap 行も追加
+5. **記事のランタイム `document.title` 削除（任意）**
+   - `BukkenLPPage`／`GuidePage`（manshitsu）、`TenantGuidePage`／`TenantLPPage`（hp-lp）の `document.title = ...` は prerender が書き換えるので不要化してOK
+   - 残しても害はないので優先度低め
+6. **ArticleListPage のカテゴリフィルタ確認**（§17からの継続・記事23本時点の体験確認）
+7. **事例カテゴリのバリエーション**（§17継続）：戸建DIY事例は追加済、他の切り口（店舗併用・再建築不可・空き家バンク等）が欲しければ追加
+
+#### 優先度低（外部連携・データ待ち）
+8. Microsoft Clarity 満室専用ID取得（まだ記憶荘共用の `vuby2q6y09` から分離途中の場合）
+9. 配信60日後のシナリオC（学習層追加）拡大判断
+10. 画像最適化監査（未使用webp削除・heroImage重複解消）
+
+### この時点で守るべきこと（再掲＋今回追加）
+- §4 非公開物件方針、§5 段階的開示マップ、§13 禁じ手リスト
+- §16 戸建は主軸／DIY受容は奥に置く
+- §17 記事は内装屋の一人称視点を崩さない／新記事末尾にLINE導線を置く
+- **§18追加：`prerender.mjs` を今後いじる時は `<head>` 注入ロジックを壊さないこと**
+- **§18追加：新しい記事・静的ページを追加したら、`prerender.mjs` の `STATIC_META` にも固有タイトル／説明を追加するのを忘れない**（記事は自動抽出されるが、静的ルートは手書き定義）
+- **§18追加：hp-lp でも同じルール。`STATIC_META` に固有meta定義を追加する**
+
+### 直近コミット（このセッション分）
+**manshitsu-homes**
+```
+24070cc fix(seo): sitemap.xml 全URLに末尾スラッシュ付与
+8f3b1f3 fix(seo): prerenderで<head>をページごとに差し替え
+8e74f8e feat(articles): 戸建DIY併用リノベ事例（大崎市280万円・利回り18%）追加
+4f9897c feat(articles): 内部リンク整備＋完全ガイド導線追加
+```
+**hp-lp**
+```
+73c9684 fix(seo): prerenderで<head>をページごとに差し替え
+```
+
+### 発見した潜在課題のメモ
+- manshitsu / hp-lp どちらも Netlify の pretty URL 挙動でディレクトリ型URL（`/lp/bukken`）にアクセスすると301で `/lp/bukken/` にリダイレクトされる
+- 回避したい場合は `public/_redirects` 先頭に `/lp/bukken /lp/bukken/index.html 200` 等の200 rewrite を追加するのが最短路
+- 今回は広告最終URLの実害が軽微のため見送り、sitemap側を実配信URLに合わせる方向で対応した
+
+— 2026-04-20 5回目セッション終了時、Claude Opus 4.7 より
