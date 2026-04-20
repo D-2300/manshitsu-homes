@@ -6,16 +6,19 @@ const previews = [
   {
     name: "1K・築18年アパート",
     cost: "¥105,000",
+    unit: "／ 1室 表層改修",
     img: "/images/m-after-green-sm.webp",
   },
   {
     name: "ワンルーム・築22年",
     cost: "¥88,000",
+    unit: "／ 1室 クロス＋床",
     img: "/images/m-after-pendant-sm.webp",
   },
   {
     name: "2DK・築28年アパート",
     cost: "¥180,000",
+    unit: "／ 1室 フル改修",
     img: "/images/m-before-3-sm.webp",
   },
 ];
@@ -46,10 +49,13 @@ export default function HPWorksPreview() {
                   style={{ width: "100%", height: 160, objectFit: "cover", display: "block" }}
                 />
                 <div style={{ padding: "12px 16px" }}>
-                  <p style={{ fontSize: 13, fontWeight: 600, color: C.textDark, marginBottom: 4 }}>
+                  <p style={{ fontSize: 13, fontWeight: 600, color: C.textDark, marginBottom: 6 }}>
                     {p.name}
                   </p>
-                  <p style={{ fontSize: 12, color: C.gold, fontWeight: 500 }}>{p.cost}</p>
+                  <div style={{ display: "flex", alignItems: "baseline", gap: 4, flexWrap: "wrap" }}>
+                    <span style={{ fontSize: 13, color: C.gold, fontWeight: 700 }}>{p.cost}</span>
+                    <span style={{ fontSize: 10.5, color: C.warmGray, fontWeight: 400 }}>{p.unit}</span>
+                  </div>
                 </div>
               </div>
             </ScrollFadeIn>

@@ -139,7 +139,7 @@ export default function BukkenExitPopup() {
           lineHeight: 1.7,
           marginBottom: "20px",
         }}>
-          宮城県のアパート投資物件情報を<br />
+          宮城の収益物件情報を<br />
           <strong style={{ color: "#333" }}>無料</strong>でお届けしています。
         </p>
 

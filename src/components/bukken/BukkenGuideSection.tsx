@@ -27,7 +27,7 @@ export default function BukkenGuideSection() {
           FREE GUIDE
         </p>
         <h2 style={{ textAlign: "center", fontSize: "clamp(20px, 4.5vw, 28px)", fontWeight: 700, color: "#1a1a1f", lineHeight: 1.55, marginBottom: "16px" }}>
-          <span style={{ fontSize: "clamp(18px, 4vw, 24px)", color: "#1a1a1f", fontWeight: 700 }}>"アパート投資の仕組み"を知らないだけで、</span><br />
+          <span style={{ fontSize: "clamp(18px, 4vw, 24px)", color: "#1a1a1f", fontWeight: 700 }}>"収益物件の仕組み"を知らないだけで、</span><br />
           数百万〜数千万円<em style={{ fontStyle: "normal", color: "#C9A84C" }}>損</em>しています。
         </h2>
 
@@ -51,7 +51,7 @@ export default function BukkenGuideSection() {
             FREE GUIDE
           </div>
           <div style={{ fontSize: "clamp(14px, 3.5vw, 17px)", fontWeight: 700, lineHeight: 1.5, marginBottom: "12px" }}>
-            宮城の<br />アパート投資<br />攻略ガイド
+            宮城の<br />収益物件<br />攻略ガイド
           </div>
           <div style={{ fontSize: "10px", color: "rgba(255,255,255,.6)" }}>
             物件選び・交渉・改修・客付け

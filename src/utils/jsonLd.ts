@@ -23,7 +23,7 @@ export const organizationSchema = {
   url: BASE_URL,
   logo: `${BASE_URL}/images/logo-manshitsu-h-gold.webp`,
   sameAs: [],
-  description: "宮城のアパート投資を、物件探しから手伝う内装屋。",
+  description: "宮城の収益物件を、物件探しから手伝う内装屋。",
   telephone: "+81-80-6900-3314",
   address: {
     "@type": "PostalAddress",

@@ -6,6 +6,7 @@ import BukkenGuideSection from "./components/bukken/BukkenGuideSection";
 import BukkenBeforeAfterCTA from "./components/bukken/BukkenBeforeAfterCTA";
 import BukkenFairEval from "./components/bukken/BukkenFairEval";
 import BukkenProfiles from "./components/bukken/BukkenProfiles";
+import HPTrustTestimonials from "./components/hp/HPTrustTestimonials";
 import BukkenFAQ from "./components/bukken/BukkenFAQ";
 import BukkenBottomCTA from "./components/bukken/BukkenBottomCTA";
 import BukkenMailForm from "./components/bukken/BukkenMailForm";
@@ -24,6 +25,7 @@ export default function BukkenLPPage() {
       <BukkenBeforeAfterCTA />
       <BukkenFairEval />
       <BukkenProfiles />
+      <HPTrustTestimonials />
       <BukkenFAQ />
       <BukkenBottomCTA />
       <BukkenMailForm />

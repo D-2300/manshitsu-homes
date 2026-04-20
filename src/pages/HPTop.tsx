@@ -5,7 +5,7 @@ import HPVoice from "../components/hp/HPVoice";
 import HPWorksPreview from "../components/hp/HPWorksPreview";
 import HPArticlesPreview from "../components/hp/HPArticlesPreview";
 import HPPropertyTeaser from "../components/hp/HPPropertyTeaser";
-import HPLinkSection from "../components/hp/HPLinkSection";
+import HPTrustTestimonials from "../components/hp/HPTrustTestimonials";
 import ManshitsuFooter from "../components/hp/ManshitsuFooter";
 import V3FloatingCTA from "../components/v3/V3FloatingCTA";
 
@@ -15,11 +15,11 @@ export default function HPTop() {
       <ManshitsuNav />
       <HPHero />
       <HPWhatWeDo />
+      <HPPropertyTeaser />
+      <HPTrustTestimonials />
       <HPVoice />
       <HPWorksPreview />
       <HPArticlesPreview />
-      <HPPropertyTeaser />
-      <HPLinkSection />
       <ManshitsuFooter />
       <V3FloatingCTA />
     </div>

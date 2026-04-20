@@ -9,7 +9,7 @@ export default function BukkenSteps() {
           物件情報を受け取るまでの<span style={{ color: "#06C755" }}>かんたん3ステップ</span>
         </h2>
         <p style={{ textAlign: "center", fontSize: "clamp(13px, 2.5vw, 15px)", fontWeight: 700, color: "#06C755", marginBottom: "20px" }}>
-          アパート投資 攻略ガイド プレゼント中！
+          収益物件 攻略ガイド プレゼント中！
         </p>
 
         {/* Visual flow infographic - LINE green background band */}

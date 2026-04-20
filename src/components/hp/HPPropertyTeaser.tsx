@@ -30,7 +30,6 @@ function shuffle<T>(arr: T[]): T[] {
 export default function HPPropertyTeaser() {
   const [selected] = useState(() => shuffle(sampleProperties).slice(0, 4));
   const [animatedRows, setAnimatedRows] = useState<number[]>([]);
-  const [showCount, setShowCount] = useState(false);
   const hasStarted = useRef(false);
   const sectionRef = useRef<HTMLElement>(null);
 
@@ -43,7 +42,6 @@ export default function HPPropertyTeaser() {
           selected.forEach((_, i) => {
             setTimeout(() => setAnimatedRows((prev) => [...prev, i]), i * 80);
           });
-          setTimeout(() => setShowCount(true), selected.length * 80 + 200);
         }
       },
       { threshold: 0.3 },
@@ -55,7 +53,7 @@ export default function HPPropertyTeaser() {
   return (
     <section ref={sectionRef} style={{ padding: `${spacing.section.md} 16px`, background: "#fff" }}>
       <div style={{ maxWidth: spacing.contentMax.normal, margin: "0 auto" }}>
-        <SectionHeading en="PROPERTY INFO" ja="非公開のアパート投資物件" />
+        <SectionHeading en="PROPERTY INFO" ja="非公開の収益物件情報" />
         <p
           style={{
             textAlign: "center",
@@ -155,10 +153,10 @@ export default function HPPropertyTeaser() {
           <div style={{ padding: "10px 16px", background: "#faf7f2", borderTop: "1px solid #ece6dc", textAlign: "center" }}>
             <div style={{ fontSize: 11, color: "#8a7a6a" }}>
               他にも{" "}
-              <strong style={{ color: M.main, opacity: showCount ? 1 : 0, transition: "opacity 0.5s" }}>
-                {showCount ? Math.floor(Math.random() * 21) + 30 : "--"}
-              </strong>{" "}
-              件あります
+              <strong style={{ color: M.main }}>
+                30件以上
+              </strong>
+              {" "}の非公開情報があります
             </div>
           </div>
         </div>

@@ -15,7 +15,7 @@ export default function BukkenFooter() {
         </Link>
       </p>
       <p style={{ fontSize: "10px", color: "rgba(255,255,255,.2)" }}>
-        宮城のアパート投資 収益物件情報・改修・客付け支援
+        宮城の収益物件情報・改修・客付け支援
       </p>
     </footer>
   );

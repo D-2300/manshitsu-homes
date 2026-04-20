@@ -3,8 +3,26 @@ import { M, C, spacing, radius } from "../../tokens";
 import { SectionHeading, ScrollFadeIn } from "../../shared";
 import { getAllArticles, categoryLabels } from "../../data/articles";
 
+function pickDiversePreview(n = 3) {
+  const all = getAllArticles();
+  const seen = new Set<string>();
+  const picked: typeof all = [];
+  for (const a of all) {
+    if (picked.length >= n) break;
+    if (!seen.has(a.category)) {
+      picked.push(a);
+      seen.add(a.category);
+    }
+  }
+  for (const a of all) {
+    if (picked.length >= n) break;
+    if (!picked.includes(a)) picked.push(a);
+  }
+  return picked;
+}
+
 export default function HPArticlesPreview() {
-  const latest = getAllArticles().slice(0, 3);
+  const latest = pickDiversePreview(3);
 
   return (
     <section style={{ padding: `${spacing.section.md} ${spacing.pagePadding}`, background: "#fff" }}>
@@ -63,7 +81,19 @@ export default function HPArticlesPreview() {
                     >
                       {categoryLabels[a.category]}
                     </span>
-                    <p style={{ fontSize: 13, fontWeight: 600, color: C.textDark, lineHeight: 1.5, margin: 0 }}>
+                    <p
+                      style={{
+                        fontSize: 13,
+                        fontWeight: 600,
+                        color: C.textDark,
+                        lineHeight: 1.5,
+                        margin: 0,
+                        display: "-webkit-box",
+                        WebkitLineClamp: 2,
+                        WebkitBoxOrient: "vertical",
+                        overflow: "hidden",
+                      }}
+                    >
                       {a.title}
                     </p>
                   </div>

@@ -83,7 +83,6 @@ export default function BukkenHero() {
   const [updateDate] = useState(getUpdateDate);
   const [remainingCount] = useState<number>(() => getWeeklyPropertyCount());
   const [animatedRows, setAnimatedRows] = useState<number[]>([]);
-  const [showCount, setShowCount] = useState(false);
   const hasStarted = useRef(false);
 
   useEffect(() => {
@@ -93,7 +92,6 @@ export default function BukkenHero() {
       selected.forEach((_, i) => {
         setTimeout(() => setAnimatedRows((prev) => [...prev, i]), i * 80);
       });
-      setTimeout(() => setShowCount(true), selected.length * 80 + 200);
     }, 300);
   }, [selected]);
 
@@ -153,8 +151,8 @@ export default function BukkenHero() {
               letterSpacing: ".02em",
             }}
           >
-            アパート投資の成功は、<br />
-            <em style={{ fontStyle: "normal", color: "#C9A84C" }}>物件選び</em>から始まっている。
+            宮城の<em style={{ fontStyle: "normal", color: "#C9A84C" }}>収益物件</em>、<br />
+            買う前から一緒に選ぶ。
           </h1>
 
           {/* Sub copy */}
@@ -405,14 +403,8 @@ export default function BukkenHero() {
             </div>
             <div style={{ fontSize: "11px", color: "#8a7a6a" }}>
               他にも{" "}
-              <strong
-                style={{
-                  color: "#6B4066",
-                  opacity: showCount ? 1 : 0,
-                  transition: "opacity 0.5s",
-                }}
-              >
-                {showCount ? remainingCount : "--"}
+              <strong style={{ color: "#6B4066" }}>
+                {remainingCount}
               </strong>{" "}
               件あります
             </div>
