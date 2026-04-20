@@ -67,8 +67,8 @@ export default function AboutPage() {
             <span style={{ flex: 1, height: "1px", background: "linear-gradient(90deg, transparent, rgba(201,168,76,.5), transparent)" }} />
           </div>
 
-          {/* 顔写真（大きめ） */}
-          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "28px", marginBottom: "32px" }}>
+          {/* 顔写真（大サイズ・インパクト重視） */}
+          <div style={{ display: "flex", justifyContent: "center", alignItems: "center", gap: "clamp(18px, 5vw, 36px)", marginBottom: "34px" }}>
             {[
               { img: "/images/about-kai-sm.webp", name: "KAI", role: "元不動産 / 物件探し" },
               { img: "/images/about-ken-sm.webp", name: "KEN", role: "職人 / 現場・施工" },
@@ -76,14 +76,14 @@ export default function AboutPage() {
               <div key={p.name} style={{ textAlign: "center" }}>
                 <div
                   style={{
-                    width: "96px",
-                    height: "96px",
+                    width: "clamp(108px, 32vw, 140px)",
+                    height: "clamp(108px, 32vw, 140px)",
                     borderRadius: "50%",
-                    border: `2px solid ${C.gold}`,
-                    padding: "3px",
-                    background: "rgba(201,168,76,.1)",
-                    margin: "0 auto 10px",
-                    boxShadow: "0 4px 20px rgba(201,168,76,.2)",
+                    border: `3px solid ${C.gold}`,
+                    padding: "4px",
+                    background: "rgba(201,168,76,.12)",
+                    margin: "0 auto 12px",
+                    boxShadow: "0 6px 28px rgba(201,168,76,.25), 0 0 0 1px rgba(255,240,200,.1) inset",
                   }}
                 >
                   <img
@@ -92,10 +92,10 @@ export default function AboutPage() {
                     style={{ width: "100%", height: "100%", borderRadius: "50%", objectFit: "cover", display: "block" }}
                   />
                 </div>
-                <div style={{ fontSize: "14px", color: C.gold, fontWeight: 700, letterSpacing: ".08em" }}>
+                <div style={{ fontSize: "16px", color: C.gold, fontWeight: 700, letterSpacing: ".1em" }}>
                   {p.name}
                 </div>
-                <div style={{ fontSize: "10px", color: "rgba(220,210,220,.65)", marginTop: "2px", letterSpacing: ".05em" }}>
+                <div style={{ fontSize: "11px", color: "rgba(220,210,220,.7)", marginTop: "3px", letterSpacing: ".05em" }}>
                   {p.role}
                 </div>
               </div>
@@ -310,6 +310,92 @@ export default function AboutPage() {
                   今は<strong style={{ color: M.dark }}>物件を売らない側</strong>、内装をつくる側にいます。仕組みを知っているからこそ、大家さんの利益だけで物件を選べる立場に立てる。元仲介の目で、物件の裏まで読みます。
                 </p>
               </div>
+
+              {/* ── タイムライン：20年の転身 ── */}
+              <div style={{ marginTop: "32px", paddingTop: "24px", borderTop: `1px dashed ${C.borderLight}` }}>
+                <div style={{ fontSize: "10px", letterSpacing: ".25em", color: C.gold, fontWeight: 600, textAlign: "center", marginBottom: "18px", textTransform: "uppercase" as const }}>
+                  KAI's Timeline
+                </div>
+
+                <div style={{ position: "relative", padding: "30px 0 24px" }}>
+                  {/* Base line */}
+                  <div
+                    style={{
+                      position: "absolute",
+                      left: "5%",
+                      right: "5%",
+                      top: "50%",
+                      height: "2px",
+                      background: `linear-gradient(90deg, rgba(107,64,102,.2) 0%, ${C.gold} 50%, rgba(107,64,102,.2) 100%)`,
+                      transform: "translateY(-50%)",
+                    }}
+                  />
+
+                  {/* Three points */}
+                  <div style={{ position: "relative", display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0 5%" }}>
+                    {[
+                      { label: "Start", year: "2005", title: "仲介業へ", position: "start" },
+                      { label: "◆ 転機", year: "約20年間", title: "仕組みに違和感", position: "turn" },
+                      { label: "Now", year: "2026", title: "内装屋として", position: "now" },
+                    ].map((t) => {
+                      const isTurn = t.position === "turn";
+                      return (
+                        <div key={t.year} style={{ textAlign: "center", flex: "0 0 auto", width: "32%", position: "relative" }}>
+                          {/* Label above */}
+                          <div
+                            style={{
+                              fontSize: "9px",
+                              letterSpacing: ".15em",
+                              color: isTurn ? C.gold : M.main,
+                              fontWeight: 700,
+                              marginBottom: "10px",
+                              textTransform: "uppercase" as const,
+                            }}
+                          >
+                            {t.label}
+                          </div>
+
+                          {/* Dot */}
+                          <div
+                            style={{
+                              width: isTurn ? "18px" : "12px",
+                              height: isTurn ? "18px" : "12px",
+                              borderRadius: isTurn ? "2px" : "50%",
+                              background: isTurn ? C.gold : M.main,
+                              margin: "0 auto",
+                              boxShadow: isTurn ? "0 0 16px rgba(201,168,76,.5)" : "0 2px 6px rgba(107,64,102,.3)",
+                              transform: isTurn ? "rotate(45deg)" : "none",
+                            }}
+                          />
+
+                          {/* Year */}
+                          <div
+                            style={{
+                              fontSize: "11px",
+                              color: isTurn ? C.gold : M.main,
+                              fontWeight: 700,
+                              marginTop: "10px",
+                              fontFamily: "'Cormorant Garamond', serif",
+                              letterSpacing: ".04em",
+                            }}
+                          >
+                            {t.year}
+                          </div>
+
+                          {/* Title */}
+                          <div style={{ fontSize: "11px", color: C.textMid, marginTop: "2px", lineHeight: 1.4 }}>
+                            {t.title}
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
+
+                <div style={{ fontSize: "11px", color: C.warmGray, textAlign: "center", fontStyle: "italic", marginTop: "8px" }}>
+                  業界の仕組みを知った上で、辞めた。今は〝反対側〟に立っています。
+                </div>
+              </div>
             </div>
           </ScrollFadeIn>
         </div>
@@ -392,6 +478,184 @@ export default function AboutPage() {
                 </p>
               </div>
             </div>
+          </ScrollFadeIn>
+        </div>
+      </section>
+
+      {/* ================================================================ */}
+      {/* 3.5. Business Model 比較図 — なぜ中間マージンがないか               */}
+      {/* ================================================================ */}
+      <section style={{ padding: `${spacing.section.md} ${spacing.pagePadding}`, background: C.warmWhite }}>
+        <div style={{ maxWidth: "720px", margin: "0 auto" }}>
+          <ScrollFadeIn>
+            <SectionHeading en="Business Model" ja="なぜ、中間マージンがないのか" />
+          </ScrollFadeIn>
+
+          <ScrollFadeIn>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "10px", marginBottom: "20px" }}>
+              {/* 左: 従来 */}
+              <div
+                style={{
+                  background: "#fff",
+                  borderRadius: radius.md,
+                  padding: "18px 10px",
+                  border: `1px solid ${C.border}`,
+                  textAlign: "center",
+                  opacity: 0.9,
+                }}
+              >
+                <div style={{ fontSize: "10px", letterSpacing: ".15em", color: C.warmGray, fontWeight: 600, marginBottom: "14px", textTransform: "uppercase" as const }}>
+                  一般的な構造
+                </div>
+
+                {/* flow nodes */}
+                {[
+                  { node: "お客さん", tone: "main" },
+                  { node: "不動産仲介", meta: "手数料 3%" },
+                  { node: "内装の元請け", meta: "中抜きマージン" },
+                  { node: "下請け工務店", meta: "実作業" },
+                ].map((item, i, arr) => (
+                  <div key={i} style={{ position: "relative", padding: "6px 0" }}>
+                    <div
+                      style={{
+                        padding: "8px 6px",
+                        background: item.tone === "main" ? M.bg : "#f4efe6",
+                        border: `1px solid ${item.tone === "main" ? M.light : "#e8e0d4"}`,
+                        borderRadius: "6px",
+                        fontSize: "12px",
+                        fontWeight: 700,
+                        color: item.tone === "main" ? M.dark : "#6a5a4a",
+                      }}
+                    >
+                      {item.node}
+                    </div>
+                    {item.meta && (
+                      <div style={{ fontSize: "9px", color: C.accentRed, marginTop: "3px", fontWeight: 500 }}>
+                        ↓ {item.meta}
+                      </div>
+                    )}
+                    {!item.meta && i < arr.length - 1 && (
+                      <div style={{ fontSize: "12px", color: C.warmGray, marginTop: "2px" }}>↓</div>
+                    )}
+                  </div>
+                ))}
+
+                <div
+                  style={{
+                    marginTop: "14px",
+                    padding: "8px 6px",
+                    background: "rgba(196,77,63,.08)",
+                    border: `1px dashed ${C.accentRed}`,
+                    borderRadius: "6px",
+                    fontSize: "10px",
+                    color: C.accentRed,
+                    fontWeight: 700,
+                    lineHeight: 1.4,
+                  }}
+                >
+                  3社分のマージン<br />＝最終的にお客負担
+                </div>
+              </div>
+
+              {/* 右: 満室 */}
+              <div
+                style={{
+                  background: "linear-gradient(180deg, #fff 0%, #faf7f2 100%)",
+                  borderRadius: radius.md,
+                  padding: "18px 10px",
+                  border: `2px solid ${C.gold}`,
+                  textAlign: "center",
+                  boxShadow: "0 3px 16px rgba(201,168,76,.2), inset 0 1px 0 rgba(255,240,200,.4)",
+                  position: "relative",
+                }}
+              >
+                <span
+                  style={{
+                    position: "absolute",
+                    top: "-5px",
+                    left: "50%",
+                    transform: "translateX(-50%)",
+                    fontSize: "7px",
+                    color: C.gold,
+                    background: C.warmWhite,
+                    padding: "0 4px",
+                  }}
+                >
+                  ◆
+                </span>
+                <div style={{ fontSize: "10px", letterSpacing: ".15em", color: C.gold, fontWeight: 700, marginBottom: "14px", textTransform: "uppercase" as const }}>
+                  満室の構造
+                </div>
+
+                <div style={{ position: "relative", padding: "6px 0" }}>
+                  <div
+                    style={{
+                      padding: "8px 6px",
+                      background: M.bg,
+                      border: `1px solid ${M.light}`,
+                      borderRadius: "6px",
+                      fontSize: "12px",
+                      fontWeight: 700,
+                      color: M.dark,
+                    }}
+                  >
+                    お客さん
+                  </div>
+                  <div style={{ fontSize: "12px", color: C.warmGray, marginTop: "2px" }}>↓</div>
+                </div>
+
+                <div style={{ position: "relative", padding: "6px 0" }}>
+                  <div
+                    style={{
+                      padding: "14px 6px",
+                      background: `linear-gradient(180deg, rgba(201,168,76,.2), rgba(107,64,102,.15))`,
+                      border: `1px solid ${C.gold}`,
+                      borderRadius: "6px",
+                      fontSize: "12px",
+                      fontWeight: 700,
+                      color: M.dark,
+                      lineHeight: 1.5,
+                    }}
+                  >
+                    <div style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: "16px", fontWeight: 700, color: M.dark }}>
+                      KAI × KEN
+                    </div>
+                    <div style={{ fontSize: "10px", color: C.textMid, marginTop: "4px", fontWeight: 500 }}>
+                      物件〜施工まで<br />1社完結
+                    </div>
+                  </div>
+                </div>
+
+                {/* spacer to match left height */}
+                <div style={{ padding: "6px 0", visibility: "hidden" }}>
+                  <div style={{ padding: "8px 6px" }}>placeholder</div>
+                </div>
+                <div style={{ padding: "6px 0", visibility: "hidden" }}>
+                  <div style={{ padding: "8px 6px" }}>placeholder</div>
+                </div>
+
+                <div
+                  style={{
+                    marginTop: "14px",
+                    padding: "8px 6px",
+                    background: "rgba(45,138,94,.08)",
+                    border: `1px dashed ${C.accentGreen}`,
+                    borderRadius: "6px",
+                    fontSize: "10px",
+                    color: C.accentGreen,
+                    fontWeight: 700,
+                    lineHeight: 1.4,
+                  }}
+                >
+                  中間マージン<br />ゼロ
+                </div>
+              </div>
+            </div>
+
+            <p style={{ fontSize: "clamp(12px, 2.4vw, 14px)", color: C.textMid, lineHeight: 1.9, textAlign: "center", margin: 0, maxWidth: "520px", marginLeft: "auto", marginRight: "auto" }}>
+              物件を売ると利益が出る業界構造から離れたから、<br />
+              <strong style={{ color: M.dark }}>どの物件を選んでもらっても構わない</strong>立場で相談に乗れます。
+            </p>
           </ScrollFadeIn>
         </div>
       </section>
