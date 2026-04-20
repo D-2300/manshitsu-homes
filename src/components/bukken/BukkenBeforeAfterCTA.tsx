@@ -85,7 +85,7 @@ function BukkenBASlider() {
       }}
     >
       <img
-        src="/images/m-after-accent-sm.webp"
+        src="/images/m-after-green-sm.webp"
         alt="アパート改修 After"
         width="480"
         height="360"
@@ -103,7 +103,7 @@ function BukkenBASlider() {
         }}
       >
         <img
-          src="/images/m-before-1-sm.webp"
+          src="/images/m-before-3-sm.webp"
           alt="アパート改修 Before"
           width="480"
           height="360"

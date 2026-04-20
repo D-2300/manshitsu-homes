@@ -1,37 +1,38 @@
 import BukkenHero from "./components/bukken/BukkenHeroV2";
-import BukkenYourSide from "./components/bukken/BukkenYourSide";
 import BukkenSteps from "./components/bukken/BukkenSteps";
-import BukkenMidCTA from "./components/bukken/BukkenMidCTA";
 import BukkenGuideSection from "./components/bukken/BukkenGuideSection";
 import BukkenBeforeAfterCTA from "./components/bukken/BukkenBeforeAfterCTA";
-import BukkenFairEval from "./components/bukken/BukkenFairEval";
 import BukkenProfiles from "./components/bukken/BukkenProfiles";
-import HPTrustTestimonials from "./components/hp/HPTrustTestimonials";
 import BukkenFAQ from "./components/bukken/BukkenFAQ";
 import BukkenBottomCTA from "./components/bukken/BukkenBottomCTA";
 import BukkenMailForm from "./components/bukken/BukkenMailForm";
 import BukkenFooter from "./components/bukken/BukkenFooter";
-import BukkenExitPopup from "./components/bukken/BukkenExitPopup";
-import V3FloatingCTA from "./components/v3/V3FloatingCTA";
 
+/**
+ * BukkenLPPage — Phase 2 トリム版（9セクション）
+ *
+ * 削除したセクション（冗長・CTA過多の解消）:
+ *  - BukkenYourSide（V2 Hero 三角形が代替）
+ *  - BukkenMidCTA（CTA数削減）
+ *  - BukkenFairEval（Profiles/LINE配信に移管）
+ *  - HPTrustTestimonials（Voice系はHP側）
+ *  - V3FloatingCTA（押し付け感削減）
+ *  - BukkenExitPopup（押し付け感削減）
+ *
+ * CTA は3箇所に圧縮: Hero CTA → BottomCTA → MailForm
+ */
 export default function BukkenLPPage() {
   return (
     <div style={{ fontFamily: "'Noto Sans JP', sans-serif", color: "#333", background: "#fff" }}>
       <BukkenHero />
-      <BukkenYourSide />
       <BukkenSteps />
-      <BukkenMidCTA />
       <BukkenGuideSection />
       <BukkenBeforeAfterCTA />
-      <BukkenFairEval />
       <BukkenProfiles />
-      <HPTrustTestimonials />
       <BukkenFAQ />
       <BukkenBottomCTA />
       <BukkenMailForm />
       <BukkenFooter />
-      <V3FloatingCTA />
-      <BukkenExitPopup />
     </div>
   );
 }
