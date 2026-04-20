@@ -790,3 +790,94 @@ cdcfe92 docs(line): paste-ready を全Phase完了状態に同期
 - 今回は広告最終URLの実害が軽微のため見送り、sitemap側を実配信URLに合わせる方向で対応した
 
 — 2026-04-20 5回目セッション終了時、Claude Opus 4.7 より
+
+---
+
+## §19. 前回セッション（6回目／2026-04-21）の差分と次やること
+
+### このセッションでやったこと（全てpush済・Netlifyデプロイ反映中）
+
+**1. hp-lp に sitemap.xml を新規作成（hp-lp commit `feb7b0b`）** — §18-④の残件を消化
+- `public/sitemap.xml` 新規（24ルート列挙：固定15＋記事9、全URL末尾スラッシュ統一）
+- `public/robots.txt` に `Sitemap: https://kiokuso.jp/sitemap.xml` 行を追加
+- これで hp-lp 側も Search Console に sitemap 投入できる状態に
+
+**2. ランタイム `document.title` 注入を削除（manshitsu `f28efac` / hp-lp `204fecf`）** — §18-⑤の残件
+- prerender が `<head>` をページ別に書き換えているので `useEffect` での title/meta 書換は重複
+- 対象：`BukkenLPPage` / `GuidePage`（manshitsu）、`TenantLPPage` / `TenantGuidePage`（hp-lp）の4ファイル
+- `useEffect` ブロックと不要になった `import` も削除、型チェック通過
+
+**3. ArticleListPage カテゴリフィルタの動作確認（コード変更なし）** — §18-⑥の残件
+- すべて=24／施工事例=3／コラム=3／お役立ち情報=18 で合計整合、空状態分岐も想定通り
+- コンソールエラーなし、フィルタ反転表示も機能。追加修正不要と判定
+
+**4. 施工事例3本を追加（commit `133ba3d`）** — §18-⑦の残件、かつ⑥で観察したカテゴリ偏重の補正
+- `saikenchiku-fuka-wakabayashi-case`（再建築不可・若林区旗竿地180万→利回り12.8%／出口2枚目に土地活用）
+- `akiya-bank-tome-case`（登米市・空き家バンク0円譲渡→総投資345万・利回り19.1%／移住ルートでの客付け）
+- `tenpo-jukyo-heiyou-taihaku-case`（太白区近隣商業・店舗併用で月13万・利回り18.1%／記憶荘グループ店舗内装スタジオとの客付け連動）
+- 記事 24→27本、施工事例 3→6本にバランス改善。sitemap.xml にも3URL追加
+
+**5. relatedSlugs 健全性チェック** — 27記事 全 relatedSlugs が実在スラッグを参照、自参照ゼロ、リンク切れゼロを確認
+
+**6. HomePage に Articles プレビュー追加（commit `2daa212`）**
+- 27本もの記事があるのにトップからの導線がゼロだった問題を解消
+- `HPArticlesPreview` コンポを新設、`getAllArticles().slice(0, 3)` で最新3本を自動表示
+- Hero → WhatWeDo → Voice → WorksPreview → **ArticlesPreview（新）** → PropertyTeaser → Links の流れに
+- 以後は記事を足すだけで更新される（データ駆動）
+
+### 🚀 次セッションで最初にやること
+
+#### 優先度高（手動作業・ユーザー側、§18から継続）
+1. **LINE Manager でガイド表紙画像を再アップロード**（§17から4セッション継続・最優先）
+   - URL: https://manager.line.biz/ ／ アカウント: `@074uzmls`
+   - あいさつメッセージ② → リッチ画像 → `docs/line-setup-output/guide-cover.png`（1200×1800）
+2. **Search Console に hp-lp sitemap 投入**（§19-1の効果観測）
+   - `https://kiokuso.jp/sitemap.xml` を Search Console に登録
+   - インデックス登録状況と記事個別タイトルでのCTR改善を観測
+3. **Search Console・Clarity・GA4 で SEO修正の効果観測**（§18継続）
+   - §18で入れた prerender <head> ページ別注入の効果が出始める頃（デプロイ2週間後）
+   - 配信30日後の論文改訂（`BUSINESS_THESIS.md §7`）へつなげる
+
+#### 優先度中（コード／コンテンツ）
+4. **SEO記事の手薄領域を補強**（現状「お役立ち情報」18本が中心、偏りが残る領域）
+   - 金融：属性別融資戦略（サラリーマン・自営業・法人化済オーナー別）
+   - エリア：仙台市外の多賀城・名取・富谷・古川など特化記事
+   - 管理業務：原状回復トラブル・滞納対応・退去立会の実例
+5. **LP `/lp/bukken` 拡張**：FAQ追加・CTA文言 A/B 要素
+6. **ArticleListPage にタグフィルタ追加**（カテゴリ4段 + 戸建／アパート／資金／エリアの横断タグ）
+7. **事例バリエーションの継続追加**（§18継続）：民泊事例、ボロ戸建の超再生事例、アパート1棟まるごと再生事例
+
+#### 優先度低（外部連携・データ待ち）
+8. Microsoft Clarity 満室専用ID取得（まだ記憶荘共用の `vuby2q6y09` から分離途中の場合）
+9. 配信60日後のシナリオC（学習層追加）拡大判断
+10. 画像最適化監査（未使用webp削除・heroImage重複解消）
+11. Google Ads の最終URL確認（§18継続・実害は軽微）
+
+### この時点で守るべきこと（再掲＋今回追加）
+- §4 非公開物件方針、§5 段階的開示マップ、§13 禁じ手リスト
+- §16 戸建は主軸／DIY受容は奥に置く
+- §17 記事は内装屋の一人称視点を崩さない／新記事末尾にLINE導線を置く
+- §18 `prerender.mjs` を触る時は `<head>` 注入ロジックを壊さない／新記事・新静的ページを追加したら `STATIC_META` にも固有meta定義を追加
+- **§19追加：記事を追加したら必ず `public/sitemap.xml` にも末尾スラッシュ付き URL を追加する**（記事一覧ページの自動再生は HomePage 側のみ、sitemap は手書き）
+- **§19追加：relatedSlugs は実在スラッグのみ。タイポするとビルドは通るがリンク切れになる**（検証スクリプトは `grep -oE "slug:\s*'[^']+'"` でスラッグ集合を作って relatedSlugs と照合）
+- **§19追加：HomePage の Articles プレビューは最新3本を自動表示するので、新記事を出したら自動でトップに反映される。逆に言えば、古い記事でトップに出したいものがあれば別設計が必要**
+
+### 直近コミット（このセッション分）
+**manshitsu-homes**
+```
+2daa212 feat(home): トップページに Articles プレビューを追加
+133ba3d feat(articles): 施工事例3本追加（再建築不可／空き家バンク／店舗併用）
+f28efac refactor(seo): ランタイム document.title 注入を削除
+```
+**hp-lp**
+```
+204fecf refactor(seo): ランタイム document.title 注入を削除
+feb7b0b feat(seo): sitemap.xml 新規作成＋robots.txt に Sitemap 行追加
+```
+
+### 発見した潜在課題のメモ
+- `preview_screenshot` が何度か 30s でタイムアウトした（eval / snapshot は応答するので dev server 自体は生存）。原因未特定だが、今回の開発には影響なし
+- 新 case-study 3本はすべて既存の `m-after-*` 画像を流用。事例ごとの固有画像（Before/After 等）があれば、視覚的な差別化が効く領域として残る
+- §18の prerender `<head>` 注入は `STATIC_META` に手書き定義が必要。⑤で `document.title` を削除した4ファイル分は既に `STATIC_META` に定義済みなので欠落なし。新しい固定ページを作るときは忘れずに追加
+
+— 2026-04-21 6回目セッション終了時、Claude Opus 4.7 より
