@@ -5,6 +5,7 @@ import WorksPage from './pages/WorksPage';
 import WorkDetailPage from './pages/WorkDetailPage';
 import PricingPage from './pages/PricingPage';
 import BukkenLPPage from './BukkenLPPage';
+import BukkenHeroV2 from './components/bukken/BukkenHeroV2';
 import ArticleListPage from './pages/ArticleListPage';
 import ArticlePage from './pages/ArticlePage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
@@ -30,6 +31,8 @@ export default function AppRoutes() {
         <Route path="/lp/bukken" element={<BukkenLPPage />} />
         {/* /lp/staging は既存広告URL継承のため新LPへルーティング */}
         <Route path="/lp/staging" element={<BukkenLPPage />} />
+        {/* モック: 新Hero構造のプレビュー */}
+        <Route path="/mock/hero-v2" element={<BukkenHeroV2 />} />
       </Routes>
     </>
   );

@@ -1,4 +1,4 @@
-import BukkenHero from "./components/bukken/BukkenHero";
+import BukkenHero from "./components/bukken/BukkenHeroV2";
 import BukkenYourSide from "./components/bukken/BukkenYourSide";
 import BukkenSteps from "./components/bukken/BukkenSteps";
 import BukkenMidCTA from "./components/bukken/BukkenMidCTA";
